@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Lato } from "next/font/google";
 import "./globals.css";
+import { Toaster } from "sonner";
 import { KpoBanner } from "@/components/kpo-banner";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
@@ -80,6 +81,7 @@ export default function RootLayout({
         <Navbar />
         <main>{children}</main>
         <Footer />
+        <Toaster position="bottom-right" richColors />
       </body>
     </html>
   );
