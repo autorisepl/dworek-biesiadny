@@ -5,6 +5,7 @@ import { Toaster } from "sonner";
 import { KpoBanner } from "@/components/kpo-banner";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
+import { CookieConsent } from "@/components/cookie-consent";
 
 const playfair = Playfair_Display({
   subsets: ["latin", "latin-ext"],
@@ -18,6 +19,7 @@ const lato = Lato({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://dworekbiesiadny.pl"),
   title: "Dworek Biesiadny w Radzewicach — Hotel, Restauracja, Events",
   description:
     "Kameralny dworek nad starorzeczem Warty w Radzewicach. 8 apartamentów, restauracja, strefa relaksu z sauną, balią i jacuzzi, glamping, organizacja wesel i eventów. ~40 minut od Poznania.",
@@ -81,6 +83,7 @@ export default function RootLayout({
         <Navbar />
         <main>{children}</main>
         <Footer />
+        <CookieConsent />
         <Toaster position="bottom-right" richColors />
       </body>
     </html>
