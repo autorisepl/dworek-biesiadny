@@ -14,27 +14,27 @@ export const metadata: Metadata = {
 const menuSections = [
   {
     category: "Śniadania",
-    items: ["[PLACEHOLDER_MENU]"],
+    items: ["Menu w przygotowaniu — dostępne wkrótce"],
   },
   {
     category: "Zupy",
-    items: ["[PLACEHOLDER_MENU]"],
+    items: ["Menu w przygotowaniu — dostępne wkrótce"],
   },
   {
     category: "Dania główne",
-    items: ["[PLACEHOLDER_MENU]"],
+    items: ["Menu w przygotowaniu — dostępne wkrótce"],
   },
   {
     category: "Desery",
-    items: ["[PLACEHOLDER_MENU]"],
+    items: ["Menu w przygotowaniu — dostępne wkrótce"],
   },
   {
     category: "Napoje",
-    items: ["[PLACEHOLDER_MENU]"],
+    items: ["Menu w przygotowaniu — dostępne wkrótce"],
   },
   {
     category: "Wina i alkohole",
-    items: ["[PLACEHOLDER_MENU]"],
+    items: ["Menu w przygotowaniu — dostępne wkrótce"],
   },
 ];
 
@@ -69,7 +69,7 @@ export default function RestauracjaPage() {
             {[
               { icon: Leaf, label: "Lokalne produkty, sezonowe menu" },
               { icon: Clock, label: "Śniadania, obiady, kolacje" },
-              { icon: Phone, label: "Rezerwacja stolika: [PLACEHOLDER_PHONE]" },
+              { icon: Phone, label: "Rezerwacja stolika: +48 691 845 079" },
             ].map((item) => (
               <div
                 key={item.label}

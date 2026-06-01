@@ -38,8 +38,8 @@ export function ContactPreviewSection() {
             <div className="space-y-4 mb-10">
               {[
                 { icon: MapPin, label: "Radzewice, Wielkopolska" },
-                { icon: Phone, label: "[PLACEHOLDER_PHONE]" },
-                { icon: Mail, label: "[PLACEHOLDER_EMAIL]" },
+                { icon: Phone, label: "+48 691 845 079" },
+                { icon: Mail, label: "info@dworek-biesiadny.pl" },
                 { icon: Clock, label: "Odpowiadamy w ciągu 24h" },
               ].map((item) => (
                 <div key={item.label} className="flex items-center gap-3 font-body text-white/80">

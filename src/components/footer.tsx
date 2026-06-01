@@ -17,15 +17,19 @@ export function Footer() {
             <ul className="space-y-3 font-body text-sm text-white/80">
               <li className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 mt-0.5 text-accent shrink-0" />
-                <span>Radzewice, Wielkopolska</span>
+                <span>Długa 1B, Radzewice 62-022</span>
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-accent shrink-0" />
-                <span>[PLACEHOLDER_PHONE]</span>
+                <a href="tel:+48691845079" className="hover:text-accent transition-colors">
+                  +48 691 845 079
+                </a>
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-accent shrink-0" />
-                <span>[PLACEHOLDER_EMAIL]</span>
+                <a href="mailto:info@dworek-biesiadny.pl" className="hover:text-accent transition-colors">
+                  info@dworek-biesiadny.pl
+                </a>
               </li>
             </ul>
           </div>
@@ -41,10 +45,7 @@ export function Footer() {
                 { href: "/galeria", label: "Galeria" },
               ].map((link) => (
                 <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-white/80 hover:text-accent transition-colors"
-                  >
+                  <Link href={link.href} className="text-white/80 hover:text-accent transition-colors">
                     {link.label}
                   </Link>
                 </li>
@@ -56,34 +57,22 @@ export function Footer() {
             <h3 className="font-heading text-lg font-bold mb-4">Informacje</h3>
             <ul className="space-y-2 font-body text-sm">
               <li>
-                <Link
-                  href="/polityka-prywatnosci"
-                  className="text-white/80 hover:text-accent transition-colors"
-                >
+                <Link href="/polityka-prywatnosci" className="text-white/80 hover:text-accent transition-colors">
                   Polityka prywatności
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/regulamin"
-                  className="text-white/80 hover:text-accent transition-colors"
-                >
+                <Link href="/regulamin" className="text-white/80 hover:text-accent transition-colors">
                   Regulamin
                 </Link>
               </li>
               <li>
-                <button
-                  onClick={openCookieSettings}
-                  className="text-white/80 hover:text-accent transition-colors text-left"
-                >
+                <button onClick={openCookieSettings} className="text-white/80 hover:text-accent transition-colors text-left">
                   Ustawienia cookies
                 </button>
               </li>
               <li>
-                <Link
-                  href="/dotacja-kpo"
-                  className="text-white/80 hover:text-accent transition-colors"
-                >
+                <Link href="/dotacja-kpo" className="text-white/80 hover:text-accent transition-colors">
                   Dotacja KPO
                 </Link>
               </li>
@@ -95,12 +84,7 @@ export function Footer() {
           <p>© 2024 Dworek Biesiadny w Radzewicach. Wszelkie prawa zastrzeżone.</p>
           <p>
             Realizacja:{" "}
-            <a
-              href="https://autorise.pl"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-accent transition-colors"
-            >
+            <a href="https://autorise.pl" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
               Autorise.pl
             </a>
           </p>

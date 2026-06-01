@@ -1,17 +1,15 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Dotacja KPO — Dworek Biesiadny w Radzewicach",
   description:
-    "Informacja o projekcie współfinansowanym z Krajowego Planu Odbudowy i Zwiększania Odporności (KPO) — Dworek Biesiadny w Radzewicach.",
+    "Projekt KPOD.01.03-IW.01-B265/24 — Rozszerzenie i dywersyfikacja usług Dworku Biesiadnego w województwie Wielkopolskim. Dofinansowanie UE: 417 044,35 PLN.",
 };
 
 export default function DotacjaKPOPage() {
   return (
     <div className="min-h-screen bg-warm-white py-20 md:py-28 px-4 md:px-8">
       <div className="max-w-3xl mx-auto">
-        {/* Flagi UE */}
         <div className="flex items-center gap-4 mb-10 p-5 bg-cream rounded-2xl border border-gray-100">
           <div className="flex items-center gap-3">
             <span className="text-4xl" aria-label="Flaga Unii Europejskiej">🇪🇺</span>
@@ -22,7 +20,7 @@ export default function DotacjaKPOPage() {
               Projekt współfinansowany przez
             </p>
             <p className="font-heading text-base text-primary-dark font-bold leading-snug">
-              Unię Europejską ze środków<br />Krajowego Planu Odbudowy
+              Unię Europejską ze środków<br />Krajowego Planu Odbudowy i Zwiększania Odporności
             </p>
           </div>
         </div>
@@ -42,12 +40,30 @@ export default function DotacjaKPOPage() {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {[
-                { label: "Nazwa projektu", value: "[PLACEHOLDER_KPO — nazwa projektu]" },
-                { label: "Numer projektu", value: "[PLACEHOLDER_KPO — numer projektu]" },
-                { label: "Beneficjent", value: "Dworek Biesiadny w Radzewicach" },
-                { label: "Wartość projektu", value: "[PLACEHOLDER_KPO — wartość całkowita]" },
-                { label: "Dofinansowanie UE", value: "[PLACEHOLDER_KPO — kwota dofinansowania]" },
-                { label: "Okres realizacji", value: "[PLACEHOLDER_KPO — daty]" },
+                {
+                  label: "Nazwa projektu",
+                  value: "Rozszerzenie i dywersyfikacja usług Dworku Biesiadnego w województwie Wielkopolskim",
+                },
+                {
+                  label: "Numer projektu",
+                  value: "KPOD.01.03-IW.01-B265/24",
+                },
+                {
+                  label: "Beneficjent",
+                  value: 'Justyna Błaszkowiak "Dworek Biesiadny"',
+                },
+                {
+                  label: "Całkowita wartość projektu",
+                  value: "641 508,18 PLN",
+                },
+                {
+                  label: "Dofinansowanie UE",
+                  value: "417 044,35 PLN (79,90%)",
+                },
+                {
+                  label: "Program",
+                  value: "Krajowy Plan Odbudowy i Zwiększania Odporności — inwestycja A1.2.1",
+                },
               ].map((item) => (
                 <div key={item.label} className="bg-cream rounded-xl p-4">
                   <p className="font-body text-xs text-gray-400 uppercase tracking-wide mb-1">
@@ -66,38 +82,50 @@ export default function DotacjaKPOPage() {
               Cel projektu
             </h2>
             <p className="text-sm leading-relaxed">
-              [PLACEHOLDER_KPO — opis celu projektu, zakres inwestycji i oczekiwane
-              rezultaty zgodnie z dokumentacją wniosku o dofinansowanie]
+              Celem projektu jest rozszerzenie i dywersyfikacja dotychczasowej działalności
+              Dworku Biesiadnego poprzez wprowadzenie nowej usługi wypożyczania rowerów
+              elektrycznych oraz unowocześnienie oferty hotelarskiej i gastronomicznej.
+              Inwestycja ma na celu podniesienie komfortu gości, poprawę standardu obiektu
+              oraz zwiększenie odporności przedsiębiorstwa na potencjalne kryzysy rynkowe.
             </p>
           </section>
 
           <section>
             <h2 className="font-heading text-xl text-primary-dark mb-3 font-bold">
-              Zakres inwestycji
+              Grupa docelowa
             </h2>
             <p className="text-sm leading-relaxed">
-              [PLACEHOLDER_KPO — szczegółowy opis zakresu rzeczowego projektu]
+              Projekt skierowany jest do gości Dworku Biesiadnego — turystów krajowych i
+              zagranicznych szukających aktywnego wypoczynku w otoczeniu natury Rogalińskiego
+              Parku Krajobrazowego, a także do klientów biznesowych i społeczności lokalnej.
             </p>
           </section>
 
           <section>
             <h2 className="font-heading text-xl text-primary-dark mb-3 font-bold">
-              Efekty projektu
+              Efekty realizacji projektu
             </h2>
             <p className="text-sm leading-relaxed">
-              [PLACEHOLDER_KPO — wskaźniki produktu i rezultatu projektu]
+              Realizacja inwestycji pozwoli na wprowadzenie innowacyjnych usług rekreacyjnych,
+              które znacząco podniosą atrakcyjność rynkową Dworku Biesiadnego. Dzięki
+              automatyzacji procesów rezerwacji i zameldowania goście zyskają większą
+              niezależność i wygodę, a obiekt poprawi swoją efektywność operacyjną. Wdrożenie
+              proekologicznych rozwiązań energetycznych przyczyni się do ochrony środowiska
+              naturalnego i zwiększy niezależność energetyczną obiektu. Całość działań
+              zaowocuje stworzeniem nowoczesnego, bezpiecznego i konkurencyjnego miejsca,
+              przygotowanego na dynamicznie zmieniające się potrzeby rynku turystycznego.
             </p>
           </section>
 
-          <div className="bg-primary-dark text-white rounded-2xl p-8 mt-4">
+          <div className="bg-primary-dark text-white rounded-2xl p-8">
             <div className="flex items-center gap-3 mb-4">
               <span className="text-3xl">🇪🇺</span>
               <div>
                 <p className="font-heading text-base font-bold">
-                  Finansowane przez Unię Europejską
+                  Finansowane przez Unię Europejską — NextGenerationEU
                 </p>
                 <p className="font-body text-xs text-white/60">
-                  NextGenerationEU — Krajowy Plan Odbudowy i Zwiększania Odporności
+                  #FunduszeEuropejskie #FunduszeUE #NextGenerationEU
                 </p>
               </div>
             </div>
@@ -110,7 +138,7 @@ export default function DotacjaKPOPage() {
           </div>
 
           <p className="text-xs text-gray-400 pt-4 border-t border-gray-100">
-            Ostatnia aktualizacja: 2024
+            Ostatnia aktualizacja: 2025
           </p>
         </div>
       </div>

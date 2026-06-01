@@ -25,7 +25,7 @@ export default function ReguaminPage() {
             <ol className="list-decimal list-inside space-y-2 text-sm leading-relaxed">
               <li>
                 Niniejszy Regulamin określa zasady pobytu oraz korzystania z usług
-                Dworku Biesiadnego w Radzewicach, [PLACEHOLDER_ADDRESS] (dalej:
+                Dworku Biesiadnego w Radzewicach, D�uga 1B, Radzewice 62-022 (dalej:
                 „Obiekt").
               </li>
               <li>
@@ -199,7 +199,7 @@ export default function ReguaminPage() {
             </h2>
             <p className="text-sm leading-relaxed">
               Wszelkie reklamacje dotyczące usług świadczonych przez Obiekt należy
-              składać w formie pisemnej na adres: [PLACEHOLDER_EMAIL] lub listownie na
+              składać w formie pisemnej na adres: info@dworek-biesiadny.pl lub listownie na
               adres Obiektu. Reklamacje są rozpatrywane w ciągu 14 dni roboczych.
             </p>
           </section>

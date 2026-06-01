@@ -25,8 +25,8 @@ export default function PolitykaPrywatnosci() {
             </h2>
             <p className="leading-relaxed">
               Administratorem danych osobowych jest Dworek Biesiadny w Radzewicach,
-              [PLACEHOLDER_ADDRESS], e-mail: [PLACEHOLDER_EMAIL], tel.:
-              [PLACEHOLDER_PHONE].
+              D�uga 1B, Radzewice 62-022, e-mail: info@dworek-biesiadny.pl, tel.:
+              +48 691 845 079.
             </p>
           </section>
 
@@ -107,7 +107,7 @@ export default function PolitykaPrywatnosci() {
               </li>
             </ul>
             <p className="leading-relaxed mt-3">
-              Aby skorzystać z praw, skontaktuj się z nami: [PLACEHOLDER_EMAIL]
+              Aby skorzystać z praw, skontaktuj się z nami: info@dworek-biesiadny.pl
             </p>
           </section>
 
@@ -150,7 +150,7 @@ export default function PolitykaPrywatnosci() {
             </h2>
             <p className="leading-relaxed">
               W sprawach związanych z ochroną danych osobowych skontaktuj się z nami:{" "}
-              <strong>[PLACEHOLDER_EMAIL]</strong>
+              <strong>info@dworek-biesiadny.pl</strong>
             </p>
           </section>
 

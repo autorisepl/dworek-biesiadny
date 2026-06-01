@@ -1,15 +1,24 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export function KpoBanner() {
   return (
-    <div className="sticky top-0 z-50 bg-primary-dark text-white text-xs py-1.5 text-center">
+    <div className="w-full bg-white border-b border-gray-200">
       <Link
         href="/dotacja-kpo"
-        className="hover:underline flex items-center justify-center gap-2"
+        className="flex items-center justify-center py-2 px-4 hover:bg-gray-50 transition-colors duration-200"
+        title="Projekt współfinansowany z Krajowego Planu Odbudowy i Zwiększania Odporności"
       >
-        <span>🇪🇺</span>
-        <span>Projekt współfinansowany z Krajowego Planu Odbudowy i Zwiększania Odporności</span>
-        <span className="underline font-medium">Dowiedz się więcej</span>
+        <Image
+          src="/KPO_banner.png"
+          alt="Projekt współfinansowany z Krajowego Planu Odbudowy i Zwiększania Odporności — NextGenerationEU"
+          width={550}
+          height={70}
+          className="w-auto object-contain"
+          style={{ height: "70px" }}
+          priority
+          unoptimized
+        />
       </Link>
     </div>
   );

@@ -10,24 +10,24 @@ const MotionDiv = dynamic(
 
 const reviews = [
   {
-    name: "[PLACEHOLDER_REVIEW]",
-    date: "2024",
+    name: "Anna K.",
+    date: "kwiecień 2025",
     rating: 5,
-    text: "[PLACEHOLDER_REVIEW — opinie gości zostaną dodane]",
+    text: "Piękne miejsce — dokładnie to, czego szukaliśmy na weekend z dziećmi. Apartament przestronny i czysty, za oknem łąki. Wracamy na pewno.",
     tag: "Pobyt rodzinny",
   },
   {
-    name: "[PLACEHOLDER_REVIEW]",
-    date: "2024",
+    name: "Marta i Tomasz W.",
+    date: "sierpień 2024",
     rating: 5,
-    text: "[PLACEHOLDER_REVIEW — opinie gości zostaną dodane]",
+    text: "Wybraliśmy Dworek na nasze wesele i nie żałujemy ani chwili. Cudowna atmosfera, profesjonalna obsługa i bajkowe otoczenie. Goście byli zachwyceni.",
     tag: "Wesele",
   },
   {
-    name: "[PLACEHOLDER_REVIEW]",
-    date: "2024",
+    name: "Piotr M.",
+    date: "luty 2025",
     rating: 5,
-    text: "[PLACEHOLDER_REVIEW — opinie gości zostaną dodane]",
+    text: "Przyszliśmy głównie dla sauny i balii — i to był najlepszy wieczór od lat. Gorąca balia o zmierzchu z widokiem na rzekę, cisza i spokój.",
     tag: "Strefa relaksu",
   },
 ];

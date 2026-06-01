@@ -1,6 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 import { Users, Maximize } from "lucide-react";
+import { PhotoPlaceholder } from "@/components/photo-placeholder";
 import type { Room } from "@/lib/rooms-data";
 
 export function RoomCard({ room }: { room: Room }) {
@@ -8,12 +8,7 @@ export function RoomCard({ room }: { room: Room }) {
     <Link href={`/pokoje/${room.slug}`}>
       <div className="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-[1.02]">
         <div className="relative aspect-[4/3] overflow-hidden">
-          <Image
-            src={room.image}
-            alt={room.name}
-            fill
-            className="object-cover group-hover:scale-105 transition-transform duration-500"
-          />
+          <PhotoPlaceholder className="w-full h-full" label={room.name} />
           <div className="absolute top-3 right-3 flex gap-2">
             <span className="bg-white/90 backdrop-blur px-2 py-1 rounded text-xs font-body flex items-center gap-1">
               <Maximize className="w-3 h-3" /> {room.size} m²

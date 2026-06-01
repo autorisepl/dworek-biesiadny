@@ -41,7 +41,7 @@ export function LocationSection() {
           >
             <div className="rounded-2xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2454.9!2d17.0!3d51.9!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sRadzewice%2C+Polska!5e0!3m2!1spl!2spl!4v1700000000000!5m2!1spl!2spl"
+                src="https://maps.google.com/maps?q=Dluga+1B,+Radzewice,+62-022,+Polska&output=embed&hl=pl"
                 width="100%"
                 height="100%"
                 style={{ border: 0, minHeight: "320px" }}
@@ -64,7 +64,7 @@ export function LocationSection() {
               {
                 icon: MapPin,
                 title: "Adres",
-                content: "Radzewice, województwo wielkopolskie\n[PLACEHOLDER_ADDRESS]",
+                content: "ul. Długa 1B, 62-022 Radzewice\nwojewództwo wielkopolskie",
               },
               {
                 icon: Clock,

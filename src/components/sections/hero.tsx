@@ -15,13 +15,13 @@ export function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <Image
-        src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=1920&h=1080&fit=crop"
-        alt="Dworek Biesiadny w Radzewicach — widok z zewnątrz"
+        src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=1920&h=1080&fit=crop"
+        alt="Łąki nadwarciańskie o świcie — okolice Dworku Biesiadnego"
         fill
         priority
         className="object-cover"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/70 via-primary-dark/40 to-primary-dark/60" />
+      <div className="absolute inset-0 bg-primary-dark/60" />
 
       <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
         <MotionDiv
@@ -60,18 +60,6 @@ export function HeroSection() {
               Nasze pokoje
             </Link>
           </div>
-        </MotionDiv>
-      </div>
-
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
-        <MotionDiv
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.2, duration: 0.6 }}
-          className="flex flex-col items-center gap-2 text-white/60"
-        >
-          <span className="font-body text-xs tracking-widest uppercase">Przewiń</span>
-          <div className="w-px h-8 bg-white/40 animate-pulse" />
         </MotionDiv>
       </div>
     </section>

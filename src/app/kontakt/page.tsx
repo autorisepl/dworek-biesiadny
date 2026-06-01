@@ -4,14 +4,13 @@ import { MapPin, Phone, Mail, Clock } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Kontakt i rezerwacje — Dworek Biesiadny w Radzewicach",
-  description:
-    "Skontaktuj się z Dworkiem Biesiadnym w Radzewicach. Formularz rezerwacji noclegu, organizacji wesela, eventu lub pytania o restaurację. Odpowiadamy w 24h.",
+  description: "Skontaktuj się z Dworkiem Biesiadnym w Radzewicach. Formularz rezerwacji noclegu, organizacji wesela lub pytania o restaurację. Odpowiadamy w 24h.",
 };
 
 const contactDetails = [
-  { icon: MapPin, label: "Adres", value: "Radzewice, Wielkopolska\n[PLACEHOLDER_ADDRESS]" },
-  { icon: Phone, label: "Telefon", value: "[PLACEHOLDER_PHONE]" },
-  { icon: Mail, label: "E-mail", value: "[PLACEHOLDER_EMAIL]" },
+  { icon: MapPin, label: "Adres", value: "Długa 1B, Radzewice 62-022" },
+  { icon: Phone, label: "Telefon", value: "+48 691 845 079", href: "tel:+48691845079" },
+  { icon: Mail, label: "E-mail", value: "info@dworek-biesiadny.pl", href: "mailto:info@dworek-biesiadny.pl" },
   { icon: Clock, label: "Odpowiedź", value: "W ciągu 24h w dni robocze" },
 ];
 
@@ -20,16 +19,11 @@ export default function KontaktPage() {
     <div className="min-h-screen bg-warm-white">
       <section className="py-20 md:py-28 px-4 md:px-8 bg-primary-dark text-white">
         <div className="max-w-7xl mx-auto">
-          <p className="text-accent font-body text-sm tracking-widest uppercase mb-3">
-            Kontakt
-          </p>
-          <h1 className="font-heading text-4xl md:text-6xl font-bold mb-6">
-            Napisz do nas
-          </h1>
+          <p className="text-accent font-body text-sm tracking-widest uppercase mb-3">Kontakt</p>
+          <h1 className="font-heading text-4xl md:text-6xl font-bold mb-6">Napisz do nas</h1>
           <div className="w-16 h-0.5 bg-accent mb-6" />
           <p className="font-body text-white/80 text-base md:text-xl max-w-2xl">
-            Rezerwacja noclegu, zapytanie o wesele lub event, pytanie o restaurację —
-            opisz czego potrzebujesz, a wrócimy z odpowiedzią.
+            Rezerwacja noclegu, zapytanie o wesele lub event, pytanie o restaurację — opisz czego potrzebujesz.
           </p>
         </div>
       </section>
@@ -37,12 +31,9 @@ export default function KontaktPage() {
       <section className="py-16 md:py-24 px-4 md:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            {/* Dane kontaktowe */}
             <div className="space-y-8">
               <div>
-                <h2 className="font-heading text-2xl text-primary-dark mb-6">
-                  Dane kontaktowe
-                </h2>
+                <h2 className="font-heading text-2xl text-primary-dark mb-6">Dane kontaktowe</h2>
                 <div className="space-y-5">
                   {contactDetails.map((item) => (
                     <div key={item.label} className="flex gap-4">
@@ -50,12 +41,12 @@ export default function KontaktPage() {
                         <item.icon className="w-5 h-5 text-primary" />
                       </div>
                       <div>
-                        <p className="font-body text-xs text-gray-400 uppercase tracking-wide mb-0.5">
-                          {item.label}
-                        </p>
-                        <p className="font-body text-sm text-primary-dark whitespace-pre-line">
-                          {item.value}
-                        </p>
+                        <p className="font-body text-xs text-gray-400 uppercase tracking-wide mb-0.5">{item.label}</p>
+                        {item.href ? (
+                          <a href={item.href} className="font-body text-sm text-primary-dark hover:text-primary transition-colors">{item.value}</a>
+                        ) : (
+                          <p className="font-body text-sm text-primary-dark">{item.value}</p>
+                        )}
                       </div>
                     </div>
                   ))}
@@ -64,33 +55,27 @@ export default function KontaktPage() {
 
               <div className="rounded-2xl overflow-hidden aspect-[4/3] bg-gray-100">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2454.9!2d17.0!3d51.9!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sRadzewice%2C+Polska!5e0!3m2!1spl!2spl!4v1700000000000!5m2!1spl!2spl"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2452.0!2d16.9!3d52.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sDwuga+1B+Radzewice!5e0!3m2!1spl!2spl!4v1700000000000!5m2!1spl!2spl"
                   width="100%"
                   height="100%"
                   style={{ border: 0, minHeight: "240px" }}
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Mapa — Dworek Biesiadny w Radzewicach"
+                  title="Mapa — Dworek Biesiadny, Długa 1B Radzewice"
                 />
               </div>
 
               <div className="bg-cream rounded-2xl p-6">
-                <p className="font-heading text-base text-primary-dark font-bold mb-2">
-                  Dojazd
-                </p>
+                <p className="font-heading text-base text-primary-dark font-bold mb-2">Dojazd</p>
                 <p className="font-body text-sm text-gray-600 leading-relaxed">
-                  ~40 minut z centrum Poznania. Bezpłatny parking na terenie obiektu dla
-                  wszystkich gości.
+                  ~40 minut z centrum Poznania. Bezpłatny parking na terenie obiektu dla wszystkich gości.
                 </p>
               </div>
             </div>
 
-            {/* Formularz */}
             <div className="lg:col-span-2">
-              <h2 className="font-heading text-2xl text-primary-dark mb-8">
-                Formularz kontaktowy
-              </h2>
+              <h2 className="font-heading text-2xl text-primary-dark mb-8">Formularz kontaktowy</h2>
               <div className="bg-white rounded-2xl p-8 shadow-sm">
                 <ContactForm />
               </div>
