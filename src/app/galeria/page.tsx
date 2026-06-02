@@ -37,6 +37,7 @@ export default function GaleriaPage() {
           alt="Łąki nadwarciańskie wokół Dworku Biesiadnego"
           fill
           priority
+          sizes="100vw"
           className="object-cover"
         />
         <div className="absolute inset-0 bg-primary-dark/65" />

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { ContactForm } from "@/components/contact-form";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 
@@ -17,12 +18,21 @@ const contactDetails = [
 export default function KontaktPage() {
   return (
     <div className="min-h-screen bg-warm-white">
-      <section className="py-20 md:py-28 px-4 md:px-8 bg-primary-dark text-white">
-        <div className="max-w-7xl mx-auto">
+      <section className="relative py-28 md:py-36 px-4 md:px-8 overflow-hidden">
+        <Image
+          src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1920&h=800&fit=crop"
+          alt="Kontakt — Dworek Biesiadny w Radzewicach"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-primary-dark/70" />
+        <div className="relative z-10 max-w-7xl mx-auto text-white">
           <p className="text-accent font-body text-sm tracking-widest uppercase mb-3">Kontakt</p>
           <h1 className="font-heading text-4xl md:text-6xl font-bold mb-6">Napisz do nas</h1>
           <div className="w-16 h-0.5 bg-accent mb-6" />
-          <p className="font-body text-white/80 text-base md:text-xl max-w-2xl">
+          <p className="font-body text-white/90 text-base md:text-xl max-w-2xl">
             Rezerwacja noclegu, zapytanie o wesele lub event, pytanie o restaurację — opisz czego potrzebujesz.
           </p>
         </div>
@@ -55,7 +65,7 @@ export default function KontaktPage() {
 
               <div className="rounded-2xl overflow-hidden aspect-[4/3] bg-gray-100">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2452.0!2d16.9!3d52.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sDwuga+1B+Radzewice!5e0!3m2!1spl!2spl!4v1700000000000!5m2!1spl!2spl"
+                  src="https://maps.google.com/maps?q=Dluga+1B,+Radzewice,+62-022,+Polska&output=embed&hl=pl"
                   width="100%"
                   height="100%"
                   style={{ border: 0, minHeight: "240px" }}

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -63,22 +64,31 @@ const roomPrices = [
 ];
 
 const additionalPrices = [
-  { name: "Strefa relaksu (sauna + balia + jacuzzi)", price: "[PLACEHOLDER_PRICE]", note: "za grupę / wieczór" },
-  { name: "Wypożyczalnia rowerów elektrycznych", price: "[PLACEHOLDER_PRICE]", note: "za rower / dzień" },
-  { name: "Kopuła glamping — nocleg", price: "[PLACEHOLDER_PRICE]", note: "za noc" },
-  { name: "Kopuła glamping — event", price: "[PLACEHOLDER_PRICE]", note: "wycena indywidualna" },
-  { name: "Organizacja wesela / eventu", price: "[PLACEHOLDER_PRICE]", note: "wycena indywidualna" },
+  { name: "Strefa relaksu (sauna + balia + jacuzzi)", price: "Od zapytania", note: "za grupę / wieczór" },
+  { name: "Wypożyczalnia rowerów elektrycznych", price: "Od zapytania", note: "za rower / dzień" },
+  { name: "Kopuła glamping — nocleg", price: "Od zapytania", note: "za noc" },
+  { name: "Kopuła glamping — event", price: "Wycena indywidualna", note: "wycena indywidualna" },
+  { name: "Organizacja wesela / eventu", price: "Wycena indywidualna", note: "wycena indywidualna" },
 ];
 
 export default function CennikPage() {
   return (
     <div className="min-h-screen bg-warm-white">
-      <section className="py-20 md:py-28 px-4 md:px-8 bg-primary-dark text-white">
-        <div className="max-w-7xl mx-auto">
+      <section className="relative py-28 md:py-36 px-4 md:px-8 overflow-hidden">
+        <Image
+          src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1920&h=800&fit=crop"
+          alt="Apartamenty Dworek Biesiadny — cennik noclegów"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-primary-dark/70" />
+        <div className="relative z-10 max-w-7xl mx-auto text-white">
           <p className="text-accent font-body text-sm tracking-widest uppercase mb-3">Ceny</p>
           <h1 className="font-heading text-4xl md:text-6xl font-bold mb-6">Cennik</h1>
           <div className="w-16 h-0.5 bg-accent mb-6" />
-          <p className="font-body text-white/80 text-base md:text-xl max-w-2xl">
+          <p className="font-body text-white/90 text-base md:text-xl max-w-2xl">
             Ceny zależą od terminu i dostępności. Napisz lub zadzwoń — odpowiadamy w ciągu
             24 godzin.
           </p>
@@ -131,10 +141,6 @@ export default function CennikPage() {
                   room.highlight ? "text-accent" : "text-primary"
                 )}>
                   {room.price}
-                  <span className={cn(
-                    "font-body text-xs font-normal ml-1",
-                    room.highlight ? "text-white/50" : "text-gray-400"
-                  )}>/ noc</span>
                 </p>
                 <ul className="space-y-1.5 mb-6 flex-1">
                   {room.features.map((f) => (

@@ -14,6 +14,7 @@ export function HeroSection() {
         alt="Łąki nadwarciańskie o świcie — okolice Dworku Biesiadnego"
         fill
         priority
+          sizes="100vw"
         className="object-cover"
       />
       <div className="absolute inset-0 bg-primary-dark/60" />

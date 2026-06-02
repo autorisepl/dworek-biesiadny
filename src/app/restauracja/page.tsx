@@ -47,6 +47,7 @@ export default function RestauracjaPage() {
           alt="Restauracja Dworek Biesiadny"
           fill
           priority
+          sizes="100vw"
           className="object-cover"
         />
         <div className="absolute inset-0 bg-primary-dark/70" />

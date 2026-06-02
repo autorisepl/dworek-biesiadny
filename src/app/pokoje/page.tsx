@@ -26,6 +26,7 @@ export default function PokojePage() {
           alt="Apartamenty Dworek Biesiadny w Radzewicach"
           fill
           priority
+          sizes="100vw"
           className="object-cover"
         />
         <div className="absolute inset-0 bg-primary-dark/65" />
