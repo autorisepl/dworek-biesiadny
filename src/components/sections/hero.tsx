@@ -27,7 +27,7 @@ export function HeroSection() {
         <MotionDiv
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.5 }}
         >
           <p className="font-body text-accent text-sm tracking-widest uppercase mb-4">
             Radzewice, Wielkopolska
@@ -38,24 +38,21 @@ export function HeroSection() {
           <p className="font-heading text-2xl md:text-3xl italic text-accent mb-6">
             W sercu natury
           </p>
-          <p className="font-body text-base md:text-lg text-white/85 max-w-2xl mx-auto mb-10 leading-relaxed">
+          <p className="font-body text-base md:text-lg text-white/90 max-w-2xl mx-auto mb-10 leading-relaxed">
             Kameralny obiekt nad starorzeczem Warty — 8 apartamentów, restauracja i strefa
             relaksu w otoczeniu łąk nadwarciańskich i starodrzewu akacji. Miejsce na spokojny
             wypoczynek, rodzinne uroczystości i firmowe wyjazdy.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link
               href="/kontakt"
-              className={cn(
-                buttonVariants({ size: "lg" }),
-                "bg-accent hover:bg-accent-light text-white font-body font-medium px-8 py-4 text-base"
-              )}
+              className="inline-flex items-center justify-center min-w-[220px] h-14 bg-accent hover:bg-accent-light text-white font-body font-semibold px-8 text-base rounded-lg transition-colors duration-200"
             >
               Zarezerwuj pobyt
             </Link>
             <Link
               href="/pokoje"
-              className="inline-flex items-center justify-center border-2 border-white text-white hover:bg-white hover:text-primary-dark font-body font-medium px-8 py-4 text-base rounded-lg transition-colors duration-200"
+              className="inline-flex items-center justify-center min-w-[220px] h-14 border-2 border-white text-white hover:bg-white hover:text-primary-dark font-body font-semibold px-8 text-base rounded-lg transition-colors duration-200"
             >
               Nasze pokoje
             </Link>

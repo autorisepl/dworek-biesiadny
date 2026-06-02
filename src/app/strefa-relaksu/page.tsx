@@ -4,6 +4,7 @@ import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Users, Thermometer, Zap, Wifi, Droplets, Waves } from "lucide-react";
+import { PhotoPlaceholder } from "@/components/photo-placeholder";
 
 export const metadata: Metadata = {
   title: "Strefa relaksu — Sauna, Balia, Jacuzzi — Dworek Biesiadny",
@@ -32,7 +33,7 @@ export default function StrefaRelaksuPage() {
             Strefa relaksu
           </h1>
           <div className="w-16 h-0.5 bg-accent mb-6" />
-          <p className="font-body text-white/85 text-base md:text-xl max-w-2xl leading-relaxed">
+          <p className="font-body text-white/90 text-base md:text-xl max-w-2xl leading-relaxed">
             Sauna z widokiem na starorzecze Warty, balia drewniana opalana drewnem i jacuzzi.
             Wieczorem w balii z widokiem na polany — lepszy reset niż jakikolwiek retreat za
             trzy razy większe pieniądze.
@@ -50,12 +51,12 @@ export default function StrefaRelaksuPage() {
                 Sauna zewnętrzna
               </h2>
               <div className="w-16 h-0.5 bg-accent mb-8" />
-              <p className="font-body text-gray-600 leading-relaxed mb-6">
+              <p className="font-body text-gray-700 leading-relaxed mb-6">
                 Sauna na platformie mobilnej mieści do ośmiu osób. Wnętrze ze świerku
                 skandynawskiego klasy A — drewno pracuje równomiernie i nie pęka. Ławy z drewna
                 abachi nie nagrzewają się i nie parzą dłoni.
               </p>
-              <p className="font-body text-gray-600 leading-relaxed mb-8">
+              <p className="font-body text-gray-700 leading-relaxed mb-8">
                 Panoramiczne okno 200×250 cm wychodzi na starorzecze Warty. Piec elektryczny
                 Harvia 10,5 KW ze sterowaniem WiFi plus tradycyjny piec na drewno — każdy
                 wybiera według preferencji. Przedsionek z ławkami i wieszakami, drzwi ze
@@ -77,19 +78,15 @@ export default function StrefaRelaksuPage() {
                   </div>
                 ))}
               </div>
-              <div className="mt-4 bg-cream rounded-lg px-3 py-2 font-body text-xs text-gray-500">
+              <div className="mt-4 bg-cream rounded-lg px-3 py-2 font-body text-xs text-gray-600">
                 Wymiary zewnętrzne: 200×500 cm · Okno panoramiczne: 200×250 cm ·
                 Oświetlenie LED RGB z pilotem
               </div>
             </div>
-            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
-              <Image
-                src="https://images.unsplash.com/photo-1540555700478-4be289fbec6c?w=800&h=1000&fit=crop"
-                alt="Sauna zewnętrzna z ławami abachi i panoramicznym oknem"
-                fill
-                className="object-cover"
-              />
-            </div>
+            <PhotoPlaceholder
+              className="aspect-[4/5] rounded-2xl shadow-xl"
+              label="Zdjęcie sauny zewnętrznej — widok z zewnątrz i wnętrze z oknem panoramicznym"
+            />
           </div>
         </div>
       </section>
@@ -98,26 +95,22 @@ export default function StrefaRelaksuPage() {
       <section className="py-20 md:py-28 px-4 md:px-8 bg-cream">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
-            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-xl order-2 md:order-1">
-              <Image
-                src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800&h=1000&fit=crop"
-                alt="Balia drewniana opalana drewnem z hydromasażem"
-                fill
-                className="object-cover"
-              />
-            </div>
+            <PhotoPlaceholder
+              className="aspect-[4/5] rounded-2xl shadow-xl order-2 md:order-1"
+              label="Zdjęcie balii drewnianej — nocne ujęcie z LED i widokiem na łąki"
+            />
             <div className="order-1 md:order-2">
               <p className="text-accent font-body text-sm tracking-widest uppercase mb-3">02</p>
               <h2 className="font-heading text-3xl md:text-4xl text-primary-dark mb-6">
                 Balia drewniana
               </h2>
               <div className="w-16 h-0.5 bg-accent mb-8" />
-              <p className="font-body text-gray-600 leading-relaxed mb-6">
+              <p className="font-body text-gray-700 leading-relaxed mb-6">
                 Balia opalana drewnem — piec zewnętrzny, więc woda nie pachnie dymem. Wkład
                 z włókna szklanego jest łatwy w utrzymaniu i wygodny w dotyku. Termopokrywa
                 zatrzymuje ciepło, schody ułatwiają wejście.
               </p>
-              <p className="font-body text-gray-600 leading-relaxed mb-8">
+              <p className="font-body text-gray-700 leading-relaxed mb-8">
                 Hydromasaż z ośmiu dysz i kolorowe podświetlenie LED robią swoje wieczorami.
                 Widok na polany i starorzecze Warty — tego nie zrobi żaden spa w centrum
                 miasta.
@@ -138,7 +131,7 @@ export default function StrefaRelaksuPage() {
                   </div>
                 ))}
               </div>
-              <div className="mt-4 bg-white rounded-lg px-3 py-2 font-body text-xs text-gray-500">
+              <div className="mt-4 bg-white rounded-lg px-3 py-2 font-body text-xs text-gray-600">
                 Średnica: 200 cm · Wkład z włókna szklanego · Termopokrywa i schody w zestawie
               </div>
             </div>
@@ -156,7 +149,7 @@ export default function StrefaRelaksuPage() {
                 Jacuzzi
               </h2>
               <div className="w-16 h-0.5 bg-accent mb-8" />
-              <p className="font-body text-gray-600 leading-relaxed mb-8">
+              <p className="font-body text-gray-700 leading-relaxed mb-8">
                 Jacuzzi przy saunie zewnętrznej uzupełnia strefę relaksu. Razem tworzą
                 kompletny rytm: sauna — zimny prysznic — jacuzzi — balia pod gwiazdami.
                 Dostępne wyłącznie dla gości dworku.
@@ -166,14 +159,10 @@ export default function StrefaRelaksuPage() {
                 Dostępne dla gości dworku
               </div>
             </div>
-            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
-              <Image
-                src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800&h=600&fit=crop"
-                alt="Jacuzzi przy saunie zewnętrznej"
-                fill
-                className="object-cover"
-              />
-            </div>
+            <PhotoPlaceholder
+              className="aspect-[4/3] rounded-2xl shadow-xl"
+              label="Zdjęcie jacuzzi — ujęcie wieczorne przy świetle"
+            />
           </div>
         </div>
       </section>
@@ -184,7 +173,7 @@ export default function StrefaRelaksuPage() {
           <h2 className="font-heading text-3xl md:text-4xl text-white mb-4">
             Zarezerwuj wieczór w strefie relaksu
           </h2>
-          <p className="font-body text-white/70 mb-8">
+          <p className="font-body text-white/80 mb-8">
             Strefa relaksu dostępna dla gości dworku. Zarezerwuj apartament i zaplanuj
             wieczór w saunie z widokiem na Wartę.
           </p>
@@ -192,7 +181,7 @@ export default function StrefaRelaksuPage() {
             href="/kontakt"
             className={cn(
               buttonVariants({ variant: "default" }),
-              "bg-accent hover:bg-accent-light text-white font-body font-medium px-10 py-3"
+              "bg-accent hover:bg-accent-light text-white font-body font-semibold px-10 py-4 h-14"
             )}
           >
             Zarezerwuj pobyt

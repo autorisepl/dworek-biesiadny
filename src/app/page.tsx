@@ -10,6 +10,7 @@ import { EventsSection } from "@/components/sections/events";
 import { GlampingSection } from "@/components/sections/glamping";
 import { PricingSection } from "@/components/sections/pricing";
 import { ReviewsSection } from "@/components/sections/reviews";
+import { FacebookFeedSection } from "@/components/sections/facebook-feed";
 import { LocationSection } from "@/components/sections/location";
 import { ContactPreviewSection } from "@/components/sections/contact-preview";
 
@@ -28,6 +29,7 @@ export default function HomePage() {
       <GlampingSection />
       <PricingSection />
       <ReviewsSection />
+      <FacebookFeedSection />
       <LocationSection />
       <ContactPreviewSection />
     </>

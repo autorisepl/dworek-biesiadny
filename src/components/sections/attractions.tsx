@@ -1,7 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { Fish, PersonStanding, Bike, Flame, TreePine } from "lucide-react";
+import { Fish, PersonStanding, Bike, Flame, TreePine, Rabbit, Footprints } from "lucide-react";
 import { PhotoPlaceholder } from "@/components/photo-placeholder";
 
 const MotionDiv = dynamic(
@@ -35,6 +35,16 @@ const attractions = [
     title: "Widoki natury",
     description: "Starorzecze Warty, łąki nadwarciańskie, starodrzew akacji na skarpie. Rano z balkonu słychać papugi z woliery w ogrodzie.",
   },
+  {
+    icon: Rabbit,
+    title: "Zwierzęta na miejscu",
+    description: "Na terenie dworku mieszka rodzinka baranów i owiec. W wolierze papugi i gołębie — widoczne z balkonu apartamentów od strony wschodniej.",
+  },
+  {
+    icon: Footprints,
+    title: "Daniele w okolicy",
+    description: "W okolicach dworku czasem przechodzi stadem dzikie daniele. Spacer wzdłuż starorzecza Warty o świcie lub zmierzchu daje największą szansę na spotkanie.",
+  },
 ];
 
 export function AttractionsSection() {
@@ -45,7 +55,7 @@ export function AttractionsSection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.35 }}
           className="mb-12"
         >
           <p className="text-accent font-body text-sm tracking-widest uppercase mb-3">Aktywności</p>
@@ -55,7 +65,7 @@ export function AttractionsSection() {
           <div className="w-16 h-0.5 bg-accent mb-6" />
         </MotionDiv>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-5">
           {attractions.map((item, i) => (
             <MotionDiv
               key={item.title}

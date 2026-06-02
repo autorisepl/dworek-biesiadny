@@ -8,12 +8,13 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
+  { href: "/", label: "Strona główna" },
   { href: "/pokoje", label: "Pokoje" },
   { href: "/restauracja", label: "Restauracja" },
   { href: "/strefa-relaksu", label: "Strefa relaksu" },
   { href: "/glamping", label: "Glamping" },
   { href: "/wydarzenia", label: "Wydarzenia" },
-  { href: "/aktualnosci", label: "Aktualnosci" },
+  { href: "/aktualnosci", label: "Aktualności" },
   { href: "/kontakt", label: "Kontakt" },
 ];
 
