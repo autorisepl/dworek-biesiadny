@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Regulamin — Dworek Biesiadny w Radzewicach",
-  description: "Regulamin pobytu, rezerwacji i korzystania z usług Dworku Biesiadnego w Radzewicach.",
+  title: "Regulamin â€” Dworek Biesiadny w Radzewicach",
+  description: "Regulamin pobytu, rezerwacji i korzystania z usĹ‚ug Dworku Biesiadnego w Radzewicach.",
 };
 
 export default function ReguaminPage() {
@@ -20,45 +20,45 @@ export default function ReguaminPage() {
         <div className="font-body text-gray-700 space-y-8">
           <section>
             <h2 className="font-heading text-2xl text-primary-dark mb-3">
-              § 1. Postanowienia ogólne
+              Â§ 1. Postanowienia ogĂłlne
             </h2>
             <ol className="list-decimal list-inside space-y-2 text-sm leading-relaxed">
               <li>
-                Niniejszy Regulamin określa zasady pobytu oraz korzystania z usług
-                Dworku Biesiadnego w Radzewicach, D�uga 1B, Radzewice 62-022 (dalej:
-                „Obiekt").
+                Niniejszy Regulamin okreĹ›la zasady pobytu oraz korzystania z usĹ‚ug
+                Dworku Biesiadnego w Radzewicach, Długa 1B, Radzewice 62-022 (dalej:
+                â€žObiekt").
               </li>
               <li>
-                Dokonanie rezerwacji jest równoznaczne z akceptacją niniejszego
+                Dokonanie rezerwacji jest rĂłwnoznaczne z akceptacjÄ… niniejszego
                 Regulaminu.
               </li>
               <li>
-                Obiekt jest otwarty przez cały rok. Recepcja dostępna w godzinach
-                ustalonych indywidualnie z gościem.
+                Obiekt jest otwarty przez caĹ‚y rok. Recepcja dostÄ™pna w godzinach
+                ustalonych indywidualnie z goĹ›ciem.
               </li>
             </ol>
           </section>
 
           <section>
             <h2 className="font-heading text-2xl text-primary-dark mb-3">
-              § 2. Rezerwacje
+              Â§ 2. Rezerwacje
             </h2>
             <ol className="list-decimal list-inside space-y-2 text-sm leading-relaxed">
               <li>
-                Rezerwacji można dokonać przez formularz kontaktowy na stronie
+                Rezerwacji moĹĽna dokonaÄ‡ przez formularz kontaktowy na stronie
                 dworekbiesiadny.pl, telefonicznie lub mailowo.
               </li>
               <li>
-                Rezerwacja jest potwierdzona po uiszczeniu zadatku w wysokości ustalonej
-                indywidualnie — nie mniej niż 30% wartości pobytu.
+                Rezerwacja jest potwierdzona po uiszczeniu zadatku w wysokoĹ›ci ustalonej
+                indywidualnie â€” nie mniej niĹĽ 30% wartoĹ›ci pobytu.
               </li>
               <li>
-                Płatność pozostałej kwoty następuje najpóźniej w dniu przyjazdu, chyba
-                że ustalono inaczej.
+                PĹ‚atnoĹ›Ä‡ pozostaĹ‚ej kwoty nastÄ™puje najpĂłĹşniej w dniu przyjazdu, chyba
+                ĹĽe ustalono inaczej.
               </li>
               <li>
-                W przypadku rezygnacji z rezerwacji na mniej niż 14 dni przed planowanym
-                przyjazdem zadatek nie podlega zwrotowi, chyba że strony uzgodnią
+                W przypadku rezygnacji z rezerwacji na mniej niĹĽ 14 dni przed planowanym
+                przyjazdem zadatek nie podlega zwrotowi, chyba ĹĽe strony uzgodniÄ…
                 inaczej.
               </li>
             </ol>
@@ -66,48 +66,48 @@ export default function ReguaminPage() {
 
           <section>
             <h2 className="font-heading text-2xl text-primary-dark mb-3">
-              § 3. Doba hotelowa
+              Â§ 3. Doba hotelowa
             </h2>
             <ol className="list-decimal list-inside space-y-2 text-sm leading-relaxed">
-              <li>Doba hotelowa trwa od godziny 15:00 do godziny 11:00 dnia następnego.</li>
+              <li>Doba hotelowa trwa od godziny 15:00 do godziny 11:00 dnia nastÄ™pnego.</li>
               <li>
-                Wcześniejsze zameldowanie lub późniejsze wymeldowanie jest możliwe po
-                wcześniejszym uzgodnieniu z Obiektem i może wiązać się z dodatkową opłatą.
+                WczeĹ›niejsze zameldowanie lub pĂłĹşniejsze wymeldowanie jest moĹĽliwe po
+                wczeĹ›niejszym uzgodnieniu z Obiektem i moĹĽe wiÄ…zaÄ‡ siÄ™ z dodatkowÄ… opĹ‚atÄ….
               </li>
               <li>
-                Życzenia dotyczące godziny zameldowania Gość powinien zgłosić przy
-                rezerwacji lub najpóźniej dzień przed przyjazdem.
+                Ĺ»yczenia dotyczÄ…ce godziny zameldowania GoĹ›Ä‡ powinien zgĹ‚osiÄ‡ przy
+                rezerwacji lub najpĂłĹşniej dzieĹ„ przed przyjazdem.
               </li>
             </ol>
           </section>
 
           <section>
             <h2 className="font-heading text-2xl text-primary-dark mb-3">
-              § 4. Zasady pobytu
+              Â§ 4. Zasady pobytu
             </h2>
             <ol className="list-decimal list-inside space-y-2 text-sm leading-relaxed">
               <li>
-                Gość ponosi odpowiedzialność finansową za wszelkie szkody wyrządzone
+                GoĹ›Ä‡ ponosi odpowiedzialnoĹ›Ä‡ finansowÄ… za wszelkie szkody wyrzÄ…dzone
                 podczas pobytu w Obiekcie.
               </li>
               <li>
-                Na terenie całego Obiektu obowiązuje całkowity zakaz palenia tytoniu i
-                e-papierosów, z wyjątkiem wyznaczonych miejsc.
+                Na terenie caĹ‚ego Obiektu obowiÄ…zuje caĹ‚kowity zakaz palenia tytoniu i
+                e-papierosĂłw, z wyjÄ…tkiem wyznaczonych miejsc.
               </li>
               <li>
-                W godzinach 22:00–7:00 obowiązuje cisza nocna. Prosimy o szanowanie
-                spokoju innych gości.
+                W godzinach 22:00â€“7:00 obowiÄ…zuje cisza nocna. Prosimy o szanowanie
+                spokoju innych goĹ›ci.
               </li>
               <li>
-                Zwierzęta domowe są akceptowane po wcześniejszym uzgodnieniu z Obiektem
-                i mogą wiązać się z dodatkową opłatą.
+                ZwierzÄ™ta domowe sÄ… akceptowane po wczeĹ›niejszym uzgodnieniu z Obiektem
+                i mogÄ… wiÄ…zaÄ‡ siÄ™ z dodatkowÄ… opĹ‚atÄ….
               </li>
               <li>
-                Liczba osób przebywających w pokoju nie może przekraczać liczby podanej
-                przy rezerwacji i maksymalnej pojemności danego apartamentu.
+                Liczba osĂłb przebywajÄ…cych w pokoju nie moĹĽe przekraczaÄ‡ liczby podanej
+                przy rezerwacji i maksymalnej pojemnoĹ›ci danego apartamentu.
               </li>
               <li>
-                Gość jest zobowiązany do niezwłocznego zgłoszenia wszelkich szkód lub
+                GoĹ›Ä‡ jest zobowiÄ…zany do niezwĹ‚ocznego zgĹ‚oszenia wszelkich szkĂłd lub
                 usterek wykrytych w pokoju.
               </li>
             </ol>
@@ -115,45 +115,45 @@ export default function ReguaminPage() {
 
           <section>
             <h2 className="font-heading text-2xl text-primary-dark mb-3">
-              § 5. Strefa relaksu
+              Â§ 5. Strefa relaksu
             </h2>
             <ol className="list-decimal list-inside space-y-2 text-sm leading-relaxed">
               <li>
-                Strefa relaksu (sauna, balia, jacuzzi) dostępna jest wyłącznie dla Gości
-                Obiektu w godzinach ustalonych przez administrację.
+                Strefa relaksu (sauna, balia, jacuzzi) dostÄ™pna jest wyĹ‚Ä…cznie dla GoĹ›ci
+                Obiektu w godzinach ustalonych przez administracjÄ™.
               </li>
               <li>
-                Korzystanie ze strefy relaksu przez osoby w stanie wskazującym na
-                spożycie alkoholu jest zabronione.
+                Korzystanie ze strefy relaksu przez osoby w stanie wskazujÄ…cym na
+                spoĹĽycie alkoholu jest zabronione.
               </li>
               <li>
-                Z sauny i balii nie mogą korzystać osoby z przeciwwskazaniami zdrowotnymi.
-                Obiekt nie ponosi odpowiedzialności za skutki korzystania ze strefy relaksu
+                Z sauny i balii nie mogÄ… korzystaÄ‡ osoby z przeciwwskazaniami zdrowotnymi.
+                Obiekt nie ponosi odpowiedzialnoĹ›ci za skutki korzystania ze strefy relaksu
                 wbrew wskazaniom lekarskim.
               </li>
-              <li>Obowiązuje zakaz wnoszenia szklanego naczynia na teren sauny i balii.</li>
+              <li>ObowiÄ…zuje zakaz wnoszenia szklanego naczynia na teren sauny i balii.</li>
               <li>
-                Rezerwacja strefy relaksu odbywa się w recepcji lub z wyprzedzeniem drogą
-                elektroniczną.
+                Rezerwacja strefy relaksu odbywa siÄ™ w recepcji lub z wyprzedzeniem drogÄ…
+                elektronicznÄ….
               </li>
             </ol>
           </section>
 
           <section>
             <h2 className="font-heading text-2xl text-primary-dark mb-3">
-              § 6. Restauracja
+              Â§ 6. Restauracja
             </h2>
             <ol className="list-decimal list-inside space-y-2 text-sm leading-relaxed">
               <li>
-                Restauracja Obiektu działa w godzinach podanych na stronie lub ustalonych
+                Restauracja Obiektu dziaĹ‚a w godzinach podanych na stronie lub ustalonych
                 przy rezerwacji.
               </li>
               <li>
-                Rezerwacja stolika jest możliwa telefonicznie lub przez formularz
+                Rezerwacja stolika jest moĹĽliwa telefonicznie lub przez formularz
                 kontaktowy.
               </li>
               <li>
-                Obiekt zastrzega sobie prawo do zmian w menu bez wcześniejszego
+                Obiekt zastrzega sobie prawo do zmian w menu bez wczeĹ›niejszego
                 powiadomienia.
               </li>
             </ol>
@@ -161,15 +161,15 @@ export default function ReguaminPage() {
 
           <section>
             <h2 className="font-heading text-2xl text-primary-dark mb-3">
-              § 7. Organizacja wydarzeń
+              Â§ 7. Organizacja wydarzeĹ„
             </h2>
             <ol className="list-decimal list-inside space-y-2 text-sm leading-relaxed">
               <li>
-                Organizacja wesel, komunii, urodzin, eventów firmowych i innych wydarzeń
-                odbywa się na podstawie odrębnej umowy zawieranej z Obiektem.
+                Organizacja wesel, komunii, urodzin, eventĂłw firmowych i innych wydarzeĹ„
+                odbywa siÄ™ na podstawie odrÄ™bnej umowy zawieranej z Obiektem.
               </li>
               <li>
-                Szczegółowe warunki, w tym wymagany zadatek i warunki anulacji, określa
+                SzczegĂłĹ‚owe warunki, w tym wymagany zadatek i warunki anulacji, okreĹ›la
                 indywidualna umowa.
               </li>
             </ol>
@@ -177,48 +177,48 @@ export default function ReguaminPage() {
 
           <section>
             <h2 className="font-heading text-2xl text-primary-dark mb-3">
-              § 8. Odpowiedzialność Obiektu
+              Â§ 8. OdpowiedzialnoĹ›Ä‡ Obiektu
             </h2>
             <ol className="list-decimal list-inside space-y-2 text-sm leading-relaxed">
               <li>
-                Obiekt nie ponosi odpowiedzialności za zgubione lub skradzione rzeczy
-                wartościowe. Prosimy o korzystanie z sejfów dostępnych w apartamentach
-                (o ile są dostępne) lub przekazanie kosztowności do depozytu.
+                Obiekt nie ponosi odpowiedzialnoĹ›ci za zgubione lub skradzione rzeczy
+                wartoĹ›ciowe. Prosimy o korzystanie z sejfĂłw dostÄ™pnych w apartamentach
+                (o ile sÄ… dostÄ™pne) lub przekazanie kosztownoĹ›ci do depozytu.
               </li>
               <li>
-                Obiekt zastrzega sobie prawo do odmowy przyjęcia Gości, którzy w trakcie
-                poprzedniego pobytu dopuścili się naruszenia Regulaminu lub których
-                zachowanie zakłóca spokój innych Gości.
+                Obiekt zastrzega sobie prawo do odmowy przyjÄ™cia GoĹ›ci, ktĂłrzy w trakcie
+                poprzedniego pobytu dopuĹ›cili siÄ™ naruszenia Regulaminu lub ktĂłrych
+                zachowanie zakĹ‚Ăłca spokĂłj innych GoĹ›ci.
               </li>
             </ol>
           </section>
 
           <section>
             <h2 className="font-heading text-2xl text-primary-dark mb-3">
-              § 9. Reklamacje
+              Â§ 9. Reklamacje
             </h2>
             <p className="text-sm leading-relaxed">
-              Wszelkie reklamacje dotyczące usług świadczonych przez Obiekt należy
-              składać w formie pisemnej na adres: info@dworek-biesiadny.pl lub listownie na
-              adres Obiektu. Reklamacje są rozpatrywane w ciągu 14 dni roboczych.
+              Wszelkie reklamacje dotyczÄ…ce usĹ‚ug Ĺ›wiadczonych przez Obiekt naleĹĽy
+              skĹ‚adaÄ‡ w formie pisemnej na adres: info@dworek-biesiadny.pl lub listownie na
+              adres Obiektu. Reklamacje sÄ… rozpatrywane w ciÄ…gu 14 dni roboczych.
             </p>
           </section>
 
           <section>
             <h2 className="font-heading text-2xl text-primary-dark mb-3">
-              § 10. Postanowienia końcowe
+              Â§ 10. Postanowienia koĹ„cowe
             </h2>
             <ol className="list-decimal list-inside space-y-2 text-sm leading-relaxed">
               <li>
-                W sprawach nieuregulowanych niniejszym Regulaminem zastosowanie mają
-                przepisy Kodeksu cywilnego oraz innych właściwych przepisów prawa
+                W sprawach nieuregulowanych niniejszym Regulaminem zastosowanie majÄ…
+                przepisy Kodeksu cywilnego oraz innych wĹ‚aĹ›ciwych przepisĂłw prawa
                 polskiego.
               </li>
               <li>
-                Obiekt zastrzega sobie prawo do zmiany Regulaminu. Zmiany wchodzą w życie
+                Obiekt zastrzega sobie prawo do zmiany Regulaminu. Zmiany wchodzÄ… w ĹĽycie
                 z dniem opublikowania na stronie internetowej.
               </li>
-              <li>Regulamin obowiązuje od 2024 r.</li>
+              <li>Regulamin obowiÄ…zuje od 2024 r.</li>
             </ol>
           </section>
 

@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Polityka prywatności — Dworek Biesiadny w Radzewicach",
+  title: "Polityka prywatnoĹ›ci â€” Dworek Biesiadny w Radzewicach",
   description:
-    "Polityka prywatności i ochrony danych osobowych Dworku Biesiadnego w Radzewicach zgodna z RODO.",
+    "Polityka prywatnoĹ›ci i ochrony danych osobowych Dworku Biesiadnego w Radzewicach zgodna z RODO.",
 };
 
 export default function PolitykaPrywatnosci() {
@@ -14,7 +14,7 @@ export default function PolitykaPrywatnosci() {
           Informacje prawne
         </p>
         <h1 className="font-heading text-4xl md:text-5xl text-primary-dark mb-6">
-          Polityka prywatności
+          Polityka prywatnoĹ›ci
         </h1>
         <div className="w-16 h-0.5 bg-accent mb-10" />
 
@@ -25,7 +25,7 @@ export default function PolitykaPrywatnosci() {
             </h2>
             <p className="leading-relaxed">
               Administratorem danych osobowych jest Dworek Biesiadny w Radzewicach,
-              D�uga 1B, Radzewice 62-022, e-mail: info@dworek-biesiadny.pl, tel.:
+              Długa 1B, Radzewice 62-022, e-mail: info@dworek-biesiadny.pl, tel.:
               +48 691 845 079.
             </p>
           </section>
@@ -35,17 +35,17 @@ export default function PolitykaPrywatnosci() {
               2. Jakie dane zbieramy
             </h2>
             <p className="leading-relaxed mb-3">
-              Zbieramy dane osobowe wyłącznie w zakresie niezbędnym do realizacji usług:
+              Zbieramy dane osobowe wyĹ‚Ä…cznie w zakresie niezbÄ™dnym do realizacji usĹ‚ug:
             </p>
             <ul className="list-disc list-inside space-y-2 text-sm">
               <li>
-                <strong>Formularz kontaktowy / rezerwacyjny:</strong> imię i nazwisko,
-                adres e-mail, numer telefonu (opcjonalnie), treść zapytania.
+                <strong>Formularz kontaktowy / rezerwacyjny:</strong> imiÄ™ i nazwisko,
+                adres e-mail, numer telefonu (opcjonalnie), treĹ›Ä‡ zapytania.
               </li>
               <li>
-                <strong>Pliki cookies:</strong> dane techniczne (adres IP, przeglądarka,
-                czas wizyty) zbierane przez niezbędne pliki cookies oraz — po udzieleniu
-                zgody — przez analityczne pliki cookies (Google Analytics).
+                <strong>Pliki cookies:</strong> dane techniczne (adres IP, przeglÄ…darka,
+                czas wizyty) zbierane przez niezbÄ™dne pliki cookies oraz â€” po udzieleniu
+                zgody â€” przez analityczne pliki cookies (Google Analytics).
               </li>
             </ul>
           </section>
@@ -56,17 +56,17 @@ export default function PolitykaPrywatnosci() {
             </h2>
             <ul className="list-disc list-inside space-y-2 text-sm leading-relaxed">
               <li>
-                <strong>Art. 6 ust. 1 lit. b RODO</strong> — przetwarzanie niezbędne do
-                wykonania umowy lub podjęcia działań na żądanie osoby, której dane dotyczą
-                (obsługa rezerwacji, odpowiedź na zapytanie).
+                <strong>Art. 6 ust. 1 lit. b RODO</strong> â€” przetwarzanie niezbÄ™dne do
+                wykonania umowy lub podjÄ™cia dziaĹ‚aĹ„ na ĹĽÄ…danie osoby, ktĂłrej dane dotyczÄ…
+                (obsĹ‚uga rezerwacji, odpowiedĹş na zapytanie).
               </li>
               <li>
-                <strong>Art. 6 ust. 1 lit. a RODO</strong> — zgoda osoby, której dane
-                dotyczą (analityczne pliki cookies — wyłącznie po wyrażeniu zgody).
+                <strong>Art. 6 ust. 1 lit. a RODO</strong> â€” zgoda osoby, ktĂłrej dane
+                dotyczÄ… (analityczne pliki cookies â€” wyĹ‚Ä…cznie po wyraĹĽeniu zgody).
               </li>
               <li>
-                <strong>Art. 6 ust. 1 lit. f RODO</strong> — uzasadniony interes
-                administratora (bezpieczeństwo strony, niezbędne cookies techniczne).
+                <strong>Art. 6 ust. 1 lit. f RODO</strong> â€” uzasadniony interes
+                administratora (bezpieczeĹ„stwo strony, niezbÄ™dne cookies techniczne).
               </li>
             </ul>
           </section>
@@ -77,37 +77,37 @@ export default function PolitykaPrywatnosci() {
             </h2>
             <p className="leading-relaxed">
               Dane przekazane przez formularz kontaktowy przechowujemy przez okres
-              niezbędny do obsługi zapytania lub realizacji rezerwacji, nie dłużej niż 3
+              niezbÄ™dny do obsĹ‚ugi zapytania lub realizacji rezerwacji, nie dĹ‚uĹĽej niĹĽ 3
               lata od ostatniego kontaktu. Dane z analitycznych cookies (Google Analytics)
-              przechowywane są zgodnie z warunkami Google LLC — domyślnie do 26 miesięcy.
+              przechowywane sÄ… zgodnie z warunkami Google LLC â€” domyĹ›lnie do 26 miesiÄ™cy.
             </p>
           </section>
 
           <section>
             <h2 className="font-heading text-2xl text-primary-dark mb-3">
-              5. Prawa osób, których dane dotyczą
+              5. Prawa osĂłb, ktĂłrych dane dotyczÄ…
             </h2>
             <p className="leading-relaxed mb-3">
-              Przysługują Ci następujące prawa:
+              PrzysĹ‚ugujÄ… Ci nastÄ™pujÄ…ce prawa:
             </p>
             <ul className="list-disc list-inside space-y-2 text-sm leading-relaxed">
-              <li>Prawo dostępu do danych (art. 15 RODO)</li>
+              <li>Prawo dostÄ™pu do danych (art. 15 RODO)</li>
               <li>Prawo do sprostowania danych (art. 16 RODO)</li>
-              <li>Prawo do usunięcia danych („prawo do bycia zapomnianym", art. 17 RODO)</li>
+              <li>Prawo do usuniÄ™cia danych (â€žprawo do bycia zapomnianym", art. 17 RODO)</li>
               <li>Prawo do ograniczenia przetwarzania (art. 18 RODO)</li>
               <li>Prawo do przenoszenia danych (art. 20 RODO)</li>
               <li>Prawo do sprzeciwu wobec przetwarzania (art. 21 RODO)</li>
               <li>
-                Prawo do cofnięcia zgody w dowolnym momencie (nie wpływa na zgodność z
-                prawem przetwarzania przed cofnięciem)
+                Prawo do cofniÄ™cia zgody w dowolnym momencie (nie wpĹ‚ywa na zgodnoĹ›Ä‡ z
+                prawem przetwarzania przed cofniÄ™ciem)
               </li>
               <li>
-                Prawo wniesienia skargi do organu nadzorczego — Prezesa Urzędu Ochrony
+                Prawo wniesienia skargi do organu nadzorczego â€” Prezesa UrzÄ™du Ochrony
                 Danych Osobowych (ul. Stawki 2, 00-193 Warszawa)
               </li>
             </ul>
             <p className="leading-relaxed mt-3">
-              Aby skorzystać z praw, skontaktuj się z nami: info@dworek-biesiadny.pl
+              Aby skorzystaÄ‡ z praw, skontaktuj siÄ™ z nami: info@dworek-biesiadny.pl
             </p>
           </section>
 
@@ -116,18 +116,18 @@ export default function PolitykaPrywatnosci() {
               6. Pliki cookies
             </h2>
             <p className="leading-relaxed mb-3">
-              Stosujemy dwa rodzaje plików cookies:
+              Stosujemy dwa rodzaje plikĂłw cookies:
             </p>
             <ul className="list-disc list-inside space-y-2 text-sm leading-relaxed">
               <li>
-                <strong>Niezbędne:</strong> wymagane do prawidłowego działania strony
-                (sesja, preferencje cookies). Nie wymagają zgody, nie można ich wyłączyć.
+                <strong>NiezbÄ™dne:</strong> wymagane do prawidĹ‚owego dziaĹ‚ania strony
+                (sesja, preferencje cookies). Nie wymagajÄ… zgody, nie moĹĽna ich wyĹ‚Ä…czyÄ‡.
               </li>
               <li>
-                <strong>Analityczne (opcjonalne):</strong> Google Analytics — zbierają
-                anonimowe dane statystyczne o ruchu na stronie. Aktywowane wyłącznie po
-                wyrażeniu zgody. Możesz cofnąć zgodę w dowolnym momencie klikając
-                „Ustawienia cookies" w stopce strony.
+                <strong>Analityczne (opcjonalne):</strong> Google Analytics â€” zbierajÄ…
+                anonimowe dane statystyczne o ruchu na stronie. Aktywowane wyĹ‚Ä…cznie po
+                wyraĹĽeniu zgody. MoĹĽesz cofnÄ…Ä‡ zgodÄ™ w dowolnym momencie klikajÄ…c
+                â€žUstawienia cookies" w stopce strony.
               </li>
             </ul>
           </section>
@@ -137,9 +137,9 @@ export default function PolitykaPrywatnosci() {
               7. Przekazywanie danych
             </h2>
             <p className="leading-relaxed">
-              Dane osobowe nie są sprzedawane ani przekazywane podmiotom trzecim bez
-              Twojej zgody, z wyjątkiem podmiotów przetwarzających dane w naszym imieniu
-              (hosting, baza danych Supabase, Google Analytics — wyłącznie po wyrażeniu
+              Dane osobowe nie sÄ… sprzedawane ani przekazywane podmiotom trzecim bez
+              Twojej zgody, z wyjÄ…tkiem podmiotĂłw przetwarzajÄ…cych dane w naszym imieniu
+              (hosting, baza danych Supabase, Google Analytics â€” wyĹ‚Ä…cznie po wyraĹĽeniu
               zgody) oraz sytuacji wymaganych przepisami prawa.
             </p>
           </section>
@@ -149,7 +149,7 @@ export default function PolitykaPrywatnosci() {
               8. Kontakt w sprawach ochrony danych
             </h2>
             <p className="leading-relaxed">
-              W sprawach związanych z ochroną danych osobowych skontaktuj się z nami:{" "}
+              W sprawach zwiÄ…zanych z ochronÄ… danych osobowych skontaktuj siÄ™ z nami:{" "}
               <strong>info@dworek-biesiadny.pl</strong>
             </p>
           </section>
