@@ -4,6 +4,7 @@ import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Heart, Users, Briefcase, PartyPopper, CheckCircle } from "lucide-react";
+import { PhotoPlaceholder } from "@/components/photo-placeholder";
 
 export const metadata: Metadata = {
   title: "Wesela i wydarzenia — Dworek Biesiadny w Radzewicach",
@@ -17,28 +18,24 @@ const eventTypes = [
     title: "Wesela",
     description:
       "Ceremonia i przyjęcie weselne w jednym miejscu. Nocleg dla wszystkich gości na miejscu — 8 apartamentów. Trzy przestrzenie do wyboru: sala w dworku, stajnia, kopuła glamping.",
-    image: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=800&h=600&fit=crop",
   },
   {
     icon: PartyPopper,
     title: "Komunie i 18-tki",
     description:
       "Kameralne uroczystości rodzinne w otoczeniu łąk nadwarciańskich i starodrzewu akacji. Restauracja na miejscu, strefa relaksu dla dorosłych, ogród i woliera dla dzieci.",
-    image: "https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800&h=600&fit=crop",
   },
   {
     icon: Briefcase,
     title: "Eventy firmowe",
     description:
       "Wyjazdowe szkolenia, integracje, spotkania strategiczne z dala od biura. Restauracja, nocleg, sauna — wszystko w jednym miejscu, ~40 minut od Poznania.",
-    image: "https://images.unsplash.com/photo-1617195737496-bc30194e3a19?w=800&h=600&fit=crop",
   },
   {
     icon: Users,
     title: "Urodziny i inne",
     description:
       "Każde przyjęcie na miarę — od kameralnych kolacji po imprezy dla całej rodziny. Dwa ogniska, wypożyczalnia rowerów elektrycznych, szlaki nordic walking.",
-    image: "https://images.unsplash.com/photo-1475483768296-6163e8f3e121?w=800&h=600&fit=crop",
   },
 ];
 
@@ -47,21 +44,18 @@ const venues = [
     name: "Sala w dworku",
     description:
       "Główna przestrzeń eventowa na większe przyjęcia. Klimat szlacheckiego dworku, widok na łąki nadwarciańskie. Pełne zaplecze gastronomiczne restauracji.",
-    image: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=800&h=600&fit=crop",
     capacity: "[PLACEHOLDER: pojemność]",
   },
   {
     name: "Stara stajnia",
     description:
       "Zabytkowy budynek z charakterem na kameralne spotkania. Oryginalny klimat, stonowane oświetlenie, rustykalne detale. Idealna na spotkania do kilkudziesięciu osób.",
-    image: "https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800&h=600&fit=crop",
     capacity: "[PLACEHOLDER: pojemność]",
   },
   {
     name: "Kopuła glamping",
     description:
       "37,5 m² przy starorzeczu Warty. Uroczystości w plenerze przy naturze — bez rezygnacji z wygody. Kameralne wesela, osiemnastki, komunie pod gwiazdami.",
-    image: "https://images.unsplash.com/photo-1618767689160-da3fb810aad7?w=800&h=600&fit=crop",
     capacity: "Do kilkunastu osób",
   },
 ];
@@ -80,6 +74,7 @@ const included = [
 export default function WydarzeniaPage() {
   return (
     <div className="min-h-screen bg-warm-white">
+      {/* Hero */}
       <section className="relative py-28 md:py-36 px-4 md:px-8 overflow-hidden">
         <Image
           src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1920&h=800&fit=crop"
@@ -97,7 +92,7 @@ export default function WydarzeniaPage() {
             Wesela i wydarzenia
           </h1>
           <div className="w-16 h-0.5 bg-accent mb-6" />
-          <p className="font-body text-white/85 text-base md:text-xl max-w-2xl leading-relaxed">
+          <p className="font-body text-white/90 text-base md:text-xl max-w-2xl leading-relaxed">
             Trzy przestrzenie eventowe o różnym charakterze — wesela, komunie, osiemnastki,
             imprezy firmowe. Nocleg dla gości na miejscu, restauracja i strefa relaksu w cenie
             otoczenia.
@@ -105,6 +100,7 @@ export default function WydarzeniaPage() {
         </div>
       </section>
 
+      {/* Rodzaje wydarzeń */}
       <section className="py-20 md:py-28 px-4 md:px-8 bg-cream">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
@@ -120,25 +116,24 @@ export default function WydarzeniaPage() {
             {eventTypes.map((event) => (
               <div
                 key={event.title}
-                className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300"
+                className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300"
               >
-                <div className="relative aspect-[16/7] overflow-hidden">
-                  <Image
-                    src={event.image}
-                    alt={event.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                <div className="relative">
+                  <PhotoPlaceholder
+                    className="aspect-[16/7]"
+                    label={`Zdjęcie — ${event.title}`}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/70 to-transparent" />
-                  <div className="absolute bottom-4 left-5 flex items-center gap-3">
-                    <div className="w-9 h-9 rounded-full bg-accent flex items-center justify-center">
-                      <event.icon className="w-5 h-5 text-white" />
+                  <div className="absolute bottom-3 left-4 flex items-center gap-2 z-10">
+                    <div className="w-9 h-9 rounded-full bg-accent flex items-center justify-center shrink-0">
+                      <event.icon className="w-4 h-4 text-white" />
                     </div>
-                    <h3 className="font-heading text-xl text-white font-bold">{event.title}</h3>
+                    <h3 className="font-heading text-lg text-primary-dark font-bold">
+                      {event.title}
+                    </h3>
                   </div>
                 </div>
                 <div className="p-6">
-                  <p className="font-body text-gray-600 text-sm leading-relaxed">
+                  <p className="font-body text-gray-700 text-sm leading-relaxed">
                     {event.description}
                   </p>
                 </div>
@@ -148,6 +143,7 @@ export default function WydarzeniaPage() {
         </div>
       </section>
 
+      {/* Przestrzenie */}
       <section className="py-20 md:py-28 px-4 md:px-8 bg-warm-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
@@ -165,20 +161,16 @@ export default function WydarzeniaPage() {
                 key={venue.name}
                 className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300"
               >
-                <div className="relative aspect-[4/3] overflow-hidden">
-                  <Image
-                    src={venue.image}
-                    alt={venue.name}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
+                <PhotoPlaceholder
+                  className="aspect-[4/3]"
+                  label={`Zdjęcie — ${venue.name}`}
+                />
                 <div className="p-6">
                   <h3 className="font-heading text-xl text-primary-dark mb-1 font-bold">
                     {venue.name}
                   </h3>
                   <p className="font-body text-xs text-accent mb-3">{venue.capacity}</p>
-                  <p className="font-body text-gray-600 text-sm leading-relaxed">
+                  <p className="font-body text-gray-700 text-sm leading-relaxed">
                     {venue.description}
                   </p>
                 </div>
@@ -188,6 +180,7 @@ export default function WydarzeniaPage() {
         </div>
       </section>
 
+      {/* W pakiecie */}
       <section className="py-20 md:py-28 px-4 md:px-8 bg-primary-dark text-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -201,7 +194,7 @@ export default function WydarzeniaPage() {
               <div className="w-16 h-0.5 bg-accent mb-8" />
               <ul className="space-y-3">
                 {included.map((item) => (
-                  <li key={item} className="flex items-center gap-3 font-body text-sm text-white/80">
+                  <li key={item} className="flex items-center gap-3 font-body text-sm text-white/85">
                     <CheckCircle className="w-4 h-4 text-accent shrink-0" />
                     {item}
                   </li>
@@ -212,7 +205,7 @@ export default function WydarzeniaPage() {
               <p className="font-heading text-2xl text-white mb-4">
                 Zapytaj o dostępność terminu
               </p>
-              <p className="font-body text-white/70 text-sm mb-8 leading-relaxed">
+              <p className="font-body text-white/75 text-sm mb-8 leading-relaxed">
                 Odpowiadamy w ciągu 24 godzin w dni robocze. Opisz wydarzenie, termin i
                 liczbę gości — wrócimy z ofertą.
               </p>
@@ -220,7 +213,7 @@ export default function WydarzeniaPage() {
                 href="/kontakt"
                 className={cn(
                   buttonVariants({ variant: "default" }),
-                  "bg-accent hover:bg-accent-light text-white font-body font-medium px-8 py-3"
+                  "bg-accent hover:bg-accent-light text-white font-body font-semibold px-8 py-4 h-14"
                 )}
               >
                 Napisz do nas

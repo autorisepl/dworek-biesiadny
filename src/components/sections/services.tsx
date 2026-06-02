@@ -1,12 +1,7 @@
 "use client";
 
-import dynamic from "next/dynamic";
+import { MotionDiv } from "@/components/motion";
 import { BedDouble, Utensils, CalendarHeart, Waves, Tent } from "lucide-react";
-
-const MotionDiv = dynamic(
-  () => import("framer-motion").then((m) => m.motion.div),
-  { ssr: false }
-);
 
 const services = [
   {
@@ -46,10 +41,10 @@ export function ServicesSection() {
     <section id="uslugi" className="py-20 md:py-28 px-4 md:px-8 bg-warm-white">
       <div className="max-w-7xl mx-auto">
         <MotionDiv
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.35 }}
           className="text-center mb-14"
         >
           <p className="text-accent font-body text-sm tracking-widest uppercase mb-3">
@@ -59,7 +54,7 @@ export function ServicesSection() {
             Usługi
           </h2>
           <div className="w-16 h-0.5 bg-accent mx-auto mb-6" />
-          <p className="font-body text-gray-600 text-base md:text-lg max-w-2xl mx-auto">
+          <p className="font-body text-gray-700 text-base md:text-lg max-w-2xl mx-auto">
             Wszystko w jednym miejscu — od spokojnego noclegu przez rodzinne przyjęcie, aż po
             wieczór w saunie z widokiem na Wartę.
           </p>
@@ -69,10 +64,10 @@ export function ServicesSection() {
           {services.map((service, i) => (
             <MotionDiv
               key={service.title}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
+              transition={{ duration: 0.3, delay: i * 0.1 }}
               className="bg-cream rounded-xl p-6 text-center hover:shadow-md transition-shadow duration-300 group"
             >
               <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 text-primary mb-4 group-hover:bg-primary group-hover:text-white transition-colors duration-300">

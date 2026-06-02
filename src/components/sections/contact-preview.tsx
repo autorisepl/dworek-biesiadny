@@ -1,15 +1,10 @@
 "use client";
 
-import dynamic from "next/dynamic";
+import { MotionDiv } from "@/components/motion";
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
-
-const MotionDiv = dynamic(
-  () => import("framer-motion").then((m) => m.motion.div),
-  { ssr: false }
-);
 
 export function ContactPreviewSection() {
   return (
@@ -17,10 +12,10 @@ export function ContactPreviewSection() {
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
           <MotionDiv
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.35 }}
           >
             <p className="text-accent font-body text-sm tracking-widest uppercase mb-3">
               Kontakt
@@ -61,10 +56,10 @@ export function ContactPreviewSection() {
           </MotionDiv>
 
           <MotionDiv
-            initial={{ opacity: 0, x: 20 }}
+            initial={{ opacity: 0, x: 10 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.35, delay: 0.1 }}
             className="bg-white/5 rounded-2xl p-8 border border-white/10"
           >
             <p className="font-heading text-xl text-white mb-6">Szybkie zapytanie</p>

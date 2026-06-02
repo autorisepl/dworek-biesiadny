@@ -1,22 +1,17 @@
 "use client";
 
-import dynamic from "next/dynamic";
+import { MotionDiv } from "@/components/motion";
 import { Car, Clock, MapPin, ParkingCircle } from "lucide-react";
-
-const MotionDiv = dynamic(
-  () => import("framer-motion").then((m) => m.motion.div),
-  { ssr: false }
-);
 
 export function LocationSection() {
   return (
     <section id="dojazd" className="py-20 md:py-28 px-4 md:px-8 bg-cream">
       <div className="max-w-7xl mx-auto">
         <MotionDiv
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.35 }}
           className="mb-12"
         >
           <p className="text-accent font-body text-sm tracking-widest uppercase mb-3">
@@ -26,7 +21,7 @@ export function LocationSection() {
             Jak do nas trafić
           </h2>
           <div className="w-16 h-0.5 bg-accent mb-6" />
-          <p className="font-body text-gray-600 text-base md:text-lg max-w-2xl">
+          <p className="font-body text-gray-700 text-base md:text-lg max-w-2xl">
             Dworek Biesiadny znajduje się w Radzewicach w województwie wielkopolskim. Dojazd
             z centrum Poznania zajmuje około 40 minut.
           </p>
@@ -34,10 +29,10 @@ export function LocationSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <MotionDiv
-            initial={{ opacity: 0, x: -20 }}
+            initial={{ opacity: 0, x: -10 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.35 }}
           >
             <div className="rounded-2xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-100">
               <iframe
@@ -54,10 +49,10 @@ export function LocationSection() {
           </MotionDiv>
 
           <MotionDiv
-            initial={{ opacity: 0, x: 20 }}
+            initial={{ opacity: 0, x: 10 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.35, delay: 0.1 }}
             className="space-y-6"
           >
             {[

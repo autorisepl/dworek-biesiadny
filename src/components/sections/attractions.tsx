@@ -1,13 +1,8 @@
 "use client";
 
-import dynamic from "next/dynamic";
+import { MotionDiv } from "@/components/motion";
 import { Fish, PersonStanding, Bike, Flame, TreePine, Rabbit, Footprints } from "lucide-react";
 import { PhotoPlaceholder } from "@/components/photo-placeholder";
-
-const MotionDiv = dynamic(
-  () => import("framer-motion").then((m) => m.motion.div),
-  { ssr: false }
-);
 
 const attractions = [
   {
@@ -52,9 +47,9 @@ export function AttractionsSection() {
     <section id="atrakcje" className="py-20 md:py-28 px-4 md:px-8 bg-warm-white">
       <div className="max-w-7xl mx-auto">
         <MotionDiv
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.35 }}
           className="mb-12"
         >
@@ -69,10 +64,10 @@ export function AttractionsSection() {
           {attractions.map((item, i) => (
             <MotionDiv
               key={item.title}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
+              transition={{ duration: 0.3, delay: i * 0.1 }}
               className="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300"
             >
               <PhotoPlaceholder className="aspect-[4/3]" label={item.title} />
@@ -81,7 +76,7 @@ export function AttractionsSection() {
                   <item.icon className="w-4 h-4 text-accent" />
                   <h3 className="font-body text-sm font-medium text-primary-dark">{item.title}</h3>
                 </div>
-                <p className="font-body text-xs text-gray-500 leading-relaxed">{item.description}</p>
+                <p className="font-body text-xs text-gray-600 leading-relaxed">{item.description}</p>
               </div>
             </MotionDiv>
           ))}

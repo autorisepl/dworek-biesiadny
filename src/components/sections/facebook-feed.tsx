@@ -1,5 +1,6 @@
 "use client";
 
+import { MotionDiv } from "@/components/motion";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 

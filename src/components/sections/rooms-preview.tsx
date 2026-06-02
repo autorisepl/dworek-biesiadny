@@ -1,26 +1,21 @@
 "use client";
 
-import dynamic from "next/dynamic";
+import { MotionDiv } from "@/components/motion";
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { RoomCard } from "@/components/room-card";
 import { rooms } from "@/lib/rooms-data";
 
-const MotionDiv = dynamic(
-  () => import("framer-motion").then((m) => m.motion.div),
-  { ssr: false }
-);
-
 export function RoomsPreviewSection() {
   return (
     <section id="pokoje" className="py-20 md:py-28 px-4 md:px-8 bg-cream">
       <div className="max-w-7xl mx-auto">
         <MotionDiv
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.35 }}
         >
           <p className="text-accent font-body text-sm tracking-widest uppercase mb-3">
             Noclegi
@@ -29,7 +24,7 @@ export function RoomsPreviewSection() {
             Nasze apartamenty
           </h2>
           <div className="w-16 h-0.5 bg-accent mb-4" />
-          <p className="font-body text-gray-600 text-base md:text-lg max-w-2xl mb-10">
+          <p className="font-body text-gray-700 text-base md:text-lg max-w-2xl mb-10">
             Każdy z ośmiu apartamentów ma własny charakter — Dębowy z lamelami z naturalnego
             drewna, Trzcinowy z LED-owym podświetleniem, Nad Rzeką z obrazem mostka nad Wartą.
             Pokoje od 15 do 25 m², łóżka King size, Netflix, światłowód.
@@ -40,10 +35,10 @@ export function RoomsPreviewSection() {
           {rooms.map((room, i) => (
             <MotionDiv
               key={room.slug}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: i * 0.08 }}
+              transition={{ duration: 0.3, delay: i * 0.08 }}
             >
               <RoomCard room={room} />
             </MotionDiv>
@@ -54,7 +49,7 @@ export function RoomsPreviewSection() {
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.3 }}
           className="text-center mt-12"
         >
           <Link

@@ -1,15 +1,10 @@
 "use client";
 
-import dynamic from "next/dynamic";
+import { MotionDiv } from "@/components/motion";
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Check } from "lucide-react";
-
-const MotionDiv = dynamic(
-  () => import("framer-motion").then((m) => m.motion.div),
-  { ssr: false }
-);
 
 const pricingTiers = [
   {
@@ -43,10 +38,10 @@ export function PricingSection() {
     <section id="cennik" className="py-20 md:py-28 px-4 md:px-8 bg-cream">
       <div className="max-w-7xl mx-auto">
         <MotionDiv
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.35 }}
           className="text-center mb-14"
         >
           <p className="text-accent font-body text-sm tracking-widest uppercase mb-3">
@@ -56,7 +51,7 @@ export function PricingSection() {
             Cennik
           </h2>
           <div className="w-16 h-0.5 bg-accent mx-auto mb-6" />
-          <p className="font-body text-gray-600 text-base md:text-lg max-w-2xl mx-auto">
+          <p className="font-body text-gray-700 text-base md:text-lg max-w-2xl mx-auto">
             Ceny zależą od terminu i dostępności. Napisz do nas, żeby sprawdzić aktualną
             ofertę i dostępność w wybranym terminie.
           </p>
@@ -66,10 +61,10 @@ export function PricingSection() {
           {pricingTiers.map((tier, i) => (
             <MotionDiv
               key={tier.name}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
+              transition={{ duration: 0.3, delay: i * 0.1 }}
               className={cn(
                 "rounded-2xl p-8 border-2 transition-all duration-300",
                 tier.highlight
@@ -90,7 +85,7 @@ export function PricingSection() {
               </h3>
               <p className={cn(
                 "font-body text-sm mb-6",
-                tier.highlight ? "text-white/70" : "text-gray-500"
+                tier.highlight ? "text-white/70" : "text-gray-600"
               )}>
                 {tier.subtitle}
               </p>
@@ -115,7 +110,7 @@ export function PricingSection() {
                       "w-4 h-4 shrink-0",
                       tier.highlight ? "text-accent" : "text-primary"
                     )} />
-                    <span className={tier.highlight ? "text-white/80" : "text-gray-600"}>
+                    <span className={tier.highlight ? "text-white/80" : "text-gray-700"}>
                       {f}
                     </span>
                   </li>
@@ -141,7 +136,7 @@ export function PricingSection() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.3 }}
           className="text-center"
         >
           <Link

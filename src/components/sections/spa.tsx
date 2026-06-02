@@ -1,16 +1,11 @@
 "use client";
 
-import dynamic from "next/dynamic";
+import { MotionDiv } from "@/components/motion";
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 import { PhotoPlaceholder } from "@/components/photo-placeholder";
 import { cn } from "@/lib/utils";
 import { Thermometer, Droplets, Waves, Users, Wifi, Zap } from "lucide-react";
-
-const MotionDiv = dynamic(
-  () => import("framer-motion").then((m) => m.motion.div),
-  { ssr: false }
-);
 
 const saunaFeatures = [
   { icon: Users, label: "6–8 osób" },
@@ -31,10 +26,10 @@ export function SpaSection() {
     <section id="strefa-relaksu" className="py-20 md:py-28 px-4 md:px-8 bg-primary-dark text-white">
       <div className="max-w-7xl mx-auto">
         <MotionDiv
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.35 }}
           className="text-center mb-16"
         >
           <p className="text-accent font-body text-sm tracking-widest uppercase mb-3">Relaks</p>
@@ -53,10 +48,10 @@ export function SpaSection() {
           ].map((item, i) => (
             <MotionDiv
               key={item.title}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
+              transition={{ duration: 0.3, delay: i * 0.1 }}
               className="bg-white/5 rounded-2xl overflow-hidden border border-white/10 hover:border-accent/40 transition-colors duration-300"
             >
               <PhotoPlaceholder className="aspect-[4/3]" label={item.title} />

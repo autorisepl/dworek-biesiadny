@@ -1,15 +1,10 @@
 "use client";
 
-import dynamic from "next/dynamic";
+import { MotionDiv } from "@/components/motion";
 import Image from "next/image";
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-
-const MotionDiv = dynamic(
-  () => import("framer-motion").then((m) => m.motion.div),
-  { ssr: false }
-);
 
 export function HeroSection() {
   return (
@@ -25,9 +20,9 @@ export function HeroSection() {
 
       <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
         <MotionDiv
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.3 }}
         >
           <p className="font-body text-accent text-sm tracking-widest uppercase mb-4">
             Radzewice, Wielkopolska

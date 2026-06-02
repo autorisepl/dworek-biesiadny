@@ -32,5 +32,6 @@
 
   html {
     font-family: var(--font-lato), sans-serif;
+    font-size: 17px;
   }
 }

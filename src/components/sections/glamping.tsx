@@ -1,16 +1,11 @@
 "use client";
 
-import dynamic from "next/dynamic";
+import { MotionDiv } from "@/components/motion";
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 import { PhotoPlaceholder } from "@/components/photo-placeholder";
 import { cn } from "@/lib/utils";
 import { Maximize, Moon, Users, TreePine } from "lucide-react";
-
-const MotionDiv = dynamic(
-  () => import("framer-motion").then((m) => m.motion.div),
-  { ssr: false }
-);
 
 const glampingFeatures = [
   { icon: Maximize, label: "37,5 m² powierzchni" },
@@ -25,10 +20,10 @@ export function GlampingSection() {
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
           <MotionDiv
-            initial={{ opacity: 0, x: 20 }}
+            initial={{ opacity: 0, x: 10 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.35 }}
             className="order-2 md:order-1 relative"
           >
             <PhotoPlaceholder className="aspect-[4/3] rounded-2xl shadow-xl" label="Kopuła glamping" />
@@ -39,20 +34,20 @@ export function GlampingSection() {
           </MotionDiv>
 
           <MotionDiv
-            initial={{ opacity: 0, x: -20 }}
+            initial={{ opacity: 0, x: -10 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.35, delay: 0.1 }}
             className="order-1 md:order-2"
           >
             <p className="text-accent font-body text-sm tracking-widest uppercase mb-3">Glamping</p>
             <h2 className="font-heading text-3xl md:text-5xl text-primary-dark mb-6">Kopuła nad Wartą</h2>
             <div className="w-16 h-0.5 bg-accent mb-8" />
-            <p className="font-body text-gray-600 leading-relaxed mb-6 text-base md:text-lg">
+            <p className="font-body text-gray-700 leading-relaxed mb-6 text-base md:text-lg">
               Kopuła o powierzchni 37,5 m² stoi przy starorzeczu Warty, na skraju rozległych polan.
               Wewnątrz — pełen komfort noclegowy z widokiem na naturę przez transparentne ściany.
             </p>
-            <p className="font-body text-gray-600 leading-relaxed mb-8">
+            <p className="font-body text-gray-700 leading-relaxed mb-8">
               Kopuła sprawdza się również jako przestrzeń eventowa: komunie, osiemnastki i kameralne
               wesela w plenerze. Cisza, przestrzeń i brak sąsiadów za ścianą w cenie.
             </p>

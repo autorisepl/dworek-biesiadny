@@ -1,15 +1,10 @@
 "use client";
 
-import dynamic from "next/dynamic";
+import { MotionDiv } from "@/components/motion";
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 import { PhotoPlaceholder } from "@/components/photo-placeholder";
 import { cn } from "@/lib/utils";
-
-const MotionDiv = dynamic(
-  () => import("framer-motion").then((m) => m.motion.div),
-  { ssr: false }
-);
 
 const galleryItems = [
   { label: "Dworek — widok zewnętrzny", tall: false },
@@ -27,10 +22,10 @@ export function GallerySection() {
     <section id="galeria" className="py-20 md:py-28 px-4 md:px-8 bg-cream">
       <div className="max-w-7xl mx-auto">
         <MotionDiv
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.35 }}
           className="mb-12"
         >
           <p className="text-accent font-body text-sm tracking-widest uppercase mb-3">Galeria</p>
@@ -38,7 +33,7 @@ export function GallerySection() {
             Obrazy z Radzewic
           </h2>
           <div className="w-16 h-0.5 bg-accent mb-6" />
-          <p className="font-body text-gray-600 text-base md:text-lg max-w-2xl">
+          <p className="font-body text-gray-700 text-base md:text-lg max-w-2xl">
             Dworek, apartamenty, strefa relaksu i łąki nadwarciańskie — pełna galeria na
             osobnej stronie.
           </p>
@@ -51,7 +46,7 @@ export function GallerySection() {
               initial={{ opacity: 0, scale: 0.97 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: i * 0.06 }}
+              transition={{ duration: 0.3, delay: i * 0.06 }}
               className="break-inside-avoid"
             >
               <PhotoPlaceholder

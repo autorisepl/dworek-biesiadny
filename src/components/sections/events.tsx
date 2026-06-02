@@ -1,16 +1,11 @@
 "use client";
 
-import dynamic from "next/dynamic";
+import { MotionDiv } from "@/components/motion";
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 import { PhotoPlaceholder } from "@/components/photo-placeholder";
 import { cn } from "@/lib/utils";
 import { Heart, Users, Briefcase, PartyPopper } from "lucide-react";
-
-const MotionDiv = dynamic(
-  () => import("framer-motion").then((m) => m.motion.div),
-  { ssr: false }
-);
 
 const eventTypes = [
   { icon: Heart, title: "Wesela", description: "Ceremonia i przyjęcie w jednym miejscu. Nocleg dla wszystkich gości na miejscu." },
@@ -30,16 +25,16 @@ export function EventsSection() {
     <section id="wydarzenia" className="py-20 md:py-28 px-4 md:px-8 bg-cream">
       <div className="max-w-7xl mx-auto">
         <MotionDiv
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.35 }}
           className="mb-14"
         >
           <p className="text-accent font-body text-sm tracking-widest uppercase mb-3">Uroczystości</p>
           <h2 className="font-heading text-3xl md:text-5xl text-primary-dark mb-6">Wydarzenia</h2>
           <div className="w-16 h-0.5 bg-accent mb-6" />
-          <p className="font-body text-gray-600 text-base md:text-lg max-w-2xl">
+          <p className="font-body text-gray-700 text-base md:text-lg max-w-2xl">
             Trzy przestrzenie eventowe, nocleg dla gości na miejscu i otoczenie łąk nadwarciańskich.
           </p>
         </MotionDiv>
@@ -48,10 +43,10 @@ export function EventsSection() {
           {eventTypes.map((event, i) => (
             <MotionDiv
               key={event.title}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
+              transition={{ duration: 0.3, delay: i * 0.1 }}
               className="bg-white rounded-xl p-6 text-center group hover:shadow-md transition-shadow duration-300"
             >
               <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-accent/10 text-accent mb-4 group-hover:bg-accent group-hover:text-white transition-colors duration-300">
@@ -70,7 +65,7 @@ export function EventsSection() {
               initial={{ opacity: 0, scale: 0.97 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
+              transition={{ duration: 0.3, delay: i * 0.1 }}
               className="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300"
             >
               <PhotoPlaceholder className="aspect-[4/3]" label={venue.name} />

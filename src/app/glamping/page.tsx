@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { PhotoPlaceholder } from "@/components/photo-placeholder";
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -89,14 +90,10 @@ export default function GlampingPage() {
       <section className="py-20 md:py-28 px-4 md:px-8 bg-warm-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
-              <Image
-                src="https://images.unsplash.com/photo-1618767689160-da3fb810aad7?w=800&h=600&fit=crop"
-                alt="Wnętrze kopuły glamping"
-                fill
-                className="object-cover"
-              />
-            </div>
+            <PhotoPlaceholder
+              className="aspect-[4/3] rounded-2xl shadow-xl"
+              label="Zdjęcie wnętrza kopuły glamping — ujęcie nocne przez transparentne ściany"
+            />
             <div>
               <p className="text-accent font-body text-sm tracking-widest uppercase mb-3">
                 Dwa zastosowania

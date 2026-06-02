@@ -1,12 +1,7 @@
 "use client";
 
-import dynamic from "next/dynamic";
+import { MotionDiv } from "@/components/motion";
 import { Star, Quote } from "lucide-react";
-
-const MotionDiv = dynamic(
-  () => import("framer-motion").then((m) => m.motion.div),
-  { ssr: false }
-);
 
 const reviews = [
   {
@@ -37,10 +32,10 @@ export function ReviewsSection() {
     <section id="opinie" className="py-20 md:py-28 px-4 md:px-8 bg-warm-white">
       <div className="max-w-7xl mx-auto">
         <MotionDiv
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.35 }}
           className="text-center mb-14"
         >
           <p className="text-accent font-body text-sm tracking-widest uppercase mb-3">
@@ -56,10 +51,10 @@ export function ReviewsSection() {
           {reviews.map((review, i) => (
             <MotionDiv
               key={i}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
+              transition={{ duration: 0.3, delay: i * 0.1 }}
               className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow duration-300 relative"
             >
               <Quote className="w-8 h-8 text-accent/30 absolute top-6 right-6" />
@@ -68,7 +63,7 @@ export function ReviewsSection() {
                   <Star key={j} className="w-4 h-4 fill-accent text-accent" />
                 ))}
               </div>
-              <p className="font-body text-gray-600 text-sm leading-relaxed mb-6 italic">
+              <p className="font-body text-gray-700 text-sm leading-relaxed mb-6 italic">
                 &ldquo;{review.text}&rdquo;
               </p>
               <div className="flex items-center justify-between">
