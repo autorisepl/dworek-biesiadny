@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { RoomCard } from "@/components/room-card";
 import { rooms } from "@/lib/rooms-data";
 import { Wifi, Coffee, Snowflake, Tv } from "lucide-react";
@@ -19,8 +20,16 @@ const commonAmenities = [
 export default function PokojePage() {
   return (
     <div className="min-h-screen bg-warm-white">
-      <section className="py-20 md:py-28 px-4 md:px-8 bg-primary-dark text-white">
-        <div className="max-w-7xl mx-auto">
+      <section className="relative py-28 md:py-36 px-4 md:px-8 overflow-hidden">
+        <Image
+          src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1920&h=800&fit=crop"
+          alt="Apartamenty Dworek Biesiadny w Radzewicach"
+          fill
+          priority
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-primary-dark/65" />
+        <div className="relative z-10 max-w-7xl mx-auto text-white">
           <p className="text-accent font-body text-sm tracking-widest uppercase mb-3">
             Noclegi
           </p>

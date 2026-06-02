@@ -13,6 +13,7 @@ const navLinks = [
   { href: "/strefa-relaksu", label: "Strefa relaksu" },
   { href: "/glamping", label: "Glamping" },
   { href: "/wydarzenia", label: "Wydarzenia" },
+  { href: "/aktualnosci", label: "Aktualnosci" },
   { href: "/kontakt", label: "Kontakt" },
 ];
 
