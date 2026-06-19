@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { rooms } from "@/lib/rooms-data";
-import { PhotoPlaceholder } from "@/components/photo-placeholder";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Users, Maximize, BedDouble, Eye, Bath, Check, ArrowLeft, Wifi, Coffee } from "lucide-react";
@@ -22,6 +22,17 @@ export function generateMetadata({ params }: Props): Metadata {
   };
 }
 
+const ROOM_PHOTOS: Record<string, string> = {
+  "apartament-1": "/images/rooms/apartament-1.jpg",
+  "apartament-2": "/images/rooms/apartament-1.jpg",
+  "apartament-5": "/images/rooms/apartament-5.jpg",
+  "apartament-debowy-6": "/images/rooms/apartament-debowy.jpg",
+  "pokoj-3": "/images/otoczenie/otoczenie-2.jpg",
+  "apartament-4": "/images/otoczenie/otoczenie-3.jpg",
+  "apartament-trzcinowy-7": "/images/otoczenie/otoczenie-4.jpg",
+  "apartament-nad-rzeka-8": "/images/otoczenie/otoczenie-5.jpg",
+};
+
 export default function RoomPage({ params }: Props) {
   const room = rooms.find((r) => r.slug === params.slug);
   if (!room) notFound();
@@ -33,7 +44,18 @@ export default function RoomPage({ params }: Props) {
   return (
     <div className="min-h-screen bg-warm-white">
       <div className="relative h-[55vh] md:h-[65vh] overflow-hidden">
-        <PhotoPlaceholder className="w-full h-full" label={`Zdjęcie — ${room.name}`} />
+        {ROOM_PHOTOS[room.slug] ? (
+          <Image
+            src={ROOM_PHOTOS[room.slug]}
+            alt={`${room.name} — Dworek Biesiadny w Radzewicach`}
+            fill
+            priority
+            className="object-cover"
+            sizes="100vw"
+          />
+        ) : (
+          <div className="w-full h-full bg-cream" />
+        )}
         <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/80 via-primary-dark/10 to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 px-4 md:px-8 pb-10 max-w-7xl mx-auto">
           <Link href="/pokoje" className="inline-flex items-center gap-2 text-white/70 hover:text-white font-body text-sm mb-4 transition-colors">

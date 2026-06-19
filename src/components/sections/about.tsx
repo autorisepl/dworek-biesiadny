@@ -1,7 +1,7 @@
 "use client";
 
 import { MotionDiv } from "@/components/motion";
-import { PhotoPlaceholder } from "@/components/photo-placeholder";
+import Image from "next/image";
 
 export function AboutSection() {
   return (
@@ -50,8 +50,24 @@ export function AboutSection() {
             transition={{ duration: 0.35, delay: 0.1 }}
             className="relative"
           >
-            <PhotoPlaceholder className="aspect-[4/5] rounded-2xl shadow-xl" label="Zdjęcie dworku" />
-            <PhotoPlaceholder className="absolute -bottom-6 -left-6 w-40 h-40 rounded-xl shadow-lg border-4 border-white hidden md:flex" label="Ognisko" />
+            <div className="aspect-[4/5] rounded-2xl shadow-xl overflow-hidden">
+              <Image
+                src="/images/otoczenie/otoczenie-2.jpg"
+                alt="Dworek Biesiadny w Radzewicach — widok ogólny"
+                fill
+                className="object-cover"
+                sizes="(max-width:768px) 100vw, 50vw"
+              />
+            </div>
+            <div className="absolute -bottom-6 -left-6 w-40 h-40 rounded-xl shadow-lg border-4 border-white overflow-hidden hidden md:block">
+              <Image
+                src="/images/otoczenie/otoczenie-3.jpg"
+                alt="Otoczenie Dworku Biesiadnego"
+                fill
+                className="object-cover"
+                sizes="160px"
+              />
+            </div>
           </MotionDiv>
         </div>
       </div>

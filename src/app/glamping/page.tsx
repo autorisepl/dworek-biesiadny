@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { PhotoPlaceholder } from "@/components/photo-placeholder";
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -26,7 +25,7 @@ export default function GlampingPage() {
     <div className="min-h-screen bg-warm-white">
       <section className="relative py-28 md:py-36 px-4 md:px-8 overflow-hidden">
         <Image
-          src="https://images.unsplash.com/photo-1618767689160-da3fb810aad7?w=1920&h=800&fit=crop"
+          src="/images/glamping/glamping-1.jpg"
           alt="Kopuła glamping przy starorzeczu Warty"
           fill
           priority
@@ -91,10 +90,15 @@ export default function GlampingPage() {
       <section className="py-20 md:py-28 px-4 md:px-8 bg-warm-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <PhotoPlaceholder
-              className="aspect-[4/3] rounded-2xl shadow-xl"
-              label="Zdjęcie wnętrza kopuły glamping — ujęcie nocne przez transparentne ściany"
-            />
+            <div className="aspect-[4/3] rounded-2xl shadow-xl overflow-hidden">
+              <Image
+                src="/images/glamping/glamping-2.jpg"
+                alt="Wnętrze kopuły glamping — ujęcie nocne przez transparentne ściany"
+                fill
+                className="object-cover"
+                sizes="(max-width:768px) 100vw, 50vw"
+              />
+            </div>
             <div>
               <p className="text-accent font-body text-sm tracking-widest uppercase mb-3">
                 Dwa zastosowania

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Users, Thermometer, Zap, Wifi, Droplets, Waves } from "lucide-react";
-import { PhotoPlaceholder } from "@/components/photo-placeholder";
+
 
 export const metadata: Metadata = {
   title: "Strefa relaksu — Sauna, Balia, Jacuzzi — Dworek Biesiadny",
@@ -18,7 +18,7 @@ export default function StrefaRelaksuPage() {
       {/* Hero */}
       <section className="relative py-28 md:py-36 px-4 md:px-8 overflow-hidden">
         <Image
-          src="https://images.unsplash.com/photo-1540555700478-4be289fbec6c?w=1920&h=800&fit=crop"
+          src="/images/wellness/wellness-1.jpg"
           alt="Sauna zewnętrzna z widokiem na starorzecze Warty"
           fill
           priority
@@ -84,10 +84,15 @@ export default function StrefaRelaksuPage() {
                 Oświetlenie LED RGB z pilotem
               </div>
             </div>
-            <PhotoPlaceholder
-              className="aspect-[4/5] rounded-2xl shadow-xl"
-              label="Zdjęcie sauny zewnętrznej — widok z zewnątrz i wnętrze z oknem panoramicznym"
-            />
+            <div className="aspect-[4/5] rounded-2xl shadow-xl overflow-hidden">
+              <Image
+                src="/images/wellness/wellness-1.jpg"
+                alt="Sauna zewnętrzna z panoramicznym oknem na starorzecze Warty"
+                fill
+                className="object-cover"
+                sizes="(max-width:768px) 100vw, 50vw"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -96,10 +101,15 @@ export default function StrefaRelaksuPage() {
       <section className="py-20 md:py-28 px-4 md:px-8 bg-cream">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
-            <PhotoPlaceholder
-              className="aspect-[4/5] rounded-2xl shadow-xl order-2 md:order-1"
-              label="Zdjęcie balii drewnianej — nocne ujęcie z LED i widokiem na łąki"
-            />
+            <div className="aspect-[4/5] rounded-2xl shadow-xl overflow-hidden order-2 md:order-1">
+              <Image
+                src="/images/otoczenie/otoczenie-6.jpg"
+                alt="Balia drewniana z widokiem na łąki"
+                fill
+                className="object-cover"
+                sizes="(max-width:768px) 100vw, 50vw"
+              />
+            </div>
             <div className="order-1 md:order-2">
               <p className="text-accent font-body text-sm tracking-widest uppercase mb-3">02</p>
               <h2 className="font-heading text-3xl md:text-4xl text-primary-dark mb-6">
@@ -160,10 +170,15 @@ export default function StrefaRelaksuPage() {
                 Dostępne dla gości dworku
               </div>
             </div>
-            <PhotoPlaceholder
-              className="aspect-[4/3] rounded-2xl shadow-xl"
-              label="Zdjęcie jacuzzi — ujęcie wieczorne przy świetle"
-            />
+            <div className="aspect-[4/3] rounded-2xl shadow-xl overflow-hidden">
+              <Image
+                src="/images/otoczenie/otoczenie-7.jpg"
+                alt="Jacuzzi przy saunie zewnętrznej — strefa relaksu"
+                fill
+                className="object-cover"
+                sizes="(max-width:768px) 100vw, 50vw"
+              />
+            </div>
           </div>
         </div>
       </section>

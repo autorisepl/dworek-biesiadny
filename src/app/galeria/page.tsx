@@ -10,22 +10,30 @@ export const metadata: Metadata = {
 };
 
 const images: GalleryImage[] = [
-  { src: "https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800&h=600&fit=crop", alt: "Dworek — widok zewnętrzny", category: "Obiekt" },
-  { src: "https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=800&h=1000&fit=crop", alt: "Apartament z łóżkiem King size", category: "Pokoje" },
-  { src: "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?w=800&h=600&fit=crop", alt: "Wnętrze apartamentu", category: "Pokoje" },
-  { src: "https://images.unsplash.com/photo-1540555700478-4be289fbec6c?w=800&h=800&fit=crop", alt: "Sauna zewnętrzna", category: "Relaks" },
-  { src: "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800&h=500&fit=crop", alt: "Łąki nadwarciańskie", category: "Otoczenie" },
-  { src: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=600&fit=crop", alt: "Restauracja Dworek Biesiadny", category: "Restauracja" },
-  { src: "https://images.unsplash.com/photo-1618767689160-da3fb810aad7?w=800&h=700&fit=crop", alt: "Kopuła glamping", category: "Glamping" },
-  { src: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=800&h=900&fit=crop", alt: "Sala eventowa — wesele", category: "Wydarzenia" },
-  { src: "https://images.unsplash.com/photo-1475483768296-6163e8f3e121?w=800&h=500&fit=crop", alt: "Ognisko przy dworku", category: "Otoczenie" },
-  { src: "https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=800&h=600&fit=crop", alt: "Rowery elektryczne", category: "Otoczenie" },
-  { src: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&h=600&fit=crop", alt: "Apartament Dębowy", category: "Pokoje" },
-  { src: "https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=600&h=900&fit=crop", alt: "Dworek od strony ogrodu", category: "Obiekt" },
-  { src: "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=600&h=800&fit=crop", alt: "Skarpa nad starorzeczem Warty", category: "Otoczenie" },
-  { src: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&h=400&fit=crop", alt: "Sala restauracyjna", category: "Restauracja" },
-  { src: "https://images.unsplash.com/photo-1540555700478-4be289fbec6c?w=600&h=900&fit=crop", alt: "Strefa relaksu — sauna i balia", category: "Relaks" },
-  { src: "https://images.unsplash.com/photo-1618767689160-da3fb810aad7?w=600&h=400&fit=crop", alt: "Wnętrze kopuły glamping", category: "Glamping" },
+  { src: "/images/otoczenie/otoczenie-1.jpg", alt: "Łąki nadwarciańskie wokół Dworku Biesiadnego", category: "Otoczenie" },
+  { src: "/images/rooms/apartament-1.jpg", alt: "Apartament 1 — łóżko King size z widokiem na łąki", category: "Pokoje" },
+  { src: "/images/wellness/wellness-1.jpg", alt: "Sauna zewnętrzna z panoramicznym oknem", category: "Relaks" },
+  { src: "/images/otoczenie/otoczenie-2.jpg", alt: "Starodrzew akacji przy dworku", category: "Otoczenie" },
+  { src: "/images/glamping/glamping-1.jpg", alt: "Kopuła glamping przy starorzeczu Warty", category: "Glamping" },
+  { src: "/images/wydarzenia/wydarzenie-1.jpg", alt: "Sala eventowa — Dworek Biesiadny", category: "Wydarzenia" },
+  { src: "/images/otoczenie/otoczenie-3.jpg", alt: "Starorzecze Warty", category: "Otoczenie" },
+  { src: "/images/rooms/apartament-debowy.jpg", alt: "Apartament Dębowy — lamele z naturalnego drewna", category: "Pokoje" },
+  { src: "/images/wydarzenia/wydarzenie-2.jpg", alt: "Uroczystość weselna w Dworku Biesiadnym", category: "Wydarzenia" },
+  { src: "/images/otoczenie/otoczenie-4.jpg", alt: "Widok z okien dworku", category: "Otoczenie" },
+  { src: "/images/glamping/glamping-2.jpg", alt: "Kopuła glamping — wnętrze nocne", category: "Glamping" },
+  { src: "/images/rooms/apartament-5.jpg", alt: "Apartament 5 — widok z balkonu", category: "Pokoje" },
+  { src: "/images/otoczenie/otoczenie-5.jpg", alt: "Ogród i okolice dworku", category: "Otoczenie" },
+  { src: "/images/wydarzenia/wydarzenie-3.jpg", alt: "Stara stajnia — kameralne wydarzenie", category: "Wydarzenia" },
+  { src: "/images/otoczenie/otoczenie-6.jpg", alt: "Łąki Nadwarciańskie o zmierzchu", category: "Otoczenie" },
+  { src: "/images/glamping/glamping-3.jpg", alt: "Glamping — nocleg pod gwiazdami przy Warcie", category: "Glamping" },
+  { src: "/images/wydarzenia/wydarzenie-4.jpg", alt: "Komunie i uroczystości rodzinne", category: "Wydarzenia" },
+  { src: "/images/otoczenie/otoczenie-7.jpg", alt: "Otoczenie przyrodnicze — wędkowanie", category: "Otoczenie" },
+  { src: "/images/wydarzenia/wydarzenie-5.jpg", alt: "Eventy firmowe w dworku", category: "Wydarzenia" },
+  { src: "/images/otoczenie/otoczenie-8.jpg", alt: "Szlaki nordic walking wzdłuż Warty", category: "Otoczenie" },
+  { src: "/images/wydarzenia/wydarzenie-6.jpg", alt: "Przyjęcie okolicznościowe", category: "Wydarzenia" },
+  { src: "/images/otoczenie/otoczenie-9.jpg", alt: "Przyroda wokół Radzewic", category: "Otoczenie" },
+  { src: "/images/wydarzenia/wydarzenie-7.jpg", alt: "Dekoracje — uroczystość w dworku", category: "Wydarzenia" },
+  { src: "/images/wydarzenia/wydarzenie-8.jpg", alt: "Bankiet weselny — Dworek Biesiadny", category: "Wydarzenia" },
 ];
 
 export default function GaleriaPage() {
@@ -33,7 +41,7 @@ export default function GaleriaPage() {
     <div className="min-h-screen bg-warm-white">
       <section className="relative py-28 md:py-36 px-4 md:px-8 overflow-hidden">
         <Image
-          src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=1920&h=800&fit=crop"
+          src="/images/otoczenie/otoczenie-1.jpg"
           alt="Łąki nadwarciańskie wokół Dworku Biesiadnego"
           fill
           priority

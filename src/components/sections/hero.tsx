@@ -11,7 +11,7 @@ export function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <Image
-        src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=1920&h=1080&fit=crop"
+        src="/images/otoczenie/otoczenie-1.jpg"
         alt="Łąki nadwarciańskie o świcie — okolice Dworku Biesiadnego"
         fill
         priority

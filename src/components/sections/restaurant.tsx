@@ -4,7 +4,6 @@ import { MotionDiv } from "@/components/motion";
 import Link from "next/link";
 import Image from "next/image";
 import { buttonVariants } from "@/components/ui/button";
-import { PhotoPlaceholder } from "@/components/photo-placeholder";
 import { cn } from "@/lib/utils";
 import { Leaf, Clock, MapPin, Heart } from "lucide-react";
 
@@ -76,7 +75,15 @@ export function RestaurantSection() {
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.35, delay: 0.1 }}
           >
-            <PhotoPlaceholder className="aspect-[3/4] rounded-2xl shadow-xl" label="Zdjęcie restauracji" />
+            <div className="aspect-[3/4] rounded-2xl shadow-xl overflow-hidden">
+              <Image
+                src="/images/otoczenie/otoczenie-9.jpg"
+                alt="Restauracja Dworek Biesiadny w Radzewicach"
+                fill
+                className="object-cover"
+                sizes="(max-width:768px) 100vw, 50vw"
+              />
+            </div>
           </MotionDiv>
         </div>
       </div>

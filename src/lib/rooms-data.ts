@@ -10,7 +10,7 @@ export const rooms = [
     bathroom: "Wanna narożna, umywalka z szafką, lustro podświetlane, suszarka",
     description:
       "Przestronny apartament z balkonem i widokiem na łąki nadwarciańskie. Klimatyzacja, łóżko King size, biurko do pracy.",
-    image: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&h=600&fit=crop",
+    image: "/images/rooms/apartament-1.jpg",
   },
   {
     slug: "apartament-2",
@@ -22,7 +22,7 @@ export const rooms = [
     view: "Łąki nadwarciańskie, strona południowo-zachodnia",
     bathroom: "Wanna narożna, umywalka z szafką, lustro podświetlane, suszarka",
     description: "Lustrzane odbicie Apartamentu 1 — ten sam komfort, widok i wyposażenie.",
-    image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&h=600&fit=crop",
+    image: "/images/rooms/apartament-1.jpg",
   },
   {
     slug: "pokoj-3",
@@ -35,7 +35,7 @@ export const rooms = [
     bathroom: "Prysznic, lustro podświetlone, ogrzewanie podłogowe",
     description:
       "Kompaktowy pokój z widokiem na zachód. Dwa łóżka z możliwością łączenia, sofa dla dodatkowych gości.",
-    image: "https://images.unsplash.com/photo-1560185893-a55cbc8c57e8?w=800&h=600&fit=crop",
+    image: "/images/otoczenie/otoczenie-2.jpg",
   },
   {
     slug: "apartament-4",
@@ -48,7 +48,7 @@ export const rooms = [
     bathroom: "Duża łazienka z prysznicem, szafka z dwoma półkami, lustro podświetlane",
     description:
       "Największy apartament w dworku — 25 m² z czterema miejscami do spania. Idealny dla rodzin.",
-    image: "https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&h=600&fit=crop",
+    image: "/images/otoczenie/otoczenie-3.jpg",
   },
   {
     slug: "apartament-5",
@@ -61,7 +61,7 @@ export const rooms = [
     bathroom: "Duża łazienka retro, duży prysznic z szybą, otwarty brodzik",
     description:
       "Apartament z balkonem nad wejściem głównym. Z balkonu widać wolierę z papugami i gołębiami w ogrodzie.",
-    image: "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=800&h=600&fit=crop",
+    image: "/images/rooms/apartament-5.jpg",
   },
   {
     slug: "apartament-debowy-6",
@@ -74,7 +74,7 @@ export const rooms = [
     bathroom: "Wanna narożna, przytulna łazienka",
     description:
       "Przytulny apartament z lamelami z naturalnego drewna dębowego i widokiem na starodrzew akacji na skarpie nad starorzeczem.",
-    image: "https://images.unsplash.com/photo-1571508601891-ca5e7a713859?w=800&h=600&fit=crop",
+    image: "/images/rooms/apartament-debowy.jpg",
   },
   {
     slug: "apartament-trzcinowy-7",
@@ -87,7 +87,7 @@ export const rooms = [
     bathroom: "Prysznic, czarne baterie, szafka drewnopodobna",
     description:
       "Jasny, dwuosobowy apartament z klimatyzacją. Ściana z łóżkami podświetlona LED-em w ciepłym kolorze.",
-    image: "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=800&h=600&fit=crop",
+    image: "/images/otoczenie/otoczenie-4.jpg",
   },
   {
     slug: "apartament-nad-rzeka-8",
@@ -100,7 +100,7 @@ export const rooms = [
     bathroom: "Bardzo duża i przestronna, prysznic, szafa, szafka drewniana",
     description:
       "Słoneczny apartament z balkonem i klimatyzacją. Obraz rzeki, mostka na Wartą i okolicznych dębów na ścianie.",
-    image: "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=800&h=600&fit=crop",
+    image: "/images/otoczenie/otoczenie-5.jpg",
   },
 ] as const;
 

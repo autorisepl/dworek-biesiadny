@@ -4,7 +4,6 @@ import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Heart, Users, Briefcase, PartyPopper, CheckCircle } from "lucide-react";
-import { PhotoPlaceholder } from "@/components/photo-placeholder";
 
 export const metadata: Metadata = {
   title: "Wesela i wydarzenia — Dworek Biesiadny w Radzewicach",
@@ -16,24 +15,28 @@ const eventTypes = [
   {
     icon: Heart,
     title: "Wesela",
+    image: "/images/wydarzenia/wydarzenie-2.jpg",
     description:
       "Ceremonia i przyjęcie weselne w jednym miejscu. Nocleg dla wszystkich gości na miejscu — 8 apartamentów. Trzy przestrzenie do wyboru: sala w dworku, stajnia, kopuła glamping.",
   },
   {
     icon: PartyPopper,
     title: "Komunie i 18-tki",
+    image: "/images/wydarzenia/wydarzenie-4.jpg",
     description:
       "Kameralne uroczystości rodzinne w otoczeniu łąk nadwarciańskich i starodrzewu akacji. Restauracja na miejscu, strefa relaksu dla dorosłych, ogród i woliera dla dzieci.",
   },
   {
     icon: Briefcase,
     title: "Eventy firmowe",
+    image: "/images/wydarzenia/wydarzenie-5.jpg",
     description:
       "Wyjazdowe szkolenia, integracje, spotkania strategiczne z dala od biura. Restauracja, nocleg, sauna — wszystko w jednym miejscu, ~40 minut od Poznania.",
   },
   {
     icon: Users,
     title: "Urodziny i inne",
+    image: "/images/wydarzenia/wydarzenie-6.jpg",
     description:
       "Każde przyjęcie na miarę — od kameralnych kolacji po imprezy dla całej rodziny. Dwa ogniska, wypożyczalnia rowerów elektrycznych, szlaki nordic walking.",
   },
@@ -42,18 +45,21 @@ const eventTypes = [
 const venues = [
   {
     name: "Sala w dworku",
+    image: "/images/wydarzenia/wydarzenie-1.jpg",
     description:
       "Główna przestrzeń eventowa na większe przyjęcia. Klimat szlacheckiego dworku, widok na łąki nadwarciańskie. Pełne zaplecze gastronomiczne restauracji.",
-    capacity: "[PLACEHOLDER: pojemność]",
+    capacity: "Zapytaj o pojemność",
   },
   {
     name: "Stara stajnia",
+    image: "/images/wydarzenia/wydarzenie-3.jpg",
     description:
       "Zabytkowy budynek z charakterem na kameralne spotkania. Oryginalny klimat, stonowane oświetlenie, rustykalne detale. Idealna na spotkania do kilkudziesięciu osób.",
-    capacity: "[PLACEHOLDER: pojemność]",
+    capacity: "Zapytaj o pojemność",
   },
   {
     name: "Kopuła glamping",
+    image: "/images/glamping/glamping-3.jpg",
     description:
       "37,5 m² przy starorzeczu Warty. Uroczystości w plenerze przy naturze — bez rezygnacji z wygody. Kameralne wesela, osiemnastki, komunie pod gwiazdami.",
     capacity: "Do kilkunastu osób",
@@ -77,7 +83,7 @@ export default function WydarzeniaPage() {
       {/* Hero */}
       <section className="relative py-28 md:py-36 px-4 md:px-8 overflow-hidden">
         <Image
-          src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1920&h=800&fit=crop"
+          src="/images/wydarzenia/wydarzenie-1.jpg"
           alt="Sala eventowa Dworek Biesiadny"
           fill
           priority
@@ -120,10 +126,16 @@ export default function WydarzeniaPage() {
                 className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300"
               >
                 <div className="relative">
-                  <PhotoPlaceholder
-                    className="aspect-[16/7]"
-                    label={`Zdjęcie — ${event.title}`}
-                  />
+                  <div className="relative aspect-[16/7] overflow-hidden">
+                    <Image
+                      src={event.image}
+                      alt={`${event.title} — Dworek Biesiadny`}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width:768px) 100vw, 50vw"
+                    />
+                    <div className="absolute inset-0 bg-primary-dark/30" />
+                  </div>
                   <div className="absolute bottom-3 left-4 flex items-center gap-2 z-10">
                     <div className="w-9 h-9 rounded-full bg-accent flex items-center justify-center shrink-0">
                       <event.icon className="w-4 h-4 text-white" />
@@ -162,10 +174,15 @@ export default function WydarzeniaPage() {
                 key={venue.name}
                 className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300"
               >
-                <PhotoPlaceholder
-                  className="aspect-[4/3]"
-                  label={`Zdjęcie — ${venue.name}`}
-                />
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <Image
+                    src={venue.image}
+                    alt={`${venue.name} — Dworek Biesiadny`}
+                    fill
+                    className="object-cover hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width:768px) 100vw, 33vw"
+                  />
+                </div>
                 <div className="p-6">
                   <h3 className="font-heading text-xl text-primary-dark mb-1 font-bold">
                     {venue.name}

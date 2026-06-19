@@ -1,44 +1,51 @@
 "use client";
 
 import { MotionDiv } from "@/components/motion";
+import Image from "next/image";
 import { Fish, PersonStanding, Bike, Flame, TreePine, Rabbit, Footprints } from "lucide-react";
-import { PhotoPlaceholder } from "@/components/photo-placeholder";
 
 const attractions = [
   {
     icon: Fish,
     title: "Rybactwo",
     description: "Pomost na stawie do łowienia ryb — sprzęt można wypożyczyć na miejscu. Dostęp do Warty dla bardziej wymagających wędkarzy.",
+    image: "/images/otoczenie/otoczenie-7.jpg",
   },
   {
     icon: PersonStanding,
     title: "Nordic walking",
     description: "Kilometry szlaków wzdłuż starorzecza Warty. Łąki Nadwarciańskie i starodrzew akacji tworzą trasy na każdą kondycję.",
+    image: "/images/otoczenie/otoczenie-8.jpg",
   },
   {
     icon: Bike,
     title: "Rowery elektryczne",
     description: "Kilkanaście rowerów elektrycznych czeka w wypożyczalni na tych, którzy chcą zwiedzić okolicę bez wysiłku.",
+    image: "/images/otoczenie/otoczenie-9.jpg",
   },
   {
     icon: Flame,
     title: "Ogniska",
     description: "Dwa ogniska z widokiem na łąki. Wieczorny ogień, cisza i widok na starorzecze — najlepszy koniec dnia.",
+    image: "/images/otoczenie/otoczenie-6.jpg",
   },
   {
     icon: TreePine,
     title: "Widoki natury",
     description: "Starorzecze Warty, łąki nadwarciańskie, starodrzew akacji na skarpie. Rano z balkonu słychać papugi z woliery w ogrodzie.",
+    image: "/images/otoczenie/otoczenie-1.jpg",
   },
   {
     icon: Rabbit,
     title: "Zwierzęta na miejscu",
     description: "Na terenie dworku mieszka rodzinka baranów i owiec. W wolierze papugi i gołębie — widoczne z balkonu apartamentów od strony wschodniej.",
+    image: "/images/otoczenie/otoczenie-2.jpg",
   },
   {
     icon: Footprints,
     title: "Daniele w okolicy",
     description: "W okolicach dworku czasem przechodzi stadem dzikie daniele. Spacer wzdłuż starorzecza Warty o świcie lub zmierzchu daje największą szansę na spotkanie.",
+    image: "/images/otoczenie/otoczenie-3.jpg",
   },
 ];
 
@@ -70,7 +77,15 @@ export function AttractionsSection() {
               transition={{ duration: 0.3, delay: i * 0.1 }}
               className="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300"
             >
-              <PhotoPlaceholder className="aspect-[4/3]" label={item.title} />
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <Image
+                  src={item.image}
+                  alt={`${item.title} — Dworek Biesiadny okolice`}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 14vw"
+                />
+              </div>
               <div className="p-4">
                 <div className="flex items-center gap-2 mb-2">
                   <item.icon className="w-4 h-4 text-accent" />

@@ -42,8 +42,10 @@ export async function POST(req: NextRequest) {
     // Send confirmation email to guest
     if (process.env.RESEND_API_KEY) {
       const resend = new Resend(process.env.RESEND_API_KEY);
-      await resend.emails.send({
-        from: "Dworek Biesiadny <rezerwacje@dworekbiesiadny.pl>",
+
+      const { error: guestEmailError } = await resend.emails.send({
+        from: "Dworek Biesiadny <onboarding@resend.dev>",
+        replyTo: "rezerwacje@dworekbiesiadny.pl",
         to: [email],
         subject: `Potwierdzenie rezerwacji ${reservationNumber} — Dworek Biesiadny`,
         html: buildConfirmationEmail({
@@ -58,10 +60,15 @@ export async function POST(req: NextRequest) {
         }),
       });
 
+      if (guestEmailError) {
+        console.error("Guest email error:", JSON.stringify(guestEmailError));
+      }
+
       // Notify the hotel
-      await resend.emails.send({
-        from: "System rezerwacji <rezerwacje@dworekbiesiadny.pl>",
-        to: ["info@dworek-biesiadny.pl"],
+      const { error: adminEmailError } = await resend.emails.send({
+        from: "Rezerwacje <onboarding@resend.dev>",
+        replyTo: email,
+        to: ["info@dworekbiesiadny.pl", "info.autorise@gmail.com"],
         subject: `Nowa rezerwacja ${reservationNumber} — ${firstName} ${lastName}`,
         html: buildAdminEmail({
           reservationNumber,
@@ -77,6 +84,10 @@ export async function POST(req: NextRequest) {
           notes,
         }),
       });
+
+      if (adminEmailError) {
+        console.error("Admin email error:", JSON.stringify(adminEmailError));
+      }
     }
 
     return NextResponse.json({ success: true, reservationNumber });
