@@ -2,10 +2,11 @@
 
 import { MotionDiv } from "@/components/motion";
 import Link from "next/link";
+import Image from "next/image";
 import { buttonVariants } from "@/components/ui/button";
 import { PhotoPlaceholder } from "@/components/photo-placeholder";
 import { cn } from "@/lib/utils";
-import { Leaf, Clock, MapPin } from "lucide-react";
+import { Leaf, Clock, MapPin, Heart } from "lucide-react";
 
 export function RestaurantSection() {
   return (
@@ -37,6 +38,27 @@ export function RestaurantSection() {
                 </div>
               ))}
             </div>
+
+            {/* Piekarnia Blaszkowiak */}
+            <div className="bg-cream rounded-2xl border border-accent/15 p-5 mb-8">
+              <div className="flex items-start gap-4">
+                <div className="w-11 h-11 rounded-xl bg-accent/10 flex items-center justify-center shrink-0">
+                  <Heart className="w-5 h-5 text-accent" />
+                </div>
+                <div>
+                  <p className="font-body text-xs text-accent uppercase tracking-widest mb-1">Lokalna współpraca</p>
+                  <h3 className="font-heading text-base font-bold text-primary-dark mb-1">
+                    Piekarnia Blaszkowiak
+                  </h3>
+                  <p className="font-body text-sm text-gray-600 leading-relaxed">
+                    Nasze wypieki — torty, ciasta, ciastka i pieczywo — pochodzą z rodzinnej Piekarni
+                    Blaszkowiak. To lokalna, rodzinna pracownia, która od lat dostarcza nam wyroby
+                    najwyższej jakości. To dla nas nie tylko dostawca — to rodzina.
+                  </p>
+                </div>
+              </div>
+            </div>
+
             <Link
               href="/restauracja"
               className={cn(

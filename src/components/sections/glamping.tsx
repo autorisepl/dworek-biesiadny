@@ -2,8 +2,8 @@
 
 import { MotionDiv } from "@/components/motion";
 import Link from "next/link";
+import Image from "next/image";
 import { buttonVariants } from "@/components/ui/button";
-import { PhotoPlaceholder } from "@/components/photo-placeholder";
 import { cn } from "@/lib/utils";
 import { Maximize, Moon, Users, TreePine } from "lucide-react";
 
@@ -26,7 +26,30 @@ export function GlampingSection() {
             transition={{ duration: 0.35 }}
             className="order-2 md:order-1 relative"
           >
-            <PhotoPlaceholder className="aspect-[4/3] rounded-2xl shadow-xl" label="Kopuła glamping" />
+            {/* Main photo */}
+            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
+              <Image
+                src="/images/glamping/glamping-1.jpg"
+                alt="Kopuła glamping przy starorzeczu Warty — Dworek Biesiadny"
+                fill
+                className="object-cover"
+                sizes="(max-width:768px) 100vw, 50vw"
+              />
+            </div>
+            {/* Small grid of additional photos */}
+            <div className="grid grid-cols-2 gap-3 mt-3">
+              {[2, 3].map((n) => (
+                <div key={n} className="relative aspect-[4/3] rounded-xl overflow-hidden">
+                  <Image
+                    src={`/images/glamping/glamping-${n}.jpg`}
+                    alt={`Wnętrze kopuły glamping — Dworek Biesiadny`}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width:768px) 50vw, 25vw"
+                  />
+                </div>
+              ))}
+            </div>
             <div className="absolute -top-4 -right-4 bg-accent text-white rounded-xl p-4 shadow-lg hidden md:block">
               <p className="font-heading text-2xl font-bold">37,5</p>
               <p className="font-body text-xs">m² kopuła</p>

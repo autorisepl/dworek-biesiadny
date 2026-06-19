@@ -1,20 +1,21 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useState } from "react";
-import { Menu } from "lucide-react";
+import { usePathname } from "next/navigation";
+import { Menu, X } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
-  { href: "/", label: "Strona główna" },
   { href: "/pokoje", label: "Pokoje" },
   { href: "/restauracja", label: "Restauracja" },
   { href: "/strefa-relaksu", label: "Strefa relaksu" },
   { href: "/glamping", label: "Glamping" },
+  { href: "/strefa-aktywna", label: "Strefa Aktywna" },
   { href: "/wydarzenia", label: "Wydarzenia" },
-  { href: "/aktualnosci", label: "Aktualności" },
   { href: "/kontakt", label: "Kontakt" },
 ];
 
@@ -34,11 +35,11 @@ function FacebookIcon() {
   );
 }
 
-function LogoPlaceholder() {
+function Logo() {
   return (
     <div className="flex items-center gap-2">
-      <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center shrink-0">
-        <span className="font-heading text-white text-sm font-bold">DB</span>
+      <div className="relative w-10 h-10 rounded-full overflow-hidden shrink-0">
+        <Image src="/logo.png" alt="Dworek Biesiadny" fill className="object-cover" sizes="40px" />
       </div>
       <div className="hidden sm:block">
         <p className="font-heading text-sm font-bold text-primary-dark leading-none">Dworek Biesiadny</p>
@@ -50,6 +51,7 @@ function LogoPlaceholder() {
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
@@ -58,16 +60,30 @@ export function Navbar() {
   }, []);
 
   return (
-    <nav className={cn("w-full h-20 bg-white border-b border-cream transition-shadow duration-200", scrolled && "shadow-sm")}>
+    <nav className={cn("w-full h-20 bg-white border-b border-cream transition-shadow duration-200 sticky top-0 z-50", scrolled && "shadow-sm")}>
       <div className="max-w-7xl mx-auto h-full px-4 md:px-8 flex items-center justify-between gap-4">
         <Link href="/" className="flex items-center shrink-0">
-          <LogoPlaceholder />
+          <Logo />
         </Link>
 
-        <div className="hidden md:flex items-center gap-5">
+        <div className="hidden lg:flex items-center gap-4 xl:gap-5">
           {navLinks.map((link) => (
-            <Link key={link.href} href={link.href} className="font-body text-sm text-gray-700 hover:text-primary transition-colors whitespace-nowrap">
-              {link.label}
+            <Link
+              key={link.href}
+              href={link.href}
+              className={cn(
+                "font-body text-sm transition-colors whitespace-nowrap",
+                pathname === link.href
+                  ? "text-primary font-semibold"
+                  : "text-gray-700 hover:text-primary"
+              )}
+            >
+              {link.label === "Strefa Aktywna" ? (
+                <span className="flex items-center gap-1">
+                  {link.label}
+                  <span className="text-[10px] bg-accent text-white px-1.5 py-0.5 rounded-full font-body font-bold leading-none">Nowa</span>
+                </span>
+              ) : link.label}
             </Link>
           ))}
           <div className="flex items-center gap-2 ml-1 border-l border-cream pl-4">
@@ -91,7 +107,7 @@ export function Navbar() {
             </a>
           </div>
           <Link
-            href="/kontakt"
+            href="/rezerwacja"
             className={cn(buttonVariants({ variant: "default" }), "bg-primary text-white hover:bg-primary-dark font-body font-medium whitespace-nowrap ml-1")}
           >
             Zarezerwuj
@@ -99,15 +115,25 @@ export function Navbar() {
         </div>
 
         <Sheet>
-          <SheetTrigger render={<button aria-label="Otwórz menu" className="md:hidden p-2 text-primary-dark" />}>
+          <SheetTrigger render={<button aria-label="Otwórz menu" className="lg:hidden p-2 text-primary-dark" />}>
             <Menu className="w-6 h-6" />
           </SheetTrigger>
           <SheetContent side="right" className="w-72 bg-warm-white">
             <div className="flex flex-col gap-5 mt-8 px-2">
-              <LogoPlaceholder />
+              <Logo />
               {navLinks.map((link) => (
-                <Link key={link.href} href={link.href} className="font-body text-base text-gray-700 hover:text-primary transition-colors py-1 border-b border-cream">
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={cn(
+                    "font-body text-base transition-colors py-1 border-b border-cream",
+                    pathname === link.href ? "text-primary font-semibold" : "text-gray-700 hover:text-primary"
+                  )}
+                >
                   {link.label}
+                  {link.href === "/strefa-aktywna" && (
+                    <span className="ml-2 text-[10px] bg-accent text-white px-1.5 py-0.5 rounded-full font-bold">Nowa</span>
+                  )}
                 </Link>
               ))}
               <div className="flex items-center gap-4 py-1">
@@ -118,7 +144,7 @@ export function Navbar() {
                   <FacebookIcon /> Facebook
                 </a>
               </div>
-              <Link href="/kontakt" className={cn(buttonVariants({ variant: "default" }), "bg-primary text-white hover:bg-primary-dark font-body font-medium justify-center")}>
+              <Link href="/rezerwacja" className={cn(buttonVariants({ variant: "default" }), "bg-primary text-white hover:bg-primary-dark font-body font-medium justify-center")}>
                 Zarezerwuj pobyt
               </Link>
             </div>

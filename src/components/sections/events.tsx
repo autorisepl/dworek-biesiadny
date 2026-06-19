@@ -2,6 +2,7 @@
 
 import { MotionDiv } from "@/components/motion";
 import Link from "next/link";
+import Image from "next/image";
 import { buttonVariants } from "@/components/ui/button";
 import { PhotoPlaceholder } from "@/components/photo-placeholder";
 import { cn } from "@/lib/utils";
@@ -15,10 +16,13 @@ const eventTypes = [
 ];
 
 const venues = [
-  { name: "Dworek", description: "Główna sala na większe przyjęcia. Klimat szlacheckiego dworku, łąki w tle." },
-  { name: "Stara stajnia", description: "Zabytkowy budynek na kameralne spotkania do kilkudziesięciu osób." },
-  { name: "Kopuła glamping", description: "37,5 m² przy starorzeczu Warty — uroczystości w plenerze z wygodą." },
+  { name: "Dworek", description: "Główna sala na większe przyjęcia. Klimat szlacheckiego dworku, łąki w tle.", image: "/images/wydarzenia/wydarzenie-1.jpg", hasPhoto: true },
+  { name: "Stara stajnia", description: "Zabytkowy budynek na kameralne spotkania do kilkudziesięciu osób.", image: "/images/wydarzenia/wydarzenie-3.jpg", hasPhoto: true },
+  { name: "Kopuła glamping", description: "37,5 m² przy starorzeczu Warty — uroczystości w plenerze z wygodą.", image: "/images/glamping/glamping-1.jpg", hasPhoto: true },
 ];
+
+// Gallery of event photos
+const eventGallery = [2, 4, 5, 6, 7, 8];
 
 export function EventsSection() {
   return (
@@ -58,7 +62,7 @@ export function EventsSection() {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
           {venues.map((venue, i) => (
             <MotionDiv
               key={venue.name}
@@ -68,7 +72,19 @@ export function EventsSection() {
               transition={{ duration: 0.3, delay: i * 0.1 }}
               className="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300"
             >
-              <PhotoPlaceholder className="aspect-[4/3]" label={venue.name} />
+              <div className="relative aspect-[4/3] overflow-hidden">
+                {venue.hasPhoto ? (
+                  <Image
+                    src={venue.image}
+                    alt={`${venue.name} — Dworek Biesiadny`}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width:768px) 100vw, 33vw"
+                  />
+                ) : (
+                  <PhotoPlaceholder className="w-full h-full" label={venue.name} />
+                )}
+              </div>
               <div className="p-5">
                 <h3 className="font-heading text-xl text-primary-dark font-bold mb-1">{venue.name}</h3>
                 <p className="font-body text-gray-500 text-sm">{venue.description}</p>
@@ -76,6 +92,27 @@ export function EventsSection() {
             </MotionDiv>
           ))}
         </div>
+
+        {/* Event gallery */}
+        <MotionDiv
+          initial={{ opacity: 0, y: 8 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.3 }}
+          className="grid grid-cols-3 md:grid-cols-6 gap-2 mb-12"
+        >
+          {eventGallery.map((n) => (
+            <div key={n} className="relative aspect-square rounded-lg overflow-hidden">
+              <Image
+                src={`/images/wydarzenia/wydarzenie-${n}.jpg`}
+                alt={`Wydarzenie w Dworku Biesiadnym`}
+                fill
+                className="object-cover hover:scale-110 transition-transform duration-500"
+                sizes="(max-width:768px) 33vw, 16vw"
+              />
+            </div>
+          ))}
+        </MotionDiv>
 
         <div className="text-center">
           <Link

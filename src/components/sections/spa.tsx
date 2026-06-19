@@ -2,6 +2,7 @@
 
 import { MotionDiv } from "@/components/motion";
 import Link from "next/link";
+import Image from "next/image";
 import { buttonVariants } from "@/components/ui/button";
 import { PhotoPlaceholder } from "@/components/photo-placeholder";
 import { cn } from "@/lib/utils";
@@ -19,6 +20,33 @@ const baliaFeatures = [
   { icon: Droplets, label: "Hydromasaż 8 dysz" },
   { icon: Waves, label: "LED kolorowe" },
   { icon: Thermometer, label: "Opalana drewnem" },
+];
+
+const spaItems = [
+  {
+    title: "Sauna",
+    subtitle: "Platforma mobilna",
+    features: saunaFeatures,
+    desc: "Świerk skandynawski klasa A, ławy abachi, panoramiczne okno 200×250 cm na starorzecze Warty. Piec Harvia 10,5 KW WiFi + piec na drewno.",
+    image: "/images/wellness/wellness-1.jpg",
+    hasPhoto: true,
+  },
+  {
+    title: "Balia",
+    subtitle: "Drewniana, ø 200 cm",
+    features: baliaFeatures,
+    desc: "Opalana drewnem na cztery osoby. Hydromasaż (8 dysz), kolorowe podświetlenie LED, termopokrywa i schody.",
+    image: null,
+    hasPhoto: false,
+  },
+  {
+    title: "Jacuzzi",
+    subtitle: "Przy saunie",
+    features: [{ icon: Waves, label: "Dostępne dla gości" }],
+    desc: "Jacuzzi przy saunie zewnętrznej uzupełnia strefę relaksu — sauna, prysznic, jacuzzi, balia pod gwiazdami.",
+    image: null,
+    hasPhoto: false,
+  },
 ];
 
 export function SpaSection() {
@@ -41,11 +69,7 @@ export function SpaSection() {
         </MotionDiv>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {[
-            { title: "Sauna", subtitle: "Platforma mobilna", features: saunaFeatures, desc: "Świerk skandynawski klasa A, ławy abachi, panoramiczne okno 200×250 cm na starorzecze Warty. Piec Harvia 10,5 KW WiFi + piec na drewno." },
-            { title: "Balia", subtitle: "Drewniana, ø 200 cm", features: baliaFeatures, desc: "Opalana drewnem na cztery osoby. Hydromasaż (8 dysz), kolorowe podświetlenie LED, termopokrywa i schody." },
-            { title: "Jacuzzi", subtitle: "Przy saunie", features: [{ icon: Waves, label: "Dostępne dla gości" }], desc: "Jacuzzi przy saunie zewnętrznej uzupełnia strefę relaksu — sauna, prysznic, jacuzzi, balia pod gwiazdami." },
-          ].map((item, i) => (
+          {spaItems.map((item, i) => (
             <MotionDiv
               key={item.title}
               initial={{ opacity: 0, y: 10 }}
@@ -54,7 +78,19 @@ export function SpaSection() {
               transition={{ duration: 0.3, delay: i * 0.1 }}
               className="bg-white/5 rounded-2xl overflow-hidden border border-white/10 hover:border-accent/40 transition-colors duration-300"
             >
-              <PhotoPlaceholder className="aspect-[4/3]" label={item.title} />
+              <div className="relative aspect-[4/3]">
+                {item.hasPhoto && item.image ? (
+                  <Image
+                    src={item.image}
+                    alt={`${item.title} — Dworek Biesiadny strefa relaksu`}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width:768px) 100vw, 33vw"
+                  />
+                ) : (
+                  <PhotoPlaceholder className="w-full h-full" label={item.title} />
+                )}
+              </div>
               <div className="p-6">
                 <h3 className="font-heading text-2xl text-white font-bold mb-1">{item.title}</h3>
                 <p className="font-body text-accent text-sm mb-3">{item.subtitle}</p>

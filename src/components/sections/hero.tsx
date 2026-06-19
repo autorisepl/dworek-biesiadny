@@ -4,6 +4,7 @@ import { MotionDiv } from "@/components/motion";
 import Image from "next/image";
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
+import { WeatherWidget } from "@/components/weather-widget";
 import { cn } from "@/lib/utils";
 
 export function HeroSection() {
@@ -14,10 +15,15 @@ export function HeroSection() {
         alt="Łąki nadwarciańskie o świcie — okolice Dworku Biesiadnego"
         fill
         priority
-          sizes="100vw"
+        sizes="100vw"
         className="object-cover"
       />
       <div className="absolute inset-0 bg-primary-dark/60" />
+
+      {/* Weather widget — top right */}
+      <div className="absolute top-6 right-6 z-20">
+        <WeatherWidget />
+      </div>
 
       <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
         <MotionDiv
@@ -41,7 +47,7 @@ export function HeroSection() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link
-              href="/kontakt"
+              href="/rezerwacja"
               className="inline-flex items-center justify-center min-w-[220px] h-14 bg-accent hover:bg-accent-light text-white font-body font-semibold px-8 text-base rounded-lg transition-colors duration-200"
             >
               Zarezerwuj pobyt
