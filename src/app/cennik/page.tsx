@@ -156,7 +156,7 @@ export default function CennikPage() {
                   ))}
                 </ul>
                 <Link
-                  href="/kontakt"
+                  href="/rezerwacja"
                   className={cn(
                     buttonVariants({ variant: "default" }),
                     "w-full justify-center font-body text-sm mt-auto",
@@ -165,7 +165,7 @@ export default function CennikPage() {
                       : "bg-cream text-primary hover:bg-primary hover:text-white border-transparent"
                   )}
                 >
-                  Zapytaj o cenę
+                  Zarezerwuj
                 </Link>
               </div>
             ))}
@@ -198,13 +198,13 @@ export default function CennikPage() {
               potrzeb.
             </p>
             <Link
-              href="/kontakt"
+              href="/rezerwacja"
               className={cn(
                 buttonVariants({ variant: "default" }),
                 "bg-primary hover:bg-primary-dark text-white font-body font-medium px-8 py-3"
               )}
             >
-              Zapytaj o cenę
+              Zarezerwuj
             </Link>
           </div>
         </div>

@@ -117,7 +117,7 @@ export function PricingSection() {
                 ))}
               </ul>
               <Link
-                href="/kontakt"
+                href="/rezerwacja"
                 className={cn(
                   buttonVariants({ variant: tier.highlight ? "default" : "outline" }),
                   "w-full justify-center font-body font-medium",
@@ -126,7 +126,7 @@ export function PricingSection() {
                     : "border-primary text-primary hover:bg-primary hover:text-white"
                 )}
               >
-                Zapytaj o cenę
+                Zarezerwuj
               </Link>
             </MotionDiv>
           ))}

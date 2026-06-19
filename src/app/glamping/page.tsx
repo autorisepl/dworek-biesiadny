@@ -48,7 +48,7 @@ export default function GlampingPage() {
           </p>
           <div className="mt-8 flex gap-4">
             <Link
-              href="/kontakt"
+              href="/rezerwacja"
               className={cn(
                 buttonVariants({ variant: "default" }),
                 "bg-accent hover:bg-accent-light text-white font-body font-medium px-8 py-3"
@@ -129,7 +129,7 @@ export default function GlampingPage() {
               </div>
               <div className="mt-8">
                 <Link
-                  href="/kontakt"
+                  href="/rezerwacja"
                   className={cn(
                     buttonVariants({ variant: "default" }),
                     "bg-primary hover:bg-primary-dark text-white font-body font-medium px-8 py-3"

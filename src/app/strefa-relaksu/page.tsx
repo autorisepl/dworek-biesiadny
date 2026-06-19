@@ -179,7 +179,7 @@ export default function StrefaRelaksuPage() {
             wieczór w saunie z widokiem na Wartę.
           </p>
           <Link
-            href="/kontakt"
+            href="/rezerwacja"
             className={cn(
               buttonVariants({ variant: "default" }),
               "bg-accent hover:bg-accent-light text-white font-body font-semibold px-10 py-4 h-14"

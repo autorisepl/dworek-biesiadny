@@ -103,10 +103,10 @@ export default function RoomPage({ params }: Props) {
               <p className="font-body text-white/60 text-sm mb-1">Cena za noc</p>
               <p className="font-heading text-3xl text-accent font-bold mb-1">[PLACEHOLDER_PRICE]</p>
               <p className="font-body text-white/60 text-xs mb-6">Zależy od terminu i dostępności</p>
-              <Link href="/kontakt" className={cn(buttonVariants(), "w-full justify-center bg-accent hover:bg-accent-light text-white font-body font-medium py-3 mb-3")}>
+              <Link href="/rezerwacja" className={cn(buttonVariants(), "w-full justify-center bg-accent hover:bg-accent-light text-white font-body font-medium py-3 mb-3")}>
                 Zarezerwuj ten pokój
               </Link>
-              <Link href="/kontakt" className="block text-center font-body text-sm text-white/60 hover:text-white transition-colors">
+              <Link href="/rezerwacja" className="block text-center font-body text-sm text-white/60 hover:text-white transition-colors">
                 Zapytaj o dostępność
               </Link>
               <div className="mt-6 pt-6 border-t border-white/10 space-y-2">
