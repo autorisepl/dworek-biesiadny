@@ -1,28 +1,52 @@
 import { NextRequest, NextResponse } from "next/server";
-import { Resend } from "resend";
+import nodemailer from "nodemailer";
 import { createClient } from "@supabase/supabase-js";
+
+function createTransporter() {
+  const user = process.env.GMAIL_USER ?? "info.autorise@gmail.com";
+  const pass = process.env.GMAIL_APP_PASSWORD;
+  if (!pass) return null;
+  return nodemailer.createTransport({
+    service: "gmail",
+    auth: { user, pass },
+  });
+}
 
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const { firstName, lastName, email, phone, checkIn, checkOut, roomSlug, roomName, guests, notes } = body;
+    const {
+      firstName,
+      lastName,
+      email,
+      phone,
+      checkIn,
+      checkOut,
+      roomSlug,
+      roomName,
+      guests,
+      notes,
+    } = body;
 
     if (!firstName || !lastName || !email || !checkIn || !checkOut || !roomSlug) {
       return NextResponse.json({ error: "Brakuje wymaganych pól." }, { status: 400 });
     }
 
     const nights = Math.ceil(
-      (new Date(checkOut).getTime() - new Date(checkIn).getTime()) / (1000 * 60 * 60 * 24)
+      (new Date(checkOut).getTime() - new Date(checkIn).getTime()) /
+        (1000 * 60 * 60 * 24)
     );
 
     const reservationNumber = `DB-${Date.now().toString(36).toUpperCase()}`;
 
     // Save to Supabase
     const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-    const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY ?? process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY;
+    const supabaseKey =
+      process.env.SUPABASE_SERVICE_ROLE_KEY ??
+      process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY;
     if (supabaseUrl && supabaseKey) {
       const supabase = createClient(supabaseUrl, supabaseKey);
-      await supabase.from("reservations").insert({
+      const { error: dbError } = await supabase.from("reservations").insert({
         reservation_number: reservationNumber,
         first_name: firstName,
         last_name: lastName,
@@ -37,16 +61,21 @@ export async function POST(req: NextRequest) {
         payment_method: "cash",
         status: "pending",
       });
+      if (dbError) console.error("Supabase insert error:", dbError);
     }
 
-    // Send confirmation email to guest
-    if (process.env.RESEND_API_KEY) {
-      const resend = new Resend(process.env.RESEND_API_KEY);
+    // Send emails via Gmail SMTP
+    const transporter = createTransporter();
+    if (transporter) {
+      const senderName = "Dworek Biesiadny";
+      const senderEmail = process.env.GMAIL_USER ?? "info.autorise@gmail.com";
+      const from = `"${senderName}" <${senderEmail}>`;
 
-      const { error: guestEmailError } = await resend.emails.send({
-        from: "Dworek Biesiadny <onboarding@resend.dev>",
+      // Confirmation to guest
+      const guestResult = await transporter.sendMail({
+        from,
+        to: email,
         replyTo: "rezerwacje@dworekbiesiadny.pl",
-        to: [email],
         subject: `Potwierdzenie rezerwacji ${reservationNumber} — Dworek Biesiadny`,
         html: buildConfirmationEmail({
           reservationNumber,
@@ -59,16 +88,13 @@ export async function POST(req: NextRequest) {
           nights,
         }),
       });
+      console.log("Guest email sent:", guestResult.messageId);
 
-      if (guestEmailError) {
-        console.error("Guest email error:", JSON.stringify(guestEmailError));
-      }
-
-      // Notify the hotel
-      const { error: adminEmailError } = await resend.emails.send({
-        from: "Rezerwacje <onboarding@resend.dev>",
-        replyTo: email,
+      // Notification to hotel + admin
+      const adminResult = await transporter.sendMail({
+        from,
         to: ["info@dworekbiesiadny.pl", "info.autorise@gmail.com"],
+        replyTo: email,
         subject: `Nowa rezerwacja ${reservationNumber} — ${firstName} ${lastName}`,
         html: buildAdminEmail({
           reservationNumber,
@@ -84,10 +110,9 @@ export async function POST(req: NextRequest) {
           notes,
         }),
       });
-
-      if (adminEmailError) {
-        console.error("Admin email error:", JSON.stringify(adminEmailError));
-      }
+      console.log("Admin email sent:", adminResult.messageId);
+    } else {
+      console.warn("GMAIL_APP_PASSWORD not set — emails skipped");
     }
 
     return NextResponse.json({ success: true, reservationNumber });
@@ -128,7 +153,6 @@ function buildConfirmationEmail(data: {
     <tr>
       <td align="center">
         <table width="600" cellpadding="0" cellspacing="0" style="background:#ffffff;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.08);">
-          <!-- Header -->
           <tr>
             <td style="background:#2d5a3d;padding:36px 40px;text-align:center;">
               <p style="margin:0;color:#c9a84c;font-size:11px;letter-spacing:3px;text-transform:uppercase;font-family:sans-serif;">Dworek Biesiadny</p>
@@ -136,7 +160,6 @@ function buildConfirmationEmail(data: {
               <p style="margin:8px 0 0;color:#c9a84c;font-size:12px;font-family:sans-serif;">Radzewice, Wielkopolska</p>
             </td>
           </tr>
-          <!-- Body -->
           <tr>
             <td style="padding:40px 40px 24px;">
               <p style="margin:0 0 8px;color:#c9a84c;font-size:11px;letter-spacing:3px;text-transform:uppercase;font-family:sans-serif;">Potwierdzenie rezerwacji</p>
@@ -145,13 +168,10 @@ function buildConfirmationEmail(data: {
                 Twoja rezerwacja w Dworku Biesiadnym w Radzewicach została przyjęta.
                 Poniżej znajdziesz szczegóły. W przypadku pytań skontaktuj się z nami.
               </p>
-
-              <!-- Reservation box -->
               <table width="100%" cellpadding="0" cellspacing="0" style="background:#f5f0e8;border-radius:12px;overflow:hidden;margin-bottom:24px;">
                 <tr><td style="padding:24px 28px;">
                   <p style="margin:0 0 4px;color:#c9a84c;font-size:10px;letter-spacing:3px;text-transform:uppercase;font-family:sans-serif;">Numer rezerwacji</p>
                   <p style="margin:0 0 20px;color:#1d3a2d;font-size:22px;font-weight:bold;font-family:sans-serif;letter-spacing:2px;">${data.reservationNumber}</p>
-
                   <table width="100%" cellpadding="0" cellspacing="0">
                     <tr>
                       <td style="padding-bottom:14px;vertical-align:top;width:50%;">
@@ -176,7 +196,6 @@ function buildConfirmationEmail(data: {
                       </td>
                     </tr>
                   </table>
-
                   <div style="margin-top:16px;padding-top:16px;border-top:1px solid #e0d8cc;">
                     <p style="margin:0 0 2px;color:#888;font-size:10px;text-transform:uppercase;letter-spacing:1px;font-family:sans-serif;">Płatność</p>
                     <p style="margin:0;color:#1d3a2d;font-size:14px;font-family:sans-serif;font-weight:600;">Gotówka w dworku przy zameldowaniu</p>
@@ -184,13 +203,11 @@ function buildConfirmationEmail(data: {
                   </div>
                 </td></tr>
               </table>
-
               <p style="margin:0 0 8px;color:#555;font-size:14px;line-height:1.7;font-family:sans-serif;">
                 Skontaktujemy się z Tobą, aby potwierdzić dostępność i omówić szczegóły.
               </p>
             </td>
           </tr>
-          <!-- Contact -->
           <tr>
             <td style="padding:0 40px 40px;">
               <table width="100%" cellpadding="0" cellspacing="0" style="background:#2d5a3d;border-radius:12px;">
@@ -198,12 +215,11 @@ function buildConfirmationEmail(data: {
                   <p style="margin:0 0 12px;color:#c9a84c;font-size:10px;letter-spacing:3px;text-transform:uppercase;font-family:sans-serif;">Kontakt</p>
                   <p style="margin:0 0 4px;color:#ffffff;font-size:13px;font-family:sans-serif;">📍 Długa 1B, 62-022 Radzewice</p>
                   <p style="margin:0 0 4px;color:#ffffff;font-size:13px;font-family:sans-serif;">📞 <a href="tel:+48691845079" style="color:#c9a84c;text-decoration:none;">+48 691 845 079</a></p>
-                  <p style="margin:0;color:#ffffff;font-size:13px;font-family:sans-serif;">✉️ <a href="mailto:info@dworek-biesiadny.pl" style="color:#c9a84c;text-decoration:none;">info@dworek-biesiadny.pl</a></p>
+                  <p style="margin:0;color:#ffffff;font-size:13px;font-family:sans-serif;">✉️ <a href="mailto:rezerwacje@dworekbiesiadny.pl" style="color:#c9a84c;text-decoration:none;">rezerwacje@dworekbiesiadny.pl</a></p>
                 </td></tr>
               </table>
             </td>
           </tr>
-          <!-- Footer -->
           <tr>
             <td style="padding:20px 40px;background:#faf8f4;border-top:1px solid #ede8df;text-align:center;">
               <p style="margin:0;color:#aaa;font-size:11px;font-family:sans-serif;">
