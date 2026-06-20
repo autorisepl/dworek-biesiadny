@@ -74,7 +74,7 @@ export default function RezerwacjaPage() {
   function validate(): string | null {
     if (!form.firstName.trim()) return "Imię jest wymagane.";
     if (!form.lastName.trim()) return "Nazwisko jest wymagane.";
-    if (!form.email.trim() || !form.email.includes("@")) return "Podaj poprawny adres e-mail.";
+    if (!form.email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) return "Podaj poprawny adres e-mail.";
     if (!form.checkIn) return "Wybierz datę przyjazdu.";
     if (!form.checkOut) return "Wybierz datę wyjazdu.";
     if (nights <= 0) return "Data wyjazdu musi być późniejsza niż przyjazdu.";
@@ -286,7 +286,9 @@ export default function RezerwacjaPage() {
                   E-mail *
                 </label>
                 <input
-                  type="email"
+                  type="text"
+                  inputMode="email"
+                  autoComplete="email"
                   value={form.email}
                   onChange={(e) => update("email", e.target.value)}
                   placeholder="jan@example.com"
