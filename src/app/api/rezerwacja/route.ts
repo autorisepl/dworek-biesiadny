@@ -93,7 +93,7 @@ export async function POST(req: NextRequest) {
       // Notification to hotel + admin
       const adminResult = await transporter.sendMail({
         from,
-        to: ["info@dworekbiesiadny.pl", "info.autorise@gmail.com"],
+        to: ["info@dworek-biesiadny.pl", "info.autorise@gmail.com"],
         replyTo: email,
         subject: `Nowa rezerwacja ${reservationNumber} — ${firstName} ${lastName}`,
         html: buildAdminEmail({
