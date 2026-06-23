@@ -32,7 +32,7 @@ export default function GlampingPage() {
           sizes="100vw"
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-primary-dark/60" />
+        <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/90 via-primary-dark/30 to-transparent" />
         <div className="relative z-10 max-w-7xl mx-auto text-white">
           <p className="text-accent font-body text-sm tracking-widest uppercase mb-3">
             Glamping
@@ -87,10 +87,29 @@ export default function GlampingPage() {
         </div>
       </section>
 
+      {/* 3-photo strip — all glamping images */}
+      <section className="px-4 md:px-8 pb-0 pt-4 bg-cream">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-3 gap-3">
+            {[1, 2, 3].map((n) => (
+              <div key={n} className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-sm">
+                <Image
+                  src={`/images/glamping/glamping-${n}.jpg`}
+                  alt={`Kopuła glamping ${n === 1 ? "— widok zewnętrzny" : n === 2 ? "— wnętrze nocą" : "— w otoczeniu natury"}`}
+                  fill
+                  className="object-cover hover:scale-105 transition-transform duration-600"
+                  sizes="(max-width:768px) 33vw, 33vw"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="py-20 md:py-28 px-4 md:px-8 bg-warm-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="aspect-[4/3] rounded-2xl shadow-xl overflow-hidden">
+            <div className="aspect-[4/3] relative rounded-2xl shadow-xl overflow-hidden">
               <Image
                 src="/images/glamping/glamping-2.jpg"
                 alt="Wnętrze kopuły glamping — ujęcie nocne przez transparentne ściany"

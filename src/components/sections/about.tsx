@@ -43,6 +43,7 @@ export function AboutSection() {
             </div>
           </MotionDiv>
 
+          {/* 3-photo editorial collage */}
           <MotionDiv
             initial={{ opacity: 0, x: 10 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -50,7 +51,8 @@ export function AboutSection() {
             transition={{ duration: 0.35, delay: 0.1 }}
             className="relative"
           >
-            <div className="aspect-[4/5] rounded-2xl shadow-xl overflow-hidden">
+            {/* Main photo */}
+            <div className="aspect-[4/5] relative rounded-2xl shadow-xl overflow-hidden">
               <Image
                 src="/images/otoczenie/otoczenie-2.jpg"
                 alt="Dworek Biesiadny w Radzewicach — widok ogólny"
@@ -59,13 +61,24 @@ export function AboutSection() {
                 sizes="(max-width:768px) 100vw, 50vw"
               />
             </div>
-            <div className="absolute -bottom-6 -left-6 w-40 h-40 rounded-xl shadow-lg border-4 border-white overflow-hidden hidden md:block">
+            {/* Bottom-left overlay */}
+            <div className="absolute -bottom-6 -left-6 w-48 h-48 rounded-xl shadow-xl border-4 border-white overflow-hidden hidden md:block z-10">
               <Image
                 src="/images/otoczenie/otoczenie-3.jpg"
                 alt="Otoczenie Dworku Biesiadnego"
                 fill
                 className="object-cover"
-                sizes="160px"
+                sizes="192px"
+              />
+            </div>
+            {/* Top-right overlay */}
+            <div className="absolute -top-5 -right-5 w-36 h-36 rounded-xl shadow-xl border-4 border-white overflow-hidden hidden md:block z-10">
+              <Image
+                src="/images/otoczenie/otoczenie-6.jpg"
+                alt="Ogród i łąki przy Dworku"
+                fill
+                className="object-cover"
+                sizes="144px"
               />
             </div>
           </MotionDiv>
