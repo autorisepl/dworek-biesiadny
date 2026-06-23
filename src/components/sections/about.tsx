@@ -74,8 +74,8 @@ export function AboutSection() {
             {/* Top-right overlay */}
             <div className="absolute -top-5 -right-5 w-36 h-36 rounded-xl shadow-xl border-4 border-white overflow-hidden hidden md:block z-10">
               <Image
-                src="/images/otoczenie/otoczenie-6.jpg"
-                alt="Ogród i łąki przy Dworku"
+                src="/images/otoczenie/otoczenie-4.jpg"
+                alt="Widok z dworku — łąki nadwarciańskie"
                 fill
                 className="object-cover"
                 sizes="144px"

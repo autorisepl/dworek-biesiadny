@@ -36,7 +36,7 @@ const spaItems = [
     subtitle: "Drewniana, ø 200 cm",
     features: baliaFeatures,
     desc: "Opalana drewnem na cztery osoby. Hydromasaż (8 dysz), kolorowe podświetlenie LED, termopokrywa i schody.",
-    image: "/images/otoczenie/otoczenie-4.jpg",
+    image: "/images/wellness/wellness-1.jpg",
     hasPhoto: true,
   },
   {
@@ -44,7 +44,7 @@ const spaItems = [
     subtitle: "Przy saunie",
     features: [{ icon: Waves, label: "Dostępne dla gości" }],
     desc: "Jacuzzi przy saunie zewnętrznej uzupełnia strefę relaksu — sauna, prysznic, jacuzzi, balia pod gwiazdami.",
-    image: "/images/otoczenie/otoczenie-5.jpg",
+    image: "/images/wellness/wellness-1.jpg",
     hasPhoto: true,
   },
 ];

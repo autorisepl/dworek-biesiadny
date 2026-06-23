@@ -103,8 +103,8 @@ export default function StrefaRelaksuPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
             <div className="aspect-[4/5] rounded-2xl shadow-xl overflow-hidden order-2 md:order-1">
               <Image
-                src="/images/otoczenie/otoczenie-6.jpg"
-                alt="Balia drewniana z widokiem na łąki"
+                src="/images/wellness/wellness-1.jpg"
+                alt="Balia drewniana w strefie relaksu"
                 fill
                 className="object-cover"
                 sizes="(max-width:768px) 100vw, 50vw"
@@ -172,7 +172,7 @@ export default function StrefaRelaksuPage() {
             </div>
             <div className="aspect-[4/3] rounded-2xl shadow-xl overflow-hidden">
               <Image
-                src="/images/otoczenie/otoczenie-7.jpg"
+                src="/images/wellness/wellness-1.jpg"
                 alt="Jacuzzi przy saunie zewnętrznej — strefa relaksu"
                 fill
                 className="object-cover"
