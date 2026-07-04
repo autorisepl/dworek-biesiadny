@@ -7,7 +7,7 @@ import { Users, Thermometer, Zap, Wifi, Droplets, Waves } from "lucide-react";
 
 
 export const metadata: Metadata = {
-  title: "Strefa relaksu — Sauna, Balia, Jacuzzi — Dworek Biesiadny",
+  title: "Strefa relaksu — Sauna i Balia — Dworek Biesiadny",
   description:
     "Sauna zewnętrzna panoramiczna na 6–8 osób z widokiem na starorzecze Warty, balia drewniana opalana drewnem z hydromasażem oraz jacuzzi. Dworek Biesiadny w Radzewicach.",
 };
@@ -103,8 +103,8 @@ export default function StrefaRelaksuPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
             <div className="aspect-[4/5] rounded-2xl shadow-xl overflow-hidden order-2 md:order-1">
               <Image
-                src="/images/wellness/wellness-1.jpg"
-                alt="Balia drewniana w strefie relaksu"
+                src="/images/otoczenie/otoczenie-1.jpg"
+                alt="Balia drewniana z widokiem na łąki nadwarciańskie"
                 fill
                 className="object-cover"
                 sizes="(max-width:768px) 100vw, 50vw"
@@ -145,39 +145,6 @@ export default function StrefaRelaksuPage() {
               <div className="mt-4 bg-white rounded-lg px-3 py-2 font-body text-xs text-gray-600">
                 Średnica: 200 cm · Wkład z włókna szklanego · Termopokrywa i schody w zestawie
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Jacuzzi */}
-      <section className="py-20 md:py-28 px-4 md:px-8 bg-warm-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
-            <div>
-              <p className="text-accent font-body text-sm tracking-widest uppercase mb-3">03</p>
-              <h2 className="font-heading text-3xl md:text-4xl text-primary-dark mb-6">
-                Jacuzzi
-              </h2>
-              <div className="w-16 h-0.5 bg-accent mb-8" />
-              <p className="font-body text-gray-700 leading-relaxed mb-8">
-                Jacuzzi przy saunie zewnętrznej uzupełnia strefę relaksu. Razem tworzą
-                kompletny rytm: sauna — zimny prysznic — jacuzzi — balia pod gwiazdami.
-                Dostępne wyłącznie dla gości dworku.
-              </p>
-              <div className="flex items-center gap-2 bg-cream rounded-lg px-3 py-2 font-body text-sm text-primary-dark w-fit">
-                <Waves className="w-4 h-4 text-accent" />
-                Dostępne dla gości dworku
-              </div>
-            </div>
-            <div className="aspect-[4/3] rounded-2xl shadow-xl overflow-hidden">
-              <Image
-                src="/images/wellness/wellness-1.jpg"
-                alt="Jacuzzi przy saunie zewnętrznej — strefa relaksu"
-                fill
-                className="object-cover"
-                sizes="(max-width:768px) 100vw, 50vw"
-              />
             </div>
           </div>
         </div>

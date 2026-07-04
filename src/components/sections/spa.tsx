@@ -25,7 +25,7 @@ const baliaFeatures = [
 const spaItems = [
   {
     title: "Sauna",
-    subtitle: "Platforma mobilna",
+    subtitle: "Platforma mobilna · 6–8 osób",
     features: saunaFeatures,
     desc: "Świerk skandynawski klasa A, ławy abachi, panoramiczne okno 200×250 cm na starorzecze Warty. Piec Harvia 10,5 KW WiFi + piec na drewno.",
     image: "/images/wellness/wellness-1.jpg",
@@ -33,18 +33,10 @@ const spaItems = [
   },
   {
     title: "Balia",
-    subtitle: "Drewniana, ø 200 cm",
+    subtitle: "Drewniana · ø 200 cm · z hydromasażem",
     features: baliaFeatures,
-    desc: "Opalana drewnem na cztery osoby. Hydromasaż (8 dysz), kolorowe podświetlenie LED, termopokrywa i schody.",
-    image: "/images/wellness/wellness-1.jpg",
-    hasPhoto: true,
-  },
-  {
-    title: "Jacuzzi",
-    subtitle: "Przy saunie",
-    features: [{ icon: Waves, label: "Dostępne dla gości" }],
-    desc: "Jacuzzi przy saunie zewnętrznej uzupełnia strefę relaksu — sauna, prysznic, jacuzzi, balia pod gwiazdami.",
-    image: "/images/wellness/wellness-1.jpg",
+    desc: "Opalana drewnem — piec zewnętrzny, więc woda nie pachnie dymem. Hydromasaż (8 dysz), kolorowe LED, termopokrywa. Widok na starorzecze Warty.",
+    image: "/images/otoczenie/otoczenie-1.jpg",
     hasPhoto: true,
   },
 ];
@@ -68,7 +60,7 @@ export function SpaSection() {
           </p>
         </MotionDiv>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {spaItems.map((item, i) => (
             <MotionDiv
               key={item.title}
