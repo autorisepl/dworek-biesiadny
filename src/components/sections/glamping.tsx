@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { Maximize, Moon, Users, TreePine } from "lucide-react";
+import { Maximize, Moon, Users, TreePine, ChevronRight } from "lucide-react";
 
 const glampingFeatures = [
   { icon: Maximize, label: "37,5 m² powierzchni" },
@@ -90,7 +90,7 @@ export function GlampingSection() {
                 Zarezerwuj kopułę
               </Link>
               <Link href="/glamping" className="inline-flex items-center font-body text-sm text-primary hover:text-primary-dark transition-colors">
-                Dowiedz się więcej →
+                Dowiedz się więcej <ChevronRight className="w-4 h-4 ml-1" />
               </Link>
             </div>
           </MotionDiv>

@@ -15,6 +15,7 @@ export function HeroSection() {
         priority
         sizes="100vw"
         className="object-cover"
+        style={{ objectPosition: "center 35%" }}
       />
       {/* Cinematic gradient — shows landscape at top, readable text at bottom */}
       <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/92 via-primary-dark/30 to-transparent" />

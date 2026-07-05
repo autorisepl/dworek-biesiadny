@@ -103,10 +103,11 @@ export default function StrefaRelaksuPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
             <div className="aspect-[4/5] rounded-2xl shadow-xl overflow-hidden order-2 md:order-1">
               <Image
-                src="/images/otoczenie/otoczenie-1.jpg"
-                alt="Balia drewniana z widokiem na łąki nadwarciańskie"
+                src="/images/otoczenie/otoczenie-6.jpg"
+                alt="Balia drewniana z widokiem na łąki nadwarciańskie o zmierzchu"
                 fill
                 className="object-cover"
+                style={{ objectPosition: "center 40%" }}
                 sizes="(max-width:768px) 100vw, 50vw"
               />
             </div>

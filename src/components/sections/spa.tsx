@@ -29,6 +29,7 @@ const spaItems = [
     features: saunaFeatures,
     desc: "Świerk skandynawski klasa A, ławy abachi, panoramiczne okno 200×250 cm na starorzecze Warty. Piec Harvia 10,5 KW WiFi + piec na drewno.",
     image: "/images/wellness/wellness-1.jpg",
+    imagePosition: "center top",
     hasPhoto: true,
   },
   {
@@ -36,7 +37,8 @@ const spaItems = [
     subtitle: "Drewniana · ø 200 cm · z hydromasażem",
     features: baliaFeatures,
     desc: "Opalana drewnem — piec zewnętrzny, więc woda nie pachnie dymem. Hydromasaż (8 dysz), kolorowe LED, termopokrywa. Widok na starorzecze Warty.",
-    image: "/images/otoczenie/otoczenie-1.jpg",
+    image: "/images/otoczenie/otoczenie-6.jpg",
+    imagePosition: "center 40%",
     hasPhoto: true,
   },
 ];
@@ -77,6 +79,7 @@ export function SpaSection() {
                     alt={`${item.title} — Dworek Biesiadny strefa relaksu`}
                     fill
                     className="object-cover"
+                    style={{ objectPosition: item.imagePosition ?? "center" }}
                     sizes="(max-width:768px) 100vw, 33vw"
                   />
                 ) : (

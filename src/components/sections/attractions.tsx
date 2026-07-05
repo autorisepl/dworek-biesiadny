@@ -34,7 +34,7 @@ const attractions = [
     icon: TreePine,
     title: "Widoki natury",
     description: "Starorzecze Warty, łąki nadwarciańskie, starodrzew akacji na skarpie. Rano z balkonu słychać papugi z woliery w ogrodzie.",
-    image: "/images/otoczenie/otoczenie-1.jpg",
+    image: "/images/otoczenie/otoczenie-4.jpg",
   },
   {
     icon: Rabbit,

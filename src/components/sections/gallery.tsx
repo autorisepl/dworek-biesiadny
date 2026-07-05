@@ -7,12 +7,12 @@ import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 const galleryItems = [
-  { src: "/images/otoczenie/otoczenie-1.jpg", alt: "Łąki nadwarciańskie wokół dworku", featured: true },
-  { src: "/images/rooms/apartament-1.jpg", alt: "Apartament — łóżko King size" },
+  { src: "/images/rooms/apartament-debowy.jpg", alt: "Apartament Dębowy — lamele z naturalnego drewna" },
+  { src: "/images/otoczenie/otoczenie-1.jpg", alt: "Łąki nadwarciańskie wokół dworku" },
   { src: "/images/wellness/wellness-1.jpg", alt: "Sauna zewnętrzna z widokiem" },
+  { src: "/images/glamping/glamping-2.jpg", alt: "Kopuła glamping — wnętrze nocą" },
+  { src: "/images/rooms/apartament-1.jpg", alt: "Apartament — łóżko King size" },
   { src: "/images/otoczenie/otoczenie-5.jpg", alt: "Ogród Dworku Biesiadnego" },
-  { src: "/images/glamping/glamping-1.jpg", alt: "Kopuła glamping przy Warcie" },
-  { src: "/images/otoczenie/otoczenie-6.jpg", alt: "Łąki w okolicach dworku" },
   { src: "/images/wydarzenia/wydarzenie-1.jpg", alt: "Sala eventowa — Dworek Biesiadny" },
   { src: "/images/wydarzenia/wydarzenie-7.jpg", alt: "Uroczystość weselna w Dworku", wide: true },
 ];
