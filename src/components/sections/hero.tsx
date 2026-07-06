@@ -9,13 +9,13 @@ export function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-end overflow-hidden">
       <Image
-        src="/images/otoczenie/otoczenie-1.jpg"
-        alt="Łąki nadwarciańskie o świcie — okolice Dworku Biesiadnego"
+        src="/images/hero/hero-dworek-front.jpg"
+        alt="Dworek Biesiadny w Radzewicach — widok od frontu"
         fill
         priority
         sizes="100vw"
         className="object-cover"
-        style={{ objectPosition: "center 35%" }}
+        style={{ objectPosition: "center 40%" }}
       />
       {/* Cinematic gradient — shows landscape at top, readable text at bottom */}
       <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/92 via-primary-dark/30 to-transparent" />

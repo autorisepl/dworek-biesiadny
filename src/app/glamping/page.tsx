@@ -25,7 +25,7 @@ export default function GlampingPage() {
     <div className="min-h-screen bg-warm-white">
       <section className="relative py-28 md:py-36 px-4 md:px-8 overflow-hidden">
         <Image
-          src="/images/glamping/glamping-1.jpg"
+          src="/images/glamping/kopula-a.jpg"
           alt="Kopuła glamping przy starorzeczu Warty"
           fill
           priority
@@ -91,11 +91,15 @@ export default function GlampingPage() {
       <section className="px-4 md:px-8 pb-0 pt-4 bg-cream">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-3 gap-3">
-            {[1, 2, 3].map((n) => (
-              <div key={n} className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-sm">
+            {[
+              { src: "/images/glamping/kopula-a.jpg", alt: "Kopuła glamping — widok zewnętrzny" },
+              { src: "/images/glamping/kopula-b.jpg", alt: "Wnętrze kopuły glamping" },
+              { src: "/images/hero/hero-dworek-alt.jpg", alt: "Dworek Biesiadny — otoczenie natury" },
+            ].map((img) => (
+              <div key={img.src} className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-sm">
                 <Image
-                  src={`/images/glamping/glamping-${n}.jpg`}
-                  alt={`Kopuła glamping ${n === 1 ? "— widok zewnętrzny" : n === 2 ? "— wnętrze nocą" : "— w otoczeniu natury"}`}
+                  src={img.src}
+                  alt={img.alt}
                   fill
                   className="object-cover hover:scale-105 transition-transform duration-600"
                   sizes="(max-width:768px) 33vw, 33vw"
@@ -111,8 +115,8 @@ export default function GlampingPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="aspect-[4/3] relative rounded-2xl shadow-xl overflow-hidden">
               <Image
-                src="/images/glamping/glamping-2.jpg"
-                alt="Wnętrze kopuły glamping — ujęcie nocne przez transparentne ściany"
+                src="/images/glamping/kopula-b.jpg"
+                alt="Wnętrze kopuły glamping — Dworek Biesiadny"
                 fill
                 className="object-cover"
                 sizes="(max-width:768px) 100vw, 50vw"

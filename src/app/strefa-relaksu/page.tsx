@@ -18,7 +18,7 @@ export default function StrefaRelaksuPage() {
       {/* Hero */}
       <section className="relative py-28 md:py-36 px-4 md:px-8 overflow-hidden">
         <Image
-          src="/images/wellness/wellness-1.jpg"
+          src="/images/wellness/sauna-a.jpg"
           alt="Sauna zewnętrzna z widokiem na starorzecze Warty"
           fill
           priority
@@ -86,7 +86,7 @@ export default function StrefaRelaksuPage() {
             </div>
             <div className="aspect-[4/5] rounded-2xl shadow-xl overflow-hidden">
               <Image
-                src="/images/wellness/wellness-1.jpg"
+                src="/images/wellness/sauna-b.jpg"
                 alt="Sauna zewnętrzna z panoramicznym oknem na starorzecze Warty"
                 fill
                 className="object-cover"
@@ -103,8 +103,8 @@ export default function StrefaRelaksuPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
             <div className="aspect-[4/5] rounded-2xl shadow-xl overflow-hidden order-2 md:order-1">
               <Image
-                src="/images/otoczenie/otoczenie-6.jpg"
-                alt="Balia drewniana z widokiem na łąki nadwarciańskie o zmierzchu"
+                src="/images/wellness/balia-nocna.jpg"
+                alt="Balia drewniana opalana drewnem — Dworek Biesiadny strefa relaksu"
                 fill
                 className="object-cover"
                 style={{ objectPosition: "center 40%" }}

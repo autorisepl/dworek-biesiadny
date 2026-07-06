@@ -22,8 +22,8 @@ export default function PokojePage() {
     <div className="min-h-screen bg-warm-white">
       <section className="relative py-28 md:py-36 px-4 md:px-8 overflow-hidden">
         <Image
-          src="/images/rooms/apartament-debowy.jpg"
-          alt="Apartamenty Dworek Biesiadny w Radzewicach"
+          src="/images/hero/hero-dworek-front.jpg"
+          alt="Dworek Biesiadny — Pokoje i apartamenty w Radzewicach"
           fill
           priority
           sizes="100vw"

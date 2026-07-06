@@ -29,7 +29,7 @@ export function GlampingSection() {
             {/* Main photo */}
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
               <Image
-                src="/images/glamping/glamping-1.jpg"
+                src="/images/glamping/kopula-a.jpg"
                 alt="Kopuła glamping przy starorzeczu Warty — Dworek Biesiadny"
                 fill
                 className="object-cover"
@@ -38,11 +38,11 @@ export function GlampingSection() {
             </div>
             {/* Small grid of additional photos */}
             <div className="grid grid-cols-2 gap-3 mt-3">
-              {[2, 3].map((n) => (
-                <div key={n} className="relative aspect-[4/3] rounded-xl overflow-hidden">
+              {["/images/glamping/kopula-b.jpg", "/images/hero/hero-dworek-alt.jpg"].map((src) => (
+                <div key={src} className="relative aspect-[4/3] rounded-xl overflow-hidden">
                   <Image
-                    src={`/images/glamping/glamping-${n}.jpg`}
-                    alt={`Wnętrze kopuły glamping — Dworek Biesiadny`}
+                    src={src}
+                    alt="Wnętrze kopuły glamping — Dworek Biesiadny"
                     fill
                     className="object-cover"
                     sizes="(max-width:768px) 50vw, 25vw"

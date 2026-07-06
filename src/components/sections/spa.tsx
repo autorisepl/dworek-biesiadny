@@ -28,8 +28,8 @@ const spaItems = [
     subtitle: "Platforma mobilna · 6–8 osób",
     features: saunaFeatures,
     desc: "Świerk skandynawski klasa A, ławy abachi, panoramiczne okno 200×250 cm na starorzecze Warty. Piec Harvia 10,5 KW WiFi + piec na drewno.",
-    image: "/images/wellness/wellness-1.jpg",
-    imagePosition: "center top",
+    image: "/images/wellness/sauna-a.jpg",
+    imagePosition: "center 30%",
     hasPhoto: true,
   },
   {
@@ -37,8 +37,8 @@ const spaItems = [
     subtitle: "Drewniana · ø 200 cm · z hydromasażem",
     features: baliaFeatures,
     desc: "Opalana drewnem — piec zewnętrzny, więc woda nie pachnie dymem. Hydromasaż (8 dysz), kolorowe LED, termopokrywa. Widok na starorzecze Warty.",
-    image: "/images/otoczenie/otoczenie-6.jpg",
-    imagePosition: "center 40%",
+    image: "/images/wellness/balia-nocna.jpg",
+    imagePosition: "center 50%",
     hasPhoto: true,
   },
 ];

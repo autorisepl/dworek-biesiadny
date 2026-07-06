@@ -16,13 +16,19 @@ const eventTypes = [
 ];
 
 const venues = [
-  { name: "Dworek", description: "Główna sala na większe przyjęcia. Klimat szlacheckiego dworku, łąki w tle.", image: "/images/wydarzenia/wydarzenie-1.jpg", hasPhoto: true },
-  { name: "Stara stajnia", description: "Zabytkowy budynek na kameralne spotkania do kilkudziesięciu osób.", image: "/images/wydarzenia/wydarzenie-3.jpg", hasPhoto: true },
-  { name: "Kopuła glamping", description: "37,5 m² przy starorzeczu Warty — uroczystości w plenerze z wygodą.", image: "/images/glamping/glamping-1.jpg", hasPhoto: true },
+  { name: "Dworek", description: "Główna sala na większe przyjęcia. Klimat szlacheckiego dworku, łąki w tle.", image: "/images/events/sala-a.jpg", hasPhoto: true },
+  { name: "Stara stajnia", description: "Zabytkowy budynek na kameralne spotkania do kilkudziesięciu osób.", image: "/images/events/stara-stajnia.jpg", hasPhoto: true },
+  { name: "Kopuła glamping", description: "37,5 m² przy starorzeczu Warty — uroczystości w plenerze z wygodą.", image: "/images/glamping/kopula-a.jpg", hasPhoto: true },
 ];
 
-// Gallery of event photos
-const eventGallery = [2, 4, 5, 6, 7, 8];
+const eventGalleryPaths = [
+  "/images/events/sala-a.jpg",
+  "/images/events/sala-b.jpg",
+  "/images/events/stara-stajnia.jpg",
+  "/images/glamping/kopula-a.jpg",
+  "/images/glamping/kopula-b.jpg",
+  "/images/hero/hero-dworek-alt.jpg",
+];
 
 export function EventsSection() {
   return (
@@ -101,11 +107,11 @@ export function EventsSection() {
           transition={{ duration: 0.3 }}
           className="grid grid-cols-3 md:grid-cols-6 gap-2 mb-12"
         >
-          {eventGallery.map((n) => (
-            <div key={n} className="relative aspect-square rounded-lg overflow-hidden">
+          {eventGalleryPaths.map((src) => (
+            <div key={src} className="relative aspect-square rounded-lg overflow-hidden">
               <Image
-                src={`/images/wydarzenia/wydarzenie-${n}.jpg`}
-                alt={`Wydarzenie w Dworku Biesiadnym`}
+                src={src}
+                alt="Wydarzenie w Dworku Biesiadnym"
                 fill
                 className="object-cover hover:scale-110 transition-transform duration-500"
                 sizes="(max-width:768px) 33vw, 16vw"
