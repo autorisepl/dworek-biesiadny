@@ -92,7 +92,7 @@ export function StrefaAktywnaContent() {
             transition={{ duration: 0.35 }}
           >
             <p className="font-body text-accent text-xs tracking-widest uppercase mb-4">Dworek Biesiadny</p>
-            <h1 className="font-heading text-5xl md:text-7xl font-bold mb-4">Strefa Aktywna</h1>
+            <h1 className="font-heading text-5xl md:text-7xl font-bold mb-4">Strefa dla aktywnych</h1>
             <p className="font-heading text-xl md:text-2xl italic text-accent mb-6">Odkryj okolicę na dwóch kółkach</p>
             <p className="font-body text-white/80 text-base md:text-lg max-w-2xl mx-auto mb-10">
               Kilkanaście rowerów elektrycznych i klasycznych czeka na naszych gości. Łąki

@@ -14,7 +14,7 @@ const navLinks = [
   { href: "/restauracja", label: "Restauracja" },
   { href: "/strefa-wellness", label: "Strefa Wellness" },
   { href: "/glamping", label: "Glamping" },
-  { href: "/strefa-aktywna", label: "Strefa Aktywna" },
+  { href: "/strefa-aktywna", label: "Strefa dla aktywnych" },
   { href: "/wydarzenia", label: "Wydarzenia" },
   { href: "/kontakt", label: "Kontakt" },
 ];
@@ -73,12 +73,7 @@ export function Navbar() {
                   : "text-gray-700 hover:text-primary"
               )}
             >
-              {link.label === "Strefa Aktywna" ? (
-                <span className="flex items-center gap-1">
-                  {link.label}
-                  <span className="text-[10px] bg-accent text-white px-1.5 py-0.5 rounded-full font-body font-bold leading-none">Nowa</span>
-                </span>
-              ) : link.label}
+              {link.label}
             </Link>
           ))}
           <div className="flex items-center gap-2 ml-1 border-l border-cream pl-4">
@@ -128,9 +123,6 @@ export function Navbar() {
                   )}
                 >
                   {link.label}
-                  {link.href === "/strefa-aktywna" && (
-                    <span className="ml-2 text-[10px] bg-accent text-white px-1.5 py-0.5 rounded-full font-bold">Nowa</span>
-                  )}
                 </Link>
               ))}
               <div className="flex items-center gap-4 py-1">
