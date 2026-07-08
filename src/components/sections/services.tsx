@@ -24,9 +24,9 @@ const services = [
   },
   {
     icon: Waves,
-    title: "Strefa relaksu",
+    title: "Strefa Wellness",
     description:
-      "Sauna panoramiczna na 8 osób z widokiem na starorzecze Warty. Balia drewniana z hydromasażem. Jacuzzi przy saunie.",
+      "Sauna panoramiczna na 8 osób z widokiem na starorzecze Warty. Balia drewniana z hydromasażem.",
   },
   {
     icon: Tent,

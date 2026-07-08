@@ -1,12 +1,11 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
 import { MotionDiv } from "@/components/motion";
 import { PhotoPlaceholder } from "@/components/photo-placeholder";
 import { Zap, Bike, MapPin, Clock, Users, ChevronRight, Phone, CheckCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
+import { BOOKING_ENGINE_URL } from "@/lib/booking";
 
 const bikes = [
   {
@@ -83,13 +82,7 @@ export function StrefaAktywnaContent() {
       {/* Hero */}
       <section className="relative bg-primary-dark text-white py-24 md:py-36 px-4 md:px-8 overflow-hidden">
         <div className="absolute inset-0 opacity-20">
-          <Image
-            src="/images/otoczenie/otoczenie-1.jpg"
-            alt="Łąki nadwarciańskie przy Dworku Biesiadnym"
-            fill
-            className="object-cover"
-            sizes="100vw"
-          />
+          <PhotoPlaceholder className="w-full h-full" label="Zdjęcie — Łąki nadwarciańskie przy dworku" />
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/70 to-primary-dark/95" />
         <div className="relative max-w-4xl mx-auto text-center">
@@ -249,13 +242,7 @@ export function StrefaAktywnaContent() {
           <div className="grid grid-cols-3 md:grid-cols-5 gap-3 rounded-2xl overflow-hidden">
             {[1, 2, 3, 4, 5].map((n) => (
               <div key={n} className="relative aspect-square overflow-hidden rounded-xl">
-                <Image
-                  src={`/images/otoczenie/otoczenie-${n}.jpg`}
-                  alt={`Okolice Dworku Biesiadnego — widok ${n}`}
-                  fill
-                  className="object-cover hover:scale-105 transition-transform duration-500"
-                  sizes="(max-width:768px) 33vw, 20vw"
-                />
+                <PhotoPlaceholder className="w-full h-full" label={`Zdjęcie — Okolice dworku, widok ${n}`} />
               </div>
             ))}
           </div>
@@ -277,13 +264,15 @@ export function StrefaAktywnaContent() {
               Zarezerwuj nocleg i wypożycz rower na miejscu. Łąki Nadwarciańskie czekają.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/rezerwacja"
+              <a
+                href={BOOKING_ENGINE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className={cn(buttonVariants(), "bg-accent hover:bg-accent-light text-white font-body font-semibold h-14 px-8 text-base")}
               >
                 Zarezerwuj pokój
                 <ChevronRight className="w-4 h-4 ml-1" />
-              </Link>
+              </a>
               <a
                 href="tel:+48691845079"
                 className="inline-flex items-center justify-center gap-2 border-2 border-white/30 hover:border-white text-white font-body font-semibold h-14 px-8 text-base rounded-lg transition-colors"

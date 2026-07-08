@@ -137,26 +137,6 @@ export default function RoomPage({ params }: Props) {
                 Cena zależy od terminu — sprawdź dostępność poniżej.
               </p>
 
-              {/*
-                BOOKING ENGINE WIDGET — PLACEHOLDER
-                =====================================
-                Zastąp poniższy div kodem widgetu systemu rezerwacji.
-                Przykład podpięcia Booking.com Button Widget:
-                  <div id="booking-widget" data-hotel-id="TWOJE_ID"></div>
-                  <script async src="https://www.booking.com/widget.js"></script>
-
-                Lub np. Profitroom / Hotres / Eviivo widget.
-              */}
-              <div
-                id={`booking-engine-room-${room.slug}`}
-                className="booking-engine-placeholder mb-4 bg-white/5 border border-white/10 rounded-xl p-4 text-center"
-              >
-                <p className="font-body text-white/40 text-xs">
-                  [MIEJSCE NA WIDGET SYSTEMU REZERWACJI]
-                </p>
-              </div>
-
-              {/* BOOKING ENGINE: BookingButton triggers booking engine modal */}
               <BookingButton
                 roomSlug={room.slug}
                 label="Zarezerwuj ten pokój"

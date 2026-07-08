@@ -3,6 +3,7 @@
 import { useState, useCallback } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { PhotoPlaceholder } from "@/components/photo-placeholder";
 
 interface Props {
   images: readonly string[];
@@ -30,7 +31,9 @@ export function RoomImageSlider({ images, alt, sizes, priority }: Props) {
     [images.length]
   );
 
-  if (images.length === 0) return null;
+  if (images.length === 0) {
+    return <PhotoPlaceholder className="w-full h-full" label={`Zdjęcie — ${alt}`} />;
+  }
 
   if (images.length === 1) {
     return (

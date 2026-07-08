@@ -1,18 +1,18 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
+import { BOOKING_ENGINE_URL } from "@/lib/booking";
 
 const navLinks = [
   { href: "/pokoje", label: "Pokoje" },
   { href: "/restauracja", label: "Restauracja" },
-  { href: "/strefa-relaksu", label: "Strefa relaksu" },
+  { href: "/strefa-wellness", label: "Strefa Wellness" },
   { href: "/glamping", label: "Glamping" },
   { href: "/strefa-aktywna", label: "Strefa Aktywna" },
   { href: "/wydarzenia", label: "Wydarzenia" },
@@ -37,15 +37,10 @@ function FacebookIcon() {
 
 function Logo() {
   return (
-    <div className="flex items-center gap-2">
-      <div className="relative w-10 h-10 rounded-full overflow-hidden shrink-0">
-        <Image src="/logo.png" alt="Dworek Biesiadny" fill className="object-cover" sizes="40px" />
-      </div>
-      <div className="hidden sm:block">
-        <p className="font-heading text-sm font-bold text-primary-dark leading-none">Dworek Biesiadny</p>
-        <p className="font-body text-xs text-gray-400 leading-none mt-0.5">w Radzewicach</p>
-      </div>
-    </div>
+    <div
+      className="w-14 h-14 rounded-lg bg-gray-200 border border-gray-300 shrink-0"
+      aria-label="Dworek Biesiadny — logo"
+    />
   );
 }
 
@@ -106,12 +101,14 @@ export function Navbar() {
               <FacebookIcon />
             </a>
           </div>
-          <Link
-            href="/rezerwacja"
+          <a
+            href={BOOKING_ENGINE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className={cn(buttonVariants({ variant: "default" }), "bg-primary text-white hover:bg-primary-dark font-body font-medium whitespace-nowrap ml-1")}
           >
             Zarezerwuj
-          </Link>
+          </a>
         </div>
 
         <Sheet>
@@ -144,9 +141,14 @@ export function Navbar() {
                   <FacebookIcon /> Facebook
                 </a>
               </div>
-              <Link href="/rezerwacja" className={cn(buttonVariants({ variant: "default" }), "bg-primary text-white hover:bg-primary-dark font-body font-medium justify-center")}>
+              <a
+                href={BOOKING_ENGINE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={cn(buttonVariants({ variant: "default" }), "bg-primary text-white hover:bg-primary-dark font-body font-medium justify-center")}
+              >
                 Zarezerwuj pobyt
-              </Link>
+              </a>
             </div>
           </SheetContent>
         </Sheet>

@@ -4,6 +4,7 @@ import { MotionDiv } from "@/components/motion";
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { BOOKING_ENGINE_URL } from "@/lib/booking";
 import { Check } from "lucide-react";
 
 const pricingTiers = [
@@ -116,8 +117,10 @@ export function PricingSection() {
                   </li>
                 ))}
               </ul>
-              <Link
-                href="/rezerwacja"
+              <a
+                href={BOOKING_ENGINE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className={cn(
                   buttonVariants({ variant: tier.highlight ? "default" : "outline" }),
                   "w-full justify-center font-body font-medium",
@@ -127,7 +130,7 @@ export function PricingSection() {
                 )}
               >
                 Zarezerwuj
-              </Link>
+              </a>
             </MotionDiv>
           ))}
         </div>

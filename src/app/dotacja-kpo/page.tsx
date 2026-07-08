@@ -84,7 +84,7 @@ export default function DotacjaKPOPage() {
             <p className="text-sm leading-relaxed">
               Celem projektu jest rozszerzenie i dywersyfikacja dotychczasowej działalności
               Dworku Biesiadnego poprzez wprowadzenie nowej usługi wypożyczania rowerów
-              elektrycznych oraz unowocześnienie oferty hotelarskiej i gastronomicznej.
+              elektrycznych oraz unowocześnienie oferty noclegowej i gastronomicznej.
               Inwestycja ma na celu podniesienie komfortu gości, poprawę standardu obiektu
               oraz zwiększenie odporności przedsiębiorstwa na potencjalne kryzysy rynkowe.
             </p>

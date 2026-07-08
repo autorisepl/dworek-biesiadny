@@ -57,9 +57,7 @@ export const rooms = [
     bathroom: "Duża łazienka z prysznicem, szafka z dwoma półkami, lustro podświetlane",
     description:
       "Największy apartament w dworku — 25 m² z czterema miejscami do spania. Idealny dla rodzin.",
-    images: [
-      "/images/rooms/apt-debowy-a.jpg",
-    ],
+    images: [],
   },
   {
     slug: "apartament-5",
@@ -139,6 +137,7 @@ export const rooms = [
     images: [
       "/images/rooms/room-12-a.jpg",
       "/images/rooms/room-12-b.jpg",
+      "/images/rooms/room-12-c.jpg",
     ],
   },
   {

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { BOOKING_ENGINE_URL } from "@/lib/booking";
 import { Check, Info } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -64,7 +64,7 @@ const roomPrices = [
 ];
 
 const additionalPrices = [
-  { name: "Strefa relaksu (sauna + balia + jacuzzi)", price: "Od zapytania", note: "za grupę / wieczór" },
+  { name: "Strefa Wellness (sauna + balia)", price: "Od 99 zł/os", note: "zobacz cennik wellness" },
   { name: "Wypożyczalnia rowerów elektrycznych", price: "Od zapytania", note: "za rower / dzień" },
   { name: "Kopuła glamping — nocleg", price: "Od zapytania", note: "za noc" },
   { name: "Kopuła glamping — event", price: "Wycena indywidualna", note: "wycena indywidualna" },
@@ -76,7 +76,7 @@ export default function CennikPage() {
     <div className="min-h-screen bg-warm-white">
       <section className="relative py-28 md:py-36 px-4 md:px-8 overflow-hidden">
         <Image
-          src="/images/rooms/apartament-1.jpg"
+          src="/images/rooms/apt-1-a.jpg"
           alt="Apartamenty Dworek Biesiadny — cennik noclegów"
           fill
           priority
@@ -155,8 +155,10 @@ export default function CennikPage() {
                     </li>
                   ))}
                 </ul>
-                <Link
-                  href="/rezerwacja"
+                <a
+                  href={BOOKING_ENGINE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={cn(
                     buttonVariants({ variant: "default" }),
                     "w-full justify-center font-body text-sm mt-auto",
@@ -166,7 +168,7 @@ export default function CennikPage() {
                   )}
                 >
                   Zarezerwuj
-                </Link>
+                </a>
               </div>
             ))}
           </div>
@@ -197,15 +199,17 @@ export default function CennikPage() {
               Nie znalazłeś odpowiedzi? Napisz — wrócimy z ofertą dopasowaną do Twoich
               potrzeb.
             </p>
-            <Link
-              href="/rezerwacja"
+            <a
+              href={BOOKING_ENGINE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className={cn(
                 buttonVariants({ variant: "default" }),
                 "bg-primary hover:bg-primary-dark text-white font-body font-medium px-8 py-3"
               )}
             >
               Zarezerwuj
-            </Link>
+            </a>
           </div>
         </div>
       </section>

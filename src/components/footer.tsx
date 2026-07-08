@@ -40,7 +40,7 @@ export function Footer() {
               {[
                 { href: "/pokoje", label: "Pokoje" },
                 { href: "/restauracja", label: "Restauracja" },
-                { href: "/strefa-relaksu", label: "Strefa relaksu" },
+                { href: "/strefa-wellness", label: "Strefa Wellness" },
                 { href: "/glamping", label: "Glamping" },
                 { href: "/galeria", label: "Galeria" },
               ].map((link) => (

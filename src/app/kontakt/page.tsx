@@ -20,8 +20,8 @@ export default function KontaktPage() {
     <div className="min-h-screen bg-warm-white">
       <section className="relative py-28 md:py-36 px-4 md:px-8 overflow-hidden">
         <Image
-          src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1920&h=800&fit=crop"
-          alt="Kontakt — Dworek Biesiadny w Radzewicach"
+          src="/images/hero/hero-dworek-front.jpg"
+          alt="Dworek Biesiadny w Radzewicach — widok od frontu"
           fill
           priority
           sizes="100vw"

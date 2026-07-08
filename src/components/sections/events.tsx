@@ -6,7 +6,7 @@ import Image from "next/image";
 import { buttonVariants } from "@/components/ui/button";
 import { PhotoPlaceholder } from "@/components/photo-placeholder";
 import { cn } from "@/lib/utils";
-import { Heart, Users, Briefcase, PartyPopper } from "lucide-react";
+import { Heart, Users, Briefcase, PartyPopper, Flame, ChevronRight } from "lucide-react";
 
 const eventTypes = [
   { icon: Heart, title: "Wesela", description: "Ceremonia i przyjęcie w jednym miejscu. Nocleg dla wszystkich gości na miejscu." },
@@ -32,7 +32,7 @@ const eventGalleryPaths = [
 
 export function EventsSection() {
   return (
-    <section id="wydarzenia" className="py-20 md:py-28 px-4 md:px-8 bg-cream">
+    <section id="wydarzenia" className="py-20 md:py-28 px-4 md:px-8 bg-warm-white">
       <div className="max-w-7xl mx-auto">
         <MotionDiv
           initial={{ opacity: 0, y: 10 }}
@@ -119,6 +119,29 @@ export function EventsSection() {
             </div>
           ))}
         </MotionDiv>
+
+        <div className="flex flex-wrap justify-center gap-3 mb-10">
+          <Link
+            href="/wydarzenia/grill"
+            className="inline-flex items-center gap-2 bg-white rounded-full pl-3 pr-4 py-2 shadow-sm hover:shadow-md transition-shadow duration-300 font-body text-sm text-primary-dark"
+          >
+            <span className="w-7 h-7 rounded-full bg-accent/10 text-accent flex items-center justify-center shrink-0">
+              <Flame className="w-3.5 h-3.5" />
+            </span>
+            Grill w plenerze
+            <ChevronRight className="w-3.5 h-3.5 text-gray-400" />
+          </Link>
+          <Link
+            href="/wydarzenia/ognisko"
+            className="inline-flex items-center gap-2 bg-white rounded-full pl-3 pr-4 py-2 shadow-sm hover:shadow-md transition-shadow duration-300 font-body text-sm text-primary-dark"
+          >
+            <span className="w-7 h-7 rounded-full bg-accent/10 text-accent flex items-center justify-center shrink-0">
+              <Flame className="w-3.5 h-3.5" />
+            </span>
+            Ognisko w plenerze
+            <ChevronRight className="w-3.5 h-3.5 text-gray-400" />
+          </Link>
+        </div>
 
         <div className="text-center">
           <Link

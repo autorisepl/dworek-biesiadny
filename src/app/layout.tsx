@@ -20,15 +20,15 @@ const lato = Lato({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://dworekbiesiadny.pl"),
-  title: "Dworek Biesiadny w Radzewicach — Hotel, Restauracja, Events",
+  title: "Dworek Biesiadny w Radzewicach — Pokoje, Restauracja, Wydarzenia",
   description:
-    "Kameralny dworek nad starorzeczem Warty w Radzewicach. 8 apartamentów, restauracja, strefa relaksu z sauną, balią i jacuzzi, glamping, organizacja wesel i eventów. ~40 minut od Poznania.",
+    "Kameralny dworek nad starorzeczem Warty w Radzewicach. 8 apartamentów, restauracja, strefa wellness z sauną i balią, glamping, organizacja wesel i eventów. ~40 minut od Poznania.",
   keywords: [
     "dworek biesiadny",
     "radzewice",
-    "hotel wielkopolska",
+    "noclegi wielkopolska",
     "restauracja warta",
-    "sauna balia jacuzzi",
+    "sauna balia wellness",
     "glamping",
     "wesela radzewice",
   ],
@@ -48,7 +48,7 @@ const jsonLd = {
   "@type": "LodgingBusiness",
   name: "Dworek Biesiadny w Radzewicach",
   description:
-    "Kameralny hotel nad starorzeczem Warty w Radzewicach, Wielkopolska. 8 apartamentów, restauracja, sauna, glamping.",
+    "Kameralny obiekt nad starorzeczem Warty w Radzewicach, Wielkopolska. 8 apartamentów, restauracja, sauna, glamping.",
   url: "https://dworekbiesiadny.pl",
   address: {
     "@type": "PostalAddress",
@@ -58,7 +58,7 @@ const jsonLd = {
   },
   amenityFeature: [
     { "@type": "LocationFeatureSpecification", name: "Sauna", value: true },
-    { "@type": "LocationFeatureSpecification", name: "Jacuzzi", value: true },
+    { "@type": "LocationFeatureSpecification", name: "Balia", value: true },
     { "@type": "LocationFeatureSpecification", name: "Restauracja", value: true },
     { "@type": "LocationFeatureSpecification", name: "WiFi", value: true },
     { "@type": "LocationFeatureSpecification", name: "Parking", value: true },

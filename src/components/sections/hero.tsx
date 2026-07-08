@@ -4,6 +4,7 @@ import { MotionDiv } from "@/components/motion";
 import Image from "next/image";
 import Link from "next/link";
 import { WeatherWidget } from "@/components/weather-widget";
+import { BOOKING_ENGINE_URL } from "@/lib/booking";
 
 export function HeroSection() {
   return (
@@ -42,15 +43,17 @@ export function HeroSection() {
           <div className="w-10 h-px bg-accent/60 mb-6" />
           <p className="font-body text-sm md:text-base text-white/70 max-w-lg mb-9 leading-relaxed">
             Kameralny obiekt nad starorzeczem Warty — 8 apartamentów, restauracja i strefa
-            relaksu w otoczeniu łąk nadwarciańskich i starodrzewu akacji.
+            wellness w otoczeniu łąk nadwarciańskich i starodrzewu akacji.
           </p>
           <div className="flex flex-col sm:flex-row gap-3">
-            <Link
-              href="/rezerwacja"
+            <a
+              href={BOOKING_ENGINE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center h-12 bg-accent hover:bg-accent-light text-white font-body font-semibold px-8 rounded-lg transition-colors duration-200"
             >
               Zarezerwuj pobyt
-            </Link>
+            </a>
             <Link
               href="/pokoje"
               className="inline-flex items-center justify-center h-12 border border-white/40 text-white hover:bg-white/10 font-body font-semibold px-8 rounded-lg transition-colors duration-200"

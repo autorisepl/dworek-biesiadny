@@ -14,7 +14,7 @@ const INQUIRY_TYPES = [
   "Organizacja wesela",
   "Organizacja eventu / imprezy",
   "Restauracja",
-  "Strefa relaksu",
+  "Strefa Wellness",
   "Glamping",
   "Inne",
 ];

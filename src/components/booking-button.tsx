@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { BOOKING_ENGINE_URL } from "@/lib/booking";
 import { CalendarDays } from "lucide-react";
 
 interface Props {
@@ -9,20 +10,6 @@ interface Props {
   label?: string;
 }
 
-/**
- * BOOKING ENGINE INTEGRATION
- * --------------------------
- * Replace href="#rezerwacja" with your booking engine URL or attach JS handler:
- *   document.querySelectorAll('.btn-booking').forEach(btn => {
- *     btn.addEventListener('click', (e) => {
- *       e.preventDefault();
- *       BookingEngine.open({ room: btn.dataset.roomSlug });
- *     });
- *   });
- *
- * The `data-room-slug` attribute provides room context to the booking engine.
- * Classes: `btn-booking` (all), `btn-booking--room` (room-specific).
- */
 export function BookingButton({
   className,
   variant = "primary",
@@ -32,7 +19,9 @@ export function BookingButton({
 }: Props) {
   return (
     <a
-      href="#rezerwacja"
+      href={BOOKING_ENGINE_URL}
+      target="_blank"
+      rel="noopener noreferrer"
       data-room-slug={roomSlug}
       className={cn(
         "btn-booking inline-flex items-center gap-2 font-body font-semibold rounded-lg transition-colors duration-200 cursor-pointer",

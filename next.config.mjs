@@ -5,6 +5,15 @@ const nextConfig = {
       { protocol: "https", hostname: "images.unsplash.com" },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: "/strefa-relaksu",
+        destination: "/strefa-wellness",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

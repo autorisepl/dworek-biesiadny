@@ -2,6 +2,7 @@
 
 import { MotionDiv } from "@/components/motion";
 import Image from "next/image";
+import { PhotoPlaceholder } from "@/components/photo-placeholder";
 
 export function AboutSection() {
   return (
@@ -54,7 +55,7 @@ export function AboutSection() {
             {/* Main photo */}
             <div className="aspect-[4/5] relative rounded-2xl shadow-xl overflow-hidden">
               <Image
-                src="/images/otoczenie/otoczenie-2.jpg"
+                src="/images/hero/hero-dworek-alt.jpg"
                 alt="Dworek Biesiadny w Radzewicach — widok ogólny"
                 fill
                 className="object-cover"
@@ -63,23 +64,11 @@ export function AboutSection() {
             </div>
             {/* Bottom-left overlay */}
             <div className="absolute -bottom-6 -left-6 w-48 h-48 rounded-xl shadow-xl border-4 border-white overflow-hidden hidden md:block z-10">
-              <Image
-                src="/images/otoczenie/otoczenie-3.jpg"
-                alt="Otoczenie Dworku Biesiadnego"
-                fill
-                className="object-cover"
-                sizes="192px"
-              />
+              <PhotoPlaceholder className="w-full h-full" label="Zdjęcie — Ogród, woliera z papugami" />
             </div>
             {/* Top-right overlay */}
             <div className="absolute -top-5 -right-5 w-36 h-36 rounded-xl shadow-xl border-4 border-white overflow-hidden hidden md:block z-10">
-              <Image
-                src="/images/otoczenie/otoczenie-4.jpg"
-                alt="Widok z dworku — łąki nadwarciańskie"
-                fill
-                className="object-cover"
-                sizes="144px"
-              />
+              <PhotoPlaceholder className="w-full h-full" label="Zdjęcie — Łąki nadwarciańskie z dworku" />
             </div>
           </MotionDiv>
         </div>

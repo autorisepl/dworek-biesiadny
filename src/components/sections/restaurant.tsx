@@ -77,11 +77,10 @@ export function RestaurantSection() {
           >
             <div className="aspect-[3/4] rounded-2xl shadow-xl overflow-hidden">
               <Image
-                src="/images/wydarzenia/wydarzenie-6.jpg"
-                alt="Restauracja Dworek Biesiadny — przyjęcia i kolacje"
+                src="/images/events/sala-a.jpg"
+                alt="Restauracja Dworek Biesiadny — sala jadalna"
                 fill
                 className="object-cover"
-                style={{ objectPosition: "center 25%" }}
                 sizes="(max-width:768px) 100vw, 50vw"
               />
             </div>

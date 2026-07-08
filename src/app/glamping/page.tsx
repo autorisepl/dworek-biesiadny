@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { BOOKING_ENGINE_URL } from "@/lib/booking";
 import { Maximize, Moon, Users, TreePine, Waves, Star } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -46,15 +46,17 @@ export default function GlampingPage() {
             rezygnacji z wygody. Cisza, przestrzeń i brak sąsiadów za ścianą w cenie.
           </p>
           <div className="mt-8 flex gap-4">
-            <Link
-              href="/rezerwacja"
+            <a
+              href={BOOKING_ENGINE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className={cn(
                 buttonVariants({ variant: "default" }),
                 "bg-accent hover:bg-accent-light text-white font-body font-medium px-8 py-3"
               )}
             >
               Zarezerwuj kopułę
-            </Link>
+            </a>
           </div>
         </div>
       </section>
@@ -139,7 +141,7 @@ export default function GlampingPage() {
                   <p className="font-body text-gray-600 text-sm leading-relaxed">
                     Pełen komfort noclegowy z widokiem na naturę przez transparentne ściany.
                     Starorzecze Warty tuż obok, polany i las w zasięgu wzroku. Cisza, której
-                    nie znajdziesz w żadnym hotelu.
+                    nie znajdziesz nigdzie indziej.
                   </p>
                 </div>
                 <div className="bg-cream rounded-xl p-6">
@@ -155,15 +157,17 @@ export default function GlampingPage() {
                 </div>
               </div>
               <div className="mt-8">
-                <Link
-                  href="/rezerwacja"
+                <a
+                  href={BOOKING_ENGINE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={cn(
                     buttonVariants({ variant: "default" }),
                     "bg-primary hover:bg-primary-dark text-white font-body font-medium px-8 py-3"
                   )}
                 >
                   Zapytaj o dostępność
-                </Link>
+                </a>
               </div>
             </div>
           </div>

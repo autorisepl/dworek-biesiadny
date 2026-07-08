@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import { PhotoPlaceholder } from "@/components/photo-placeholder";
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -28,7 +28,7 @@ const posts: Post[] = [
     date: "2 czerwca 2026",
     title: "Poszukujemy kelnera / kelnerki — sezon letni 2026",
     description:
-      "Zatrudnimy do pracy w restauracji i obsługi gości hotelowych. Wymagana dyspozycyjność w weekendy. Oferujemy umowę zlecenie, elastyczne godziny i miłą atmosferę pracy w kameralnym obiekcie nad Wartą. CV prosimy przesłać na adres: info@dworek-biesiadny.pl",
+      "Zatrudnimy do pracy w restauracji i obsługi gości. Wymagana dyspozycyjność w weekendy. Oferujemy umowę zlecenie, elastyczne godziny i miłą atmosferę pracy w kameralnym obiekcie nad Wartą. CV prosimy przesłać na adres: info@dworek-biesiadny.pl",
     href: "/kontakt",
     linkLabel: "Napisz do nas",
   },
@@ -63,14 +63,7 @@ export default function AktualnosciPage() {
     <div className="min-h-screen bg-warm-white">
       {/* Hero */}
       <section className="relative py-28 md:py-36 px-4 md:px-8 overflow-hidden">
-        <Image
-          src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=1920&h=800&fit=crop"
-          alt="Aktualnosci Dworek Biesiadny"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover"
-        />
+        <PhotoPlaceholder className="absolute inset-0 w-full h-full" label="Zdjęcie — Dworek, widok ogólny" />
         <div className="absolute inset-0 bg-primary-dark/65" />
         <div className="relative z-10 max-w-7xl mx-auto text-white">
           <p className="text-accent font-body text-sm tracking-widest uppercase mb-3">

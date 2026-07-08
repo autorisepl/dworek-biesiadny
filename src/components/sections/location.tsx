@@ -5,7 +5,7 @@ import { Car, Clock, MapPin, ParkingCircle } from "lucide-react";
 
 export function LocationSection() {
   return (
-    <section id="dojazd" className="py-20 md:py-28 px-4 md:px-8 bg-cream">
+    <section id="dojazd" className="py-20 md:py-28 px-4 md:px-8 bg-warm-white">
       <div className="max-w-7xl mx-auto">
         <MotionDiv
           initial={{ opacity: 0, y: 10 }}

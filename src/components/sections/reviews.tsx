@@ -23,7 +23,7 @@ const reviews = [
     date: "luty 2025",
     rating: 5,
     text: "Przyszliśmy głównie dla sauny i balii — i to był najlepszy wieczór od lat. Gorąca balia o zmierzchu z widokiem na rzekę, cisza i spokój.",
-    tag: "Strefa relaksu",
+    tag: "Strefa Wellness",
   },
 ];
 

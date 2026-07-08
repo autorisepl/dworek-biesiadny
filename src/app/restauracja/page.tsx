@@ -13,28 +13,102 @@ export const metadata: Metadata = {
 
 const menuSections = [
   {
-    category: "Śniadania",
-    items: ["Menu w przygotowaniu — dostępne wkrótce"],
+    category: "Kawa i herbata",
+    items: [
+      { name: "Kawa z ekspresu", price: "15 zł" },
+      { name: "Espresso", price: "15 zł" },
+      { name: "Espresso Doppio", price: "15 zł" },
+      { name: "Cafe Macchiato", price: "18 zł" },
+      { name: "Cappuccino", price: "18 zł" },
+      { name: "Cafe Latte", price: "18 zł" },
+      { name: "Kawa mrożona", price: "25 zł" },
+    ],
+  },
+  {
+    category: "Napoje zimne",
+    items: [
+      { name: "Woda gazowana Kropla Beskidu", price: "8 zł" },
+      { name: "Woda niegazowana Kropla Beskidu", price: "8 zł" },
+      { name: "Coca-Cola 200ml", price: "10 zł" },
+      { name: "Fanta Orange 200ml", price: "10 zł" },
+      { name: "Sprite 200ml", price: "10 zł" },
+      { name: "Tonik Kinley 200ml", price: "10 zł" },
+      { name: "Fuze Tea 250ml", price: "10 zł" },
+    ],
+  },
+  {
+    category: "Soki (250ml)",
+    items: [
+      { name: "Sok pomarańczowy", price: "10 zł" },
+      { name: "Sok grejpfrutowy", price: "10 zł" },
+      { name: "Sok jabłkowy", price: "10 zł" },
+      { name: "Sok z czarnej porzeczki", price: "10 zł" },
+    ],
   },
   {
     category: "Zupy",
-    items: ["Menu w przygotowaniu — dostępne wkrótce"],
+    items: [
+      { name: "Rosół z makaronem", price: "21 zł" },
+      { name: "Czernina z kluseczkami", price: "29 zł" },
+      { name: "Zupa dworska", price: "29 zł" },
+    ],
+  },
+  {
+    category: "Sałatki",
+    items: [
+      {
+        name: "Sałatka grecka — sałata mix, pomidorki, ogórek zielony, papryka, ser feta, czerwona cebula, oliwki, sos vinegrette, bułeczki z pieca",
+        price: "36 zł",
+      },
+      {
+        name: "Cezar z kurczakiem — sałata rzymska, grzanki czosnkowe, parmezan, sos cezar",
+        price: "42 zł",
+      },
+    ],
   },
   {
     category: "Dania główne",
-    items: ["Menu w przygotowaniu — dostępne wkrótce"],
+    items: [
+      { name: "DeVolaille z masłem i pietruszką, frytki, bukiet surówek", price: "42 zł" },
+      {
+        name: "Polędwiczka wieprzowa w sosie ze świeżych kurek, kluski półfrancuskie, warzywa gotowane",
+        price: "62 zł",
+      },
+      { name: "Schab z kostką, puree, kapusta zasmażana", price: "52 zł" },
+      { name: "Rolada wołowa, pampuchy, sos, modra kapusta", price: "69 zł" },
+      {
+        name: "Burger wołowy — 100% wołowiny, bułka maślana, pikle, sałata, sos dworski, frytki",
+        price: "46 zł",
+      },
+    ],
+  },
+  {
+    category: "Dania dla dzieci",
+    items: [
+      {
+        name: "Polędwiczki drobiowe w chrupiącej panierce, frytki, surówka z białej kapusty",
+        price: "35 zł",
+      },
+      {
+        name: "Naleśniki z serkiem waniliowym, świeże owoce sezonowe, bita śmietana",
+        price: "35 zł",
+      },
+    ],
+  },
+  {
+    category: "Rybne przysmaki",
+    items: [
+      { name: "Radzewicki Pstrąg, frytki, surówki", price: "65 zł" },
+      { name: "Sandacz na maśle tymiankowym, puree, szpinak, sos maślano-cytrynowy", price: "75 zł" },
+    ],
   },
   {
     category: "Desery",
-    items: ["Menu w przygotowaniu — dostępne wkrótce"],
-  },
-  {
-    category: "Napoje",
-    items: ["Menu w przygotowaniu — dostępne wkrótce"],
-  },
-  {
-    category: "Wina i alkohole",
-    items: ["Menu w przygotowaniu — dostępne wkrótce"],
+    items: [
+      { name: "Sernik z lodami czekoladowymi i wiśnią", price: "38 zł" },
+      { name: "Lody waniliowe z gorącymi malinami i bitą śmietaną", price: "38 zł" },
+      { name: "Szarlotka dworska z lodami i bitą śmietaną", price: "38 zł" },
+    ],
   },
 ];
 
@@ -43,8 +117,8 @@ export default function RestauracjaPage() {
     <div className="min-h-screen bg-warm-white">
       <section className="relative py-28 md:py-36 px-4 md:px-8 overflow-hidden">
         <Image
-          src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1920&h=800&fit=crop"
-          alt="Restauracja Dworek Biesiadny"
+          src="/images/events/sala-b.jpg"
+          alt="Restauracja Dworek Biesiadny — sala jadalna"
           fill
           priority
           sizes="100vw"
@@ -85,21 +159,13 @@ export default function RestauracjaPage() {
       </section>
 
       <section className="py-20 md:py-28 px-4 md:px-8">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
             <p className="text-accent font-body text-sm tracking-widest uppercase mb-3">Menu</p>
             <h2 className="font-heading text-3xl md:text-4xl text-primary-dark mb-4">
               Karta dań
             </h2>
-            <div className="w-16 h-0.5 bg-accent mx-auto mb-6" />
-            <div className="bg-accent/10 border border-accent/20 rounded-xl p-4 inline-block">
-              <p className="font-body text-sm text-primary-dark">
-                Pełne menu jest w przygotowaniu — dane otrzymamy od właściciela.
-              </p>
-              <p className="font-body text-xs text-gray-500 mt-1">
-                Zadzwoń lub napisz, aby dowiedzieć się o aktualnej ofercie.
-              </p>
-            </div>
+            <div className="w-16 h-0.5 bg-accent mx-auto" />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -110,14 +176,21 @@ export default function RestauracjaPage() {
                 </h3>
                 {section.items.map((item) => (
                   <div
-                    key={item}
-                    className="flex items-center justify-between py-2 font-body text-sm text-gray-400 italic"
+                    key={item.name}
+                    className="flex items-start justify-between gap-4 py-2 font-body text-sm text-gray-700"
                   >
-                    <span>{item}</span>
+                    <span>{item.name}</span>
+                    <span className="font-medium text-primary-dark shrink-0">{item.price}</span>
                   </div>
                 ))}
               </div>
             ))}
+          </div>
+
+          <div className="bg-cream rounded-2xl p-6 mt-8">
+            <p className="font-body text-xs text-gray-500 text-center">
+              Karta alkoholi i win dostępna na miejscu u obsługi.
+            </p>
           </div>
 
           <div className="text-center mt-14">

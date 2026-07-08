@@ -45,7 +45,7 @@ const spaItems = [
 
 export function SpaSection() {
   return (
-    <section id="strefa-relaksu" className="py-20 md:py-28 px-4 md:px-8 bg-primary-dark text-white">
+    <section id="strefa-wellness" className="py-20 md:py-28 px-4 md:px-8 bg-primary-dark text-white">
       <div className="max-w-7xl mx-auto">
         <MotionDiv
           initial={{ opacity: 0, y: 10 }}
@@ -55,10 +55,10 @@ export function SpaSection() {
           className="text-center mb-16"
         >
           <p className="text-accent font-body text-sm tracking-widest uppercase mb-3">Relaks</p>
-          <h2 className="font-heading text-3xl md:text-5xl text-white mb-6">Strefa relaksu</h2>
+          <h2 className="font-heading text-3xl md:text-5xl text-white mb-6">Strefa Wellness</h2>
           <div className="w-16 h-0.5 bg-accent mx-auto mb-6" />
           <p className="font-body text-white/80 text-base md:text-lg max-w-2xl mx-auto">
-            Sauna z widokiem na starorzecze Warty, balia drewniana opalana drewnem, jacuzzi.
+            Sauna z widokiem na starorzecze Warty i balia drewniana opalana drewnem.
           </p>
         </MotionDiv>
 
@@ -105,7 +105,7 @@ export function SpaSection() {
 
         <div className="text-center mt-12">
           <Link
-            href="/strefa-relaksu"
+            href="/strefa-wellness"
             className={cn(
               buttonVariants({ variant: "default" }),
               "bg-accent hover:bg-accent-light text-white font-body font-medium px-8 py-3"

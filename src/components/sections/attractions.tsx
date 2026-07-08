@@ -1,7 +1,7 @@
 "use client";
 
 import { MotionDiv } from "@/components/motion";
-import Image from "next/image";
+import { PhotoPlaceholder } from "@/components/photo-placeholder";
 import { Fish, PersonStanding, Bike, Flame, TreePine, Rabbit, Footprints } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -10,43 +10,43 @@ const attractions = [
     icon: Fish,
     title: "Rybactwo",
     description: "Pomost na stawie do łowienia ryb — sprzęt można wypożyczyć na miejscu. Dostęp do Warty dla bardziej wymagających wędkarzy.",
-    image: "/images/otoczenie/otoczenie-7.jpg",
+    imageLabel: "Zdjęcie — Pomost i staw, rybactwo",
   },
   {
     icon: PersonStanding,
     title: "Nordic walking",
     description: "Kilometry szlaków wzdłuż starorzecza Warty. Łąki Nadwarciańskie i starodrzew akacji tworzą trasy na każdą kondycję.",
-    image: "/images/otoczenie/otoczenie-8.jpg",
+    imageLabel: "Zdjęcie — Szlak nordic walking wzdłuż Warty",
   },
   {
     icon: Bike,
     title: "Rowery elektryczne",
     description: "Kilkanaście rowerów elektrycznych czeka w wypożyczalni na tych, którzy chcą zwiedzić okolicę bez wysiłku.",
-    image: "/images/otoczenie/otoczenie-9.jpg",
+    imageLabel: "Zdjęcie — Wypożyczalnia rowerów elektrycznych",
   },
   {
     icon: Flame,
     title: "Ogniska",
     description: "Dwa ogniska z widokiem na łąki. Wieczorny ogień, cisza i widok na starorzecze — najlepszy koniec dnia.",
-    image: "/images/otoczenie/otoczenie-6.jpg",
+    imageLabel: "Zdjęcie — Ognisko, palenisko w plenerze",
   },
   {
     icon: TreePine,
     title: "Widoki natury",
     description: "Starorzecze Warty, łąki nadwarciańskie, starodrzew akacji na skarpie. Rano z balkonu słychać papugi z woliery w ogrodzie.",
-    image: "/images/otoczenie/otoczenie-4.jpg",
+    imageLabel: "Zdjęcie — Starorzecze Warty, widok ogólny",
   },
   {
     icon: Rabbit,
     title: "Zwierzęta na miejscu",
     description: "Na terenie dworku mieszka rodzinka baranów i owiec. W wolierze papugi i gołębie — widoczne z balkonu apartamentów.",
-    image: "/images/otoczenie/otoczenie-2.jpg",
+    imageLabel: "Zdjęcie — Zwierzęta na terenie dworku",
   },
   {
     icon: Footprints,
     title: "Daniele w okolicy",
     description: "W okolicach dworku czasem przechodzi stadem dzikie daniele. Spacer wzdłuż starorzecza o świcie lub zmierzchu daje największą szansę na spotkanie.",
-    image: "/images/otoczenie/otoczenie-3.jpg",
+    imageLabel: "Zdjęcie — Daniele w okolicy dworku",
   },
 ];
 
@@ -84,17 +84,7 @@ export function AttractionsSection() {
                   : "h-56 lg:h-64"
               )}
             >
-              <Image
-                src={item.image}
-                alt={`${item.title} — Dworek Biesiadny`}
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-700"
-                sizes={
-                  i === 0
-                    ? "(max-width:640px) 100vw, (max-width:1024px) 50vw, 50vw"
-                    : "(max-width:640px) 100vw, (max-width:1024px) 50vw, 25vw"
-                }
-              />
+              <PhotoPlaceholder className="absolute inset-0 w-full h-full" label={item.imageLabel} />
               {/* Gradient overlay for text readability */}
               <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/85 via-primary-dark/15 to-transparent" />
 
