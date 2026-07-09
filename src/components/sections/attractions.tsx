@@ -1,11 +1,20 @@
 "use client";
 
+import Image from "next/image";
 import { MotionDiv } from "@/components/motion";
 import { PhotoPlaceholder } from "@/components/photo-placeholder";
 import { Fish, PersonStanding, Bike, Flame, TreePine, Rabbit, Footprints } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-const attractions = [
+interface Attraction {
+  icon: typeof Fish;
+  title: string;
+  description: string;
+  imageLabel: string;
+  image?: string;
+}
+
+const attractions: Attraction[] = [
   {
     icon: Fish,
     title: "Rybactwo",
@@ -23,6 +32,7 @@ const attractions = [
     title: "Rowery elektryczne",
     description: "Kilkanaście rowerów elektrycznych czeka w wypożyczalni na tych, którzy chcą zwiedzić okolicę bez wysiłku.",
     imageLabel: "Zdjęcie — Wypożyczalnia rowerów elektrycznych",
+    image: "/images/aktywnosci/rower-elektryczny-b.jpg",
   },
   {
     icon: Flame,
@@ -84,7 +94,21 @@ export function AttractionsSection() {
                   : "h-56 lg:h-64"
               )}
             >
-              <PhotoPlaceholder className="absolute inset-0 w-full h-full" label={item.imageLabel} />
+              {item.image ? (
+                <Image
+                  src={item.image}
+                  alt={item.imageLabel}
+                  fill
+                  className="absolute inset-0 object-cover"
+                  sizes={
+                    i === 0
+                      ? "(max-width:640px) 100vw, (max-width:1024px) 50vw, 50vw"
+                      : "(max-width:640px) 100vw, (max-width:1024px) 50vw, 25vw"
+                  }
+                />
+              ) : (
+                <PhotoPlaceholder className="absolute inset-0 w-full h-full" label={item.imageLabel} />
+              )}
               {/* Gradient overlay for text readability */}
               <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/85 via-primary-dark/15 to-transparent" />
 

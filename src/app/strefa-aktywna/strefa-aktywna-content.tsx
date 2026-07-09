@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { MotionDiv } from "@/components/motion";
 import { PhotoPlaceholder } from "@/components/photo-placeholder";
 import { Zap, Bike, MapPin, Clock, Users, ChevronRight, Phone, CheckCircle } from "lucide-react";
@@ -26,7 +27,7 @@ const bikes = [
       "Kask w cenie",
       "Idealne dla każdego poziomu sprawności",
     ],
-    image: null,
+    image: "/images/aktywnosci/rower-elektryczny-a.jpg",
     imagePlaceholder: "Rower elektryczny Dworek Biesiadny",
   },
   {
@@ -47,7 +48,7 @@ const bikes = [
       "Pompka i łańcuszek w zestawie",
       "Dla dzieci od 10 lat",
     ],
-    image: null,
+    image: "/images/aktywnosci/rower-klasyczny-a.jpg",
     imagePlaceholder: "Rower klasyczny Dworek Biesiadny",
   },
 ];
@@ -136,7 +137,17 @@ export function StrefaAktywnaContent() {
               >
                 {/* Image */}
                 <div className="relative aspect-[16/9]">
-                  <PhotoPlaceholder className="w-full h-full" label={bike.imagePlaceholder} />
+                  {bike.image ? (
+                    <Image
+                      src={bike.image}
+                      alt={bike.imagePlaceholder}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width:768px) 100vw, 50vw"
+                    />
+                  ) : (
+                    <PhotoPlaceholder className="w-full h-full" label={bike.imagePlaceholder} />
+                  )}
                 </div>
 
                 {/* Content */}
