@@ -1,13 +1,15 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { toast } from "sonner";
-import { supabase } from "@/lib/supabase";
+import { useForm } from "@formspree/react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Send, Loader2 } from "lucide-react";
+
+const FORMSPREE_FORM_ID = "moevajge";
 
 const INQUIRY_TYPES = [
   "Rezerwacja noclegu",
@@ -35,13 +37,36 @@ const EMPTY: FormData = {
   message: "",
 };
 
+type FormspreeFields = {
+  name: string;
+  email: string;
+  phone: string | undefined;
+  inquiry_type: string;
+  message: string;
+};
+
 export function ContactForm() {
   const [form, setForm] = useState<FormData>(EMPTY);
-  const [loading, setLoading] = useState(false);
+  const [state, submit, reset] = useForm<FormspreeFields>(FORMSPREE_FORM_ID);
+  const loading = state.submitting;
 
   const set = (field: keyof FormData) => (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => setForm((prev) => ({ ...prev, [field]: e.target.value }));
+
+  useEffect(() => {
+    if (state.succeeded) {
+      toast.success("Wiadomość wysłana! Odpiszemy w ciągu 24 godzin.");
+      setForm(EMPTY);
+      reset();
+    }
+  }, [state.succeeded, reset]);
+
+  useEffect(() => {
+    if (state.errors) {
+      toast.error("Coś poszło nie tak. Spróbuj ponownie lub napisz bezpośrednio na e-mail.");
+    }
+  }, [state.errors]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -49,25 +74,13 @@ export function ContactForm() {
       toast.error("Wypełnij wszystkie wymagane pola.");
       return;
     }
-    setLoading(true);
-    try {
-      const { error } = await supabase.from("inquiries").insert([
-        {
-          name: form.name,
-          email: form.email,
-          phone: form.phone || null,
-          inquiry_type: form.inquiry_type,
-          message: form.message,
-        },
-      ]);
-      if (error) throw error;
-      toast.success("Wiadomość wysłana! Odpiszemy w ciągu 24 godzin.");
-      setForm(EMPTY);
-    } catch {
-      toast.error("Coś poszło nie tak. Spróbuj ponownie lub napisz bezpośrednio na e-mail.");
-    } finally {
-      setLoading(false);
-    }
+    await submit({
+      name: form.name,
+      email: form.email,
+      phone: form.phone || undefined,
+      inquiry_type: form.inquiry_type,
+      message: form.message,
+    });
   };
 
   return (

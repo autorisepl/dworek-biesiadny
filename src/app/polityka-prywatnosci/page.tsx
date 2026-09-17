@@ -139,7 +139,7 @@ export default function PolitykaPrywatnosci() {
             <p className="leading-relaxed">
               Dane osobowe nie sÄ… sprzedawane ani przekazywane podmiotom trzecim bez
               Twojej zgody, z wyjÄ…tkiem podmiotĂłw przetwarzajÄ…cych dane w naszym imieniu
-              (hosting, baza danych Supabase, Google Analytics â€” wyĹ‚Ä…cznie po wyraĹĽeniu
+              (hosting, Formspree jako operator formularza kontaktowego, Google Analytics â€” wyĹ‚Ä…cznie po wyraĹĽeniu
               zgody) oraz sytuacji wymaganych przepisami prawa.
             </p>
           </section>
